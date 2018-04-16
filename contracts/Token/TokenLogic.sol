@@ -36,6 +36,19 @@ contract TokenLogic is Token, TokenEvents,Roles {
         require(freeTransfer || src == owner || dst == owner || sameWhiteList(src, dst));
         _;
     }
+    // functions:
+    // f addWhiteList
+    // f removeWhiteList
+    // f addToWhiteList
+    // f removeFromWhiteList
+    // f transfer
+    // f transferFrom
+    // f balanceOf
+    // f approve
+    // f allowance
+
+
+
 
     // only admin can create the list
     function addWhiteList(bytes32 listName) public onlyRole("admin") {
@@ -67,7 +80,7 @@ contract TokenLogic is Token, TokenEvents,Roles {
     	UserAddToWhiteList(listName,user);
     }
 
-    function removFromWhiteList(bytes32 listName,address user) public onlyRole("userManager"){
+    function removeFromWhiteList(bytes32 listName,address user) public onlyRole("userManager"){
     	require(listExists(listName));
     	require(whiteLists[user][listName]);
     	UserRemoveFromWhiteList(listName,user);

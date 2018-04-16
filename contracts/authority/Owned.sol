@@ -32,9 +32,10 @@ contract Owned is OwnedEvents {
         _;
     }
 
-    function setOwner(address owner_) public onlyOwner {
+    function transferOwnerShip(address owner_) public onlyOwner {
         owner = owner_;
         SetTheOwner(owner);
     }
+
 
 }
