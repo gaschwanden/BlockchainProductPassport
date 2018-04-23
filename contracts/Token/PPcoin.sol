@@ -4,9 +4,9 @@ import "../authority/Roles.sol";
 import "./TokenLogic.sol";
 import "./TokenStandard.sol";
 import "./SafeMath.sol";
+import "./TokenEvents.sol";
 
-
-contract PPcoin is TokenStandard, SecuredWithRoles, TokenEvents {
+contract PPcoin is TokenStandard, TokenEvents {
 
     function () {
         //if ether is sent to this address, send it back.
@@ -16,11 +16,10 @@ contract PPcoin is TokenStandard, SecuredWithRoles, TokenEvents {
     string public name;
     uint8 public decimals;
     string public symbol;
-    string public version = 'H1.0';
+
     TokenLogic public logic;
 
-    function PPcoin(
-    ) {
+    function PPcoin() {
         balances[msg.sender] = 10;
         totalSupply = 1000000;
         name = "PP Token";

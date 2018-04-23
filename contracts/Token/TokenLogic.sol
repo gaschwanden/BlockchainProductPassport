@@ -1,8 +1,9 @@
 pragma solidity ^0.4.4;
 import "./TokenStandard.sol";
 import "./TokenEvent.sol";
-
-contract TokenLogic is Token, TokenEvents,Roles {
+import "./authority/Roles.sol";
+import "./PPcoin.sol";
+contract TokenLogic is PPcoin, TokenEvents,Roles {
 
 
     ///add1

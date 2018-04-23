@@ -74,13 +74,10 @@ contract Product {
 
         this.consume();
     }
-
-    /* @notice Function to consume the Product */
     function consume() notConsumed {
     isConsumed = true;
     }
 }
-
 
 
 contract ProductFactory {
