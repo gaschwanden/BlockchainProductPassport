@@ -1,4 +1,4 @@
-pragma solidity ^0.4.7;
+pragma solidity ^0.4.4;
 
 import "./authority/Owned.sol";
 import "./Measurement.sol";

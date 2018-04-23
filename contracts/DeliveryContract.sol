@@ -1,15 +1,12 @@
-pragma solidity ^0.4.0;
-
+pragma solidity ^0.4.4;
+import "./PPcoin.sol";
 contract DeliveryContract {
     address owner;
 
     bytes32 public name;
-    bytes32 public code;
 
-    uint escrowed_amount;
     enum Stages {
         New,
-        HasAttributes,
         WaitingForParties,
         InProgress,
         Complete,
@@ -18,19 +15,18 @@ contract DeliveryContract {
     }
 
     struct Attribute {
-        bytes32 identifer;
+        bytes32 attributeName;
         int min;
         int max;
     }
 
     struct Measurement {
-        bytes32 attribute_id;
-        int value;
-        bytes32 event_id;
+        address handler;
+        bytes32 description;
+        int lon;
+        int lat;
         uint timestamp;
-        uint block_timestamp;
-        bytes32 farmer_id;
-        bytes32 batch_id;
+        uint blockNumber;
     }
 
     struct Party {
@@ -39,7 +35,35 @@ contract DeliveryContract {
         bool has_accepted;
     }
 
-    function DeliveryContract(){
+    Stages public stage = Stages.New;
+    Attribute [] public attributes;
+    Measurement [] measurements;
+    PPcoin public ppcoin;
 
+    function DeliveryContract(bytes32 _name,  address _ppcoinAddress) {
+        owner = msg.sender;
+        name = _name;
+        ppCoin = PPcoin(_ppcoinAddress);
     }
+    //////////////////////////// imcomPlete
+    function setAttributes(bytes32 [] attributeNames, int []mins, int [] maxs )onlyOwner onlyStage(Stage.New){
+        stage= Stages.HasAttributes;
+        for(uint i=0;i<attributeNames.length;i++){
+            attributes.push(Attribute(attributeNames[i],mins[i],max[i]));
+        }
+    }
+
+    function getAttributes() constant returns (bytes[], int[],int[]){
+
+        bytes32 [] memory attributeNames = new bytes32[](attributes.length);
+        int [] memory mins = new int[](attributes.length);
+        int [] memory maxs = new int[](attributes.length);
+        for (uint i = 0; i < attributes.length; i++) {
+            attributeNames[i] = attributes[i].attributeNames;
+            mins[i] = attributes[i].min;
+            maxs[i] = attributes[i].max;
+        }
+        return (attributeNames, mins, maxs);
+    }
+
 }

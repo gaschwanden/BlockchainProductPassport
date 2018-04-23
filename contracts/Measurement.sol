@@ -35,14 +35,11 @@ contract Measurement {
         measurement.lat = lat;
         measurement.timestamp = now;
         measurement.blockNumber = block.number;
-        measurement.push(Measurement);
+        measurement.push(measurement);
 
 
     }
-    // imcomplete
-    function getMeasurement(){
 
-    }
 
     function merge(address[] otherProducts, bytes32 newProductName, bytes32 newProductAdditionalInformation, int lon, int lat) notConsumed {
         ProductFactory productFactory = ProductFactory(PRODUCT_FACTORY);
