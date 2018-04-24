@@ -10,8 +10,7 @@ contract DeliveryContract {
         WaitingForParties,
         InProgress,
         Complete,
-        Canceled,
-        Reimbursed
+        Canceled
     }
 
     struct Attribute {
@@ -64,6 +63,27 @@ contract DeliveryContract {
             maxs[i] = attributes[i].max;
         }
         return (attributeNames, mins, maxs);
+    }
+
+    function addMeasurement(bytes32 description, int lon, int lat) notConsumed {
+            Measurement memory measurement;
+            measurement.handler = msg.sender;
+            measurement.description = description;
+            measurement.lon = lon;
+            measurement.lat = lat;
+            measurement.timestamp = now;
+            measurement.blockNumber = block.number;
+            measurement.push(measurement);
+    }
+
+    function getParticipants() constant returns (address [], uint []) {
+        address [] memory wallets = new address[](parties.length);
+        uint [] memory amounts = new uint[](parties.length);
+        for (uint i = 0; i < parties.length; i++) {
+            wallets[i] = parties[i].wallet;
+            amounts[i] = parties[i].amount;
+        }
+        return (wallets, amounts);
     }
 
 }

@@ -26,8 +26,6 @@ contract Measurement {
     }
 
     function addMeasurement(bytes32 description, int lon, int lat) notConsumed {
-        if (newProductsNames.length != newProductsAdditionalInformation.length) throw;
-
         Measurement memory measurement;
         measurement.handler = msg.sender;
         measurement.description = description;
@@ -36,8 +34,6 @@ contract Measurement {
         measurement.timestamp = now;
         measurement.blockNumber = block.number;
         measurement.push(measurement);
-
-
     }
 
 
