@@ -1,14 +1,22 @@
-pragma solidity ^0.4.4;
+
+pragma solidity ^0.4.19;
+
 import "./authority/Roles.sol";
 
-contract PaymentForward {
-    address destination;
-    function PaymentForward(address from,address destination_, unit256 amount) public{
-        destination=destination_;
-        destination.transfer(msg.value);
+contract PaymentForwarder {
+    address public destination;
 
+    function PaymentForwarder(address destination_) public {
+        destination = destination_;
+        forwarder = (msg.sender);
+    }
+
+    function () payable public {
+        destination.transfer(msg.value);
+        forwarder.emitLogPaymentForwarded(msg.sender, address(this), msg.value);
     }
 }
+
 
 contract ForwarderFactoryEvents {
     event LogForwarderCreated(address forwarder);
@@ -16,9 +24,12 @@ contract ForwarderFactoryEvents {
 }
 
 
-
-contract ForwarderFactory is RolesFunction {
+contract ForwarderFactory is ForwarderFactoryEvents, rolesTest {
     mapping(address => bool) forwarders;
+
+    function ForwarderFactory(address rolesContract) public SecuredWithRoles("Forwarder", rolesContract) {
+        // nothing to do, just calling super
+    }
 
     function createForwarder(address destination) public roleOrOwner("admin") {
         PaymentForwarder forwarder = new PaymentForwarder(destination);

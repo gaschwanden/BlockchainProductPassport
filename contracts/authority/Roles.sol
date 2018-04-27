@@ -11,12 +11,15 @@ contract RolesEvents {
 }
 
 
-contract Roles is RolesEvents,Owned {
-    // mapping is contract -> role -> sender_address -> boolean
-    mapping(bytes32 => mapping (bytes32 => mapping (address => bool))) public roleList;
-    // the intention is
-    mapping (bytes32 => mapping (bytes32 => bool)) public knownRoleNames;
+contract rolesTest is Owned{
 
+    bytes32 public contractHash;
+
+    function rolesTest(string contractName_, address roles_) public{
+        require(roles_!=address(0x0));
+        contractHash = keccak256(contractName_);
+        roles = roles_;
+    }
 
     modifier onlyRole(string role) {
         require(senderHasRole(role));
@@ -28,9 +31,30 @@ contract Roles is RolesEvents,Owned {
         _;
     }
 
-    function Roles() public{
-        owner=msg.sender;
+    function hasRole(string roleName) public view returns (bool){
+        return roles.knownRoleNames(contractHash, keccak256(roleName));
     }
+
+
+    function senderHasRole(string roleName) public view returns (bool){
+        return hasRole(roleName)&& roles.roleList(contractHash, keccak256(roleName),msg.sender);
+    }
+
+    function setRolesContract (address roles_) public onlyOwner {
+        require(this !=address(roles));
+        roles =roles_;
+    }
+}
+
+contract Roles is RolesEvents,rolesTest {
+    // mapping is contract -> role -> sender_address -> boolean
+    mapping(bytes32 => mapping (bytes32 => mapping (address => bool))) public roleList;
+    // the intention is
+    mapping (bytes32 => mapping (bytes32 => bool)) public knownRoleNames;
+
+
+    function Roles() rolesTest("RolesDatabase",this) public {}
+
 
     function addContractRole(bytes32 hashOfContract, string roleName) public roleOrOwner("admin") {
         require(!knownRoleNames[hashOfContract][keccak256(roleName)]);
@@ -54,17 +78,6 @@ contract Roles is RolesEvents,Owned {
         delete roleList[hashOfContract][keccak256(roleName)][user];
         LogRoleRevoked(hashOfContract, roleName, user);
     }
-
-
-    // returns true if the role has been defined for the contract
-    function hasRole(string roleName) public view returns (bool) {
-        return roles.knownRoleNames(hashOfContract, keccak256(roleName));
-    }
-
-    function senderHasRole(string roleName) public view returns (bool) {
-        return hasRole(roleName) && roles.roleList(hashOfContract, keccak256(roleName), msg.sender);
-    }
-
 
 }
 

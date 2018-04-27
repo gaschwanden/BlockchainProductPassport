@@ -2,15 +2,8 @@ pragma solidity ^0.4.7;
 import "./Measurements.sol";
 
 contract Product {
+
     address public PRODUCT_FACTORY;
-    mapping (address => Product) product;
-
-    modifier notConsumed {
-        if (isConsumed)
-            throw;
-        _;
-    }
-
     struct Action {
         address handler;
         bytes32 description;
@@ -18,62 +11,32 @@ contract Product {
         int lat;
         uint timestamp;
         uint blockNumber;
+        bytes[] measurements;
     }
 
-
-    struct BasicCharacteristic {
-        address productId;
-        bytes32 name;
-        bytes16 color;
-        bytes16 weight;
-        bytes16 volume;
-        bytes16 quantity;
-        bytes32 material_composition;
-    }
-
-    struct product{
-        BasicCharacteristic [] bChars;
-        bytes32[] basicCharacteristicsValue;
-        bytes32[] additionalCharacteristics;
-        bytes32[] additionalCharacteristicsValue;
-        address[] parentProduct;
-        address PRODUCT_FACTORY;
-        address measurements;
-        bool  isConsumed;
+    modifier notConsumed {
+        if (isConsumed)
+            throw;
+        _;
     }
 
     address[] public parentProducts;
     address[] public childProducts;
 
+    bool public isConsumed;
+    bytes32 public name;
+    bytes32 public additionalInformation;
 
-    BasicCharacteristic [] public basicCharacteristics;
-    bytes32[] public basicCharacteristicsValue;
-    bytes32[] public additionalCharacteristics;
-    bytes32[] public additionalCharacteristicsValue;
-
-
-    Product public product;
     Measurements [] public measurements;
     Action[] public actions;
 
-    /* @notice Constructor to create a Product
-       @param _name The name of the Product
-       @param _additionalInformation Additional information about the Product,
-              generally as a JSON object.
-       @param _parentProducts Addresses of the parent products of the Product.
-       @param _lon Longitude x10^10 where the Product is created.
-       @param _lat Latitude x10^10 where the Product is created.
-       @param _DATABASE_CONTRACT Reference to its database contract
-       @param _PRODUCT_FACTORY Reference to its product factory */
-    function Product(BasicCharacteristic [] _bChars, bytes32[] _basicCharacteristicsValue, bytes32[] _additionalCharacteristics, bytes32[] _additionalCharacteristicsValue,address[] _parentProduct,address _PRODUCT_FACTORY, bool isConsumed, bytes32[] _measurements) {
-        product.bChars = _bChars;
-        product.isConsumed = false;
-        product.parentProducts = _parentProducts;
-        product.additionalCharacteristics = _additionalCharacteristics;
-        product.additionalCharacteristicsValue=_additionalCharacteristicsValue;
-        product.PRODUCT_FACTORY = _PRODUCT_FACTORY;
-        product.measurements=_measurements;
-
+    function Product(bytes32 _name, bytes32 _additionalInformation, address[] _parentProducts, int _lon, int _lat, bytes32[] _measurements, address _PRODUCT_FACTORY) {
+        name = _name;
+        isConsumed = false;
+        parentProducts = _parentProducts;
+        additionalInformation = _additionalInformation;
+        measurements=_measurements;
+        PRODUCT_FACTORY = _PRODUCT_FACTORY;
 
         Action memory creation;
         creation.handler = msg.sender;
@@ -82,6 +45,7 @@ contract Product {
         creation.lat = _lat;
         creation.timestamp = now;
         creation.blockNumber = block.number;
+        creation.measurements =["Initialized measurements"];
         actions.push(creation);
     }
 
@@ -102,7 +66,6 @@ contract Product {
     function addAction(bytes32 description, int lon, int lat, bytes32[] newProductsNames, bytes32[] newProductsAdditionalInformation, bool _consumed) notConsumed {
         if (newProductsNames.length != newProductsAdditionalInformation.length) throw;
 
-
         Action memory action;
         action.handler = msg.sender;
         action.description = description;
@@ -118,12 +81,11 @@ contract Product {
         for (uint i = 0; i < newProductsNames.length; ++i) {
             address[] memory parentProducts = new address[](1);
             parentProducts[0] = this;
-            productFactory.createProduct(newProductsNames[i], newProductsAdditionalInformation[i], parentProducts, lon, lat, DATABASE_CONTRACT);
+            productFactory.createProduct(newProductsNames[i], newProductsAdditionalInformation[i], parentProducts, lon, lat, measurements);
         }
 
         isConsumed = _consumed;
     }
-
 
     /* @notice Function to merge some products to build a new one.
        @param otherProducts addresses of the other products to be merged.
@@ -185,15 +147,7 @@ contract ProductFactory {
         throw;
     }
 
-    /* @notice Function to create a Product
-       @param _name The name of the Product
-       @param _additionalInformation Additional information about the Product,
-              generally as a JSON object.
-       @param _parentProducts Addresses of the parent products of the Product.
-       @param _lon Longitude x10^10 where the Product is created.
-       @param _lat Latitude x10^10 where the Product is created.
-       @param _DATABASE_CONTRACT Reference to its database contract */
-    function createProduct(bytes32 _name, bytes32 _additionalInformation, address[] _parentProducts, int _lon, int _lat, address DATABASE_CONTRACT) returns(address) {
-        return new Product(_name, _additionalInformation, _parentProducts, _lon, _lat, DATABASE_CONTRACT, this);
+    function createProduct(bytes32 _name, bytes32 _additionalInformation, address[] _parentProducts, int _lon, int _lat, bytes32 [] _measurements) returns(address) {
+        return new Product(_name, _additionalInformation, _parentProducts, _lon, _lat, _measurements, this);
     }
 }

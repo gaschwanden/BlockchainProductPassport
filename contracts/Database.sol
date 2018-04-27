@@ -1,7 +1,7 @@
 pragma solidity ^0.4.4;
 
 import "./authority/Owned.sol";
-import "./Measurement.sol";
+import "./Measurements.sol";
 
 
 contract Database is Owned, Measurement {
