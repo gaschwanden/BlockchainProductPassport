@@ -37,18 +37,6 @@ contract TokenLogic is PPcoin, TokenEvents,Roles {
         require(freeTransfer || src == owner || dst == owner || sameWhiteList(src, dst));
         _;
     }
-    // functions:
-    // f addWhiteList
-    // f removeWhiteList
-    // f addToWhiteList
-    // f removeFromWhiteList
-    // f transfer
-    // f transferFrom
-    // f balanceOf
-    // f approve
-    // f allowance
-
-
 
 
     // only admin can create the list

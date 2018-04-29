@@ -12,12 +12,40 @@ contract Product {
         uint timestamp;
         uint blockNumber;
         bytes[] measurements;
+
     }
+
+    struct Attribute {
+        bytes32 identifer;
+        int min;
+        int max;
+    }
+
+
+
 
     modifier notConsumed {
         if (isConsumed)
             throw;
         _;
+    }
+
+    function setAttributes(bytes32 [] _attributeName, int [] _values) onlyOwner {
+        stage = Stages.HasAttributes;
+        if (_attributeName.length != _values.length) throw;
+        for (uint i = 0; i < _attributeName.length; i++) {
+            attributes.push(Attribute(_attributeName[i], _values[i]));
+        }
+    }
+
+    function getAttributes() constant returns (bytes32 [], int [], int []) {
+        bytes32 [] memory attributeNames = new bytes32[](attributes.length);
+        int [] memory values = new int[](attributes.length);
+        for (uint i = 0; i < attributes.length; i++) {
+            attributeNames[i] = attributes[i].attributeName;
+            values[i] = attributes[i].value;
+        }
+        return (attributeNames,values);
     }
 
     address[] public parentProducts;
@@ -30,17 +58,19 @@ contract Product {
     Measurements [] public measurements;
     Action[] public actions;
 
-    function Product(bytes32 _name, bytes32 _additionalInformation, address[] _parentProducts, int _lon, int _lat, bytes32[] _measurements, address _PRODUCT_FACTORY) {
+    function Product(bytes32 _name, bytes32[] _attributeName, bytes32[] _values, address[] _parentProducts, int _lon, int _lat, bytes32[] _measurements, address _PRODUCT_FACTORY) {
+        Attribute []  attributes;
         name = _name;
         isConsumed = false;
         parentProducts = _parentProducts;
-        additionalInformation = _additionalInformation;
+        attributes=setAttributes(_attributeName,_values);
         measurements=_measurements;
         PRODUCT_FACTORY = _PRODUCT_FACTORY;
 
         Action memory creation;
         creation.handler = msg.sender;
         creation.description = "Product creation";
+        creation.attributes = _attributes;
         creation.lon = _lon;
         creation.lat = _lat;
         creation.timestamp = now;
@@ -93,9 +123,9 @@ contract Product {
        @param newProductAdditionalInformation Additional information of the new product resulting of the merge.
        @param _lon Longitude x10^10 where the merge is done.
        @param _lat Latitude x10^10 where the merge is done. */
-    function merge(address[] otherProducts, bytes32 newProductName, bytes32 newProductAdditionalInformation, int lon, int lat) notConsumed {
+    function merge(address[] otherProducts, bytes32 newProductName, bytes32[] _newAttributeName, bytes32[] _newValues, int lon, int lat) notConsumed {
         ProductFactory productFactory = ProductFactory(PRODUCT_FACTORY);
-        address newProduct = productFactory.createProduct(newProductName, newProductAdditionalInformation, otherProducts, lon, lat, DATABASE_CONTRACT);
+        address newProduct = productFactory.createProduct(newProductName, _newAttributeName,  _newValues, otherProducts, lon, lat);
 
         this.collaborateInMerge(newProduct, lon, lat);
         for (uint i = 0; i < otherProducts.length; ++i) {
@@ -116,7 +146,6 @@ contract Product {
         action.lat = lat;
         action.timestamp = now;
         action.blockNumber = block.number;
-
         actions.push(action);
 
         this.consume();
@@ -147,7 +176,7 @@ contract ProductFactory {
         throw;
     }
 
-    function createProduct(bytes32 _name, bytes32 _additionalInformation, address[] _parentProducts, int _lon, int _lat, bytes32 [] _measurements) returns(address) {
-        return new Product(_name, _additionalInformation, _parentProducts, _lon, _lat, _measurements, this);
+    function createProduct(bytes32 _name, bytes32[] _newAttributeName, bytes32[] _newValues, address[] _parentProducts, int _lon, int _lat, bytes32 [] _measurements) returns(address) {
+        return new Product(_name, _newAttributeName,  _newValues, _parentProducts, _lon, _lat, _measurements, this);
     }
 }

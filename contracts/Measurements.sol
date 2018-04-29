@@ -38,13 +38,13 @@ contract Measurements {
 
     function getMeasurements(bytes32 [])constant returns(address [], bytes32[],  int [] , bytes32 [] , bytes [] , uint [] , uint [] ) {
 
-        address [] handles= new address[](measurements.length);
-        bytes32 [] attributes = new bytes32[](measurements.length);
-        int [] values =new int[](measurements.length);
-        bytes32 [] events=new bytes32[](measurements.length);
-        bytes32 [] descriptions=new bytes32[](measurements.length);
-        uint [] timestamps=new uint[](measurements.length);
-        uint [] blockNumbers=new uint[](measurements.length);
+        address [] memory handles= new address[](measurements.length);
+        bytes32 [] memory attributes = new bytes32[](measurements.length);
+        int [] memory values =new int[](measurements.length);
+        bytes32 [] memory events=new bytes32[](measurements.length);
+        bytes32 [] memory descriptions=new bytes32[](measurements.length);
+        uint [] memory timestamps=new uint[](measurements.length);
+        uint [] memory blockNumbers=new uint[](measurements.length);
         for (uint i=0; i< measurements.length; i++){
             handles[i] = measurements[i].handler;
             attributes[i] = measurements[i].attribute_id;
@@ -59,20 +59,6 @@ contract Measurements {
     }
 
 
-
-
-
-
-    function merge(address[] otherProducts) notConsumed {
-
-        address newProduct = (newProductName, newProductAdditionalInformation, otherProducts, lon, lat, DATABASE_CONTRACT);
-
-        this.collaborateInMerge(newProduct, lon, lat);
-        for (uint i = 0; i < otherProducts.length; ++i) {
-            Product prod = Product(otherProducts[i]);
-            prod.collaborateInMerge(newProduct, lon, lat);
-        }
-    }
 
     function getMeasurement(uint i, uint[]) constant returns (bytes32, int){
         return (measurements[i].attribute_id, measurements[i].value);

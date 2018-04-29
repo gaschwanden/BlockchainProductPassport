@@ -16,6 +16,7 @@ contract rolesTest is Owned{
     bytes32 public contractHash;
 
     function rolesTest(string contractName_, address roles_) public{
+
         require(roles_!=address(0x0));
         contractHash = keccak256(contractName_);
         roles = roles_;
@@ -52,8 +53,11 @@ contract Roles is RolesEvents,rolesTest {
     // the intention is
     mapping (bytes32 => mapping (bytes32 => bool)) public knownRoleNames;
 
+    //add roles user pair
 
-    function Roles() rolesTest("RolesDatabase",this) public {}
+    function Roles() rolesTest("RolesDatabase",this) public {
+
+    }
 
 
     function addContractRole(bytes32 hashOfContract, string roleName) public roleOrOwner("admin") {
