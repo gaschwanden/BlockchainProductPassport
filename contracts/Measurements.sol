@@ -1,5 +1,6 @@
-pragma solidity ^0.4.0;
+pragma solidity ^0.4.4;
 import "./Product.sol";
+import "./Owned.sol";
 
 
 // the measurement of products
@@ -17,26 +18,21 @@ contract Measurements {
         uint blockNumber;
     }
 
-    modifier notConsumed {
-        if (isConsumed)
-            throw;
-        _;
-    }
 
     Measurement [] measurements;
 
-    function addMeasurements(address [] _handlers,bytes32 [] _attributes, int [] _values, bytes32 [] _events, bytes32 [] _descriptions, uint [] _timestamps, uint [] _blockNumbers) notConsumed {
-        require (_events.length == _attributes.length&&events.length == _values.length&&
-        events.length == _timestamps.length&&events.length == _descriptions.length&&
+    function addMeasurements(address [] _handlers,bytes32 [] _attributes, int [] _values, bytes32 [] _events, bytes32 [] _descriptions, uint [] _timestamps, uint [] _blockNumbers)  {
+        require (_events.length == _attributes.length&&_events.length == _values.length&&
+        _events.length == _timestamps.length&&_events.length == _descriptions.length&&
         _events.length == _blockNumbers.length&&_events.length == _handlers.length);
         for(uint i=0;i<_events.length;i++){
-            measurements.push(_handlers[i],_attributes[i], _values[i],   _events[i], _descriptions[i],  _timestamps[i],  _blockNumbers[i]);
+            measurements.push(Measurement(_handlers[i],_attributes[i], _values[i],   _events[i], _descriptions[i],  _timestamps[i],  _blockNumbers[i]))-1;
         }
 
     }
 
 
-    function getMeasurements(bytes32 [])constant returns(address [], bytes32[],  int [] , bytes32 [] , bytes [] , uint [] , uint [] ) {
+    function getMeasurements(bytes32 [])constant returns(address [], bytes32[],  int [] , bytes32 [] , bytes32 [] , uint [] , uint [] ) {
 
         address [] memory handles= new address[](measurements.length);
         bytes32 [] memory attributes = new bytes32[](measurements.length);

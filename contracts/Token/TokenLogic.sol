@@ -1,26 +1,39 @@
 pragma solidity ^0.4.4;
-import "./TokenStandard.sol";
-import "./TokenEvent.sol";
+import "./Token/TokenStandard.sol";
+import "./Token/TokenEvents.sol";
+import "./Token/TokenData.sol";
 import "./authority/Roles.sol";
-import "./PPcoin.sol";
-contract TokenLogic is PPcoin, TokenEvents,Roles {
+import "./Token/PPcoin.sol";
+import "./Token/SafeMath.sol";
 
 
-    ///add1
+
+
+contract TokenLogicEvents {
+    event AdditionToBlackList(address user);
+    event RemovalFromBlackList(address user);
+}
+
+contract TokenLogic is  TokenStandard,TokenLogicEvents, rolesTest {
+
+    TokenData public data;
+    PPcoin public token;
+
+    mapping (address =>  bool) public blackList;
+
     bytes32[] public listNames;
-    mapping (address => mapping (bytes32 => bool)) public whiteLists;
+
     bool public freeTransfer = true;
 
-
-    function ERC20(
+    function TokenLogic(
         address token_,
         address tokenData_,
-        address role) public SecuredWithRoles("ERC20", role)
+        address role) public rolesTest("TokenLogic", role)
     {
         require(token_ != address(0x0));
         require(role != address(0x0));
 
-        token = Token(token_);
+        token = PPcoin(token_);
         if (tokenData_ == address(0x0)) {
             data = new TokenData(this, msg.sender);
         } else {
@@ -34,96 +47,78 @@ contract TokenLogic is PPcoin, TokenEvents,Roles {
     }
 
     modifier canTransfer(address src, address dst) {
-        require(freeTransfer || src == owner || dst == owner || sameWhiteList(src, dst));
+        require(freeTransfer || src == owner || dst == owner );
+        require(notInBlackList(src)&&notInBlackList(dst));
         _;
     }
 
-
-    // only admin can create the list
-    function addWhiteList(bytes32 listName) public onlyRole("admin") {
-        require(! listExists(listName));
-        require(listNames.length < 256);
-        listNames.push(listName);
-
-        //incomplete
-        WhiteListAddition(listName);
+    function notInBlackList(address user) returns (bool){
+        return ! blackList[user];
+    }
+    function listNamesLen() public view returns (uint256) {
+        return listNames.length;
     }
 
-    function removeWhiteList(bytes32 listName) public onlyRole("admin") {
-        var (i, ok) = indexOf(listName);
-        require(ok);
-        if (i < listNames.length - 1) {
-            listNames[i] = listNames[listNames.length - 1];
-        }
-        delete listNames[listNames.length - 1];
-        --listNames.length;
-
-         //incomplete
-        WhiteListRemoval(listName);
+    function addToBlackList(address user) public onlyRole("userManager") {
+        blackList[user] = true;
+        AdditionToBlackList( user);
     }
 
-    // only UserManager can create the list
-    function addToWhiteList(bytes32 listName,address user) public onlyRole("userManager"){
-    	require(listExists(listName));
-    	require(!whiteLists[user][listName]);
-    	UserAddToWhiteList(listName,user);
+    function removeFromBlackList( address user) public onlyRole("userManager") {
+        blackList[user] = false;
+        RemovalFromBlackList(user);
     }
 
-    function removeFromWhiteList(bytes32 listName,address user) public onlyRole("userManager"){
-    	require(listExists(listName));
-    	require(whiteLists[user][listName]);
-    	UserRemoveFromWhiteList(listName,user);
+    function setFreeTransfer(bool isFree) public onlyOwner {
+        freeTransfer = isFree;
     }
 
-    // f freeTransfer
-
-    //add1 end 
-
-    function transfer(address _to, uint256 _value) returns (bool success) {
-        //Default assumes totalSupply can't be over max (2^256 - 1).
-        //If your token leaves out totalSupply and can issue more tokens as time goes on, you need to check if it doesn't wrap.
-        //Replace the if with this one instead.
-        //if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
-        if (balances[msg.sender] >= _value && _value > 0) {
-            balances[msg.sender] -= _value;
-            balances[_to] += _value;
-            Transfer(msg.sender, _to, _value);
-            return true;
-        } else { return false; }
+    function setToken(address token_) public onlyOwner {
+        token = PPcoin(token_);
     }
 
-    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
-        //same as above. Replace this line with the following if you want to protect against wrapping uints.
-        //if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
-        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
-            balances[_to] += _value;
-            balances[_from] -= _value;
-            allowed[_from][msg.sender] -= _value;
-            Transfer(_from, _to, _value);
-            return true;
-        } else { return false; }
+    function totalSupply() public view returns (uint256) {
+        return data.supply();
     }
 
-    function balanceOf(address _owner) constant returns (uint256 balance) {
-        return balances[_owner];
+    function balanceOf(address src) public view returns (uint256) {
+        return data.balances(src);
     }
 
-    function approve(address _spender, uint256 _value) returns (bool success) {
-        allowed[msg.sender][_spender] = _value;
-        Approval(msg.sender, _spender, _value);
+    function allowance(address src, address spender) public view returns (uint256) {
+        return data.approvals(src, spender);
+    }
+
+    function transfer(address src, address dst, uint wad) public tokenOnly canTransfer(src, dst)  returns (bool) {
+        data.setBalances(src, SafeMath.safeSub(data.balances(src), wad));
+        data.setBalances(dst, SafeMath.safeAdd(data.balances(dst), wad));
         return true;
     }
 
-    function allowance(address _owner, address _spender) constant returns (uint256 remaining) {
-      return allowed[_owner][_spender];
+    function transferFrom(address src, address dst, uint256 wad) public tokenOnly canTransfer(src, dst)  returns (bool) {
+        // balance and approval check is not needed because sub(a, b) will throw if a<b
+        data.setApprovals(src, dst, SafeMath.safeSub(data.approvals(src, dst), wad));
+        data.setBalances(src, SafeMath.safeSub(data.balances(src), wad));
+        data.setBalances(dst, SafeMath.safeAdd(data.balances(dst), wad));
+
+        return true;
     }
 
+    function approve(address src, address dst, uint256 wad) public tokenOnly returns (bool) {
+        data.setApprovals(src, dst, wad);
+        return true;
+    }
 
-    ///add
+    function mintFor(address dst, uint256 wad) public tokenOnly {
+        data.setBalances(dst, SafeMath.safeAdd(data.balances(dst), wad));
+        data.setSupply(SafeMath.safeAdd(data.supply(), wad));
+    }
 
-    mapping (address => uint256) balances;
-    mapping (address => mapping (address => uint256)) allowed;
-    uint256 public totalSupply;
+    function burn(address src, uint256 wad) public tokenOnly {
+        data.setBalances(src, SafeMath.safeSub(data.balances(src), wad));
+        data.setSupply(SafeMath.safeSub(data.supply(), wad));
+    }
+
 }
 
 

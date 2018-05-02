@@ -10,16 +10,24 @@ contract RolesEvents {
     event LogRoleRevoked(bytes32 hashOfContract, string roleName, address user);
 }
 
+contract RolesFunction {
+    function knownRoleNames(bytes32 contractHash, bytes32 nameHash) public view returns (bool);
+    function roleList(bytes32 contractHash, bytes32 nameHash, address member) public view returns (bool);
+    function addContractRole(bytes32 ctrct, string roleName) public;
+    function removeContractRole(bytes32 ctrct, string roleName) public;
+    function grantUserRole(bytes32 ctrct, string roleName, address user) public;
+    function revokeUserRole(bytes32 ctrct, string roleName, address user) public;
+}
 
-contract rolesTest is Owned{
-
+contract rolesTest is Owned,RolesFunction{
+    RolesFunction public roles;
     bytes32 public contractHash;
 
-    function rolesTest(string contractName_, address roles_) public{
+    function rolesTest(string _contractName, address _roles) public{
 
-        require(roles_!=address(0x0));
-        contractHash = keccak256(contractName_);
-        roles = roles_;
+        require(_roles!=address(0x0));
+        contractHash = keccak256(_contractName);
+        roles = RolesFunction(_roles);
     }
 
     modifier onlyRole(string role) {
@@ -43,7 +51,7 @@ contract rolesTest is Owned{
 
     function setRolesContract (address roles_) public onlyOwner {
         require(this !=address(roles));
-        roles =roles_;
+        roles =RolesFunction(roles_);
     }
 }
 

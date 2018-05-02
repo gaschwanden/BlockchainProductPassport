@@ -3,8 +3,9 @@ pragma solidity ^0.4.11;
 import "../Token/TokenStandard.sol";
 import "../authority/Owned.sol";
 import "../authority/Roles.sol";
+import "../authority/Users.sol";
 
-contract Parties is Roles,Owned {
+contract Parties is Users,Roles,Owned {
 
     struct Party {
       address wallet;
@@ -36,13 +37,13 @@ contract Parties is Roles,Owned {
         token = _token;
     }
 
-    function inviteParticipants(address [] _parties, uint [] _amounts) onlyState(State.New) {
+    function inviteParticipants(address [] _parties, uint [] _amounts) onlyState(State.New) roleOrOwner("User") {
         require(_parties.length == _amounts.length);    
         buyer = msg.sender;        
         for (uint i = 0; i < _parties.length; i++) {
             parties.push(Party(_parties[i], _amounts[i], false));
         }
-        assert(token.transferFrom(buyer, this, ArrayUtils.sum(_amounts)));
+        assert(token.transferFrom(buyer, this, sum(_amounts)));
         state = State.Invited;
     }
 
@@ -86,5 +87,12 @@ contract Parties is Roles,Owned {
     function reimburse() onlyState(State.Locked) onlyOwner {
         token.transfer(buyer, token.balanceOf(this));
         state = State.Reimbursed;      
+    }
+
+    function sum(uint[] memory self) internal constant returns (uint result) {
+        result = self[0];
+        for (uint i = 1; i < self.length; i++) {
+            result += self[i];
+        }
     }
 }

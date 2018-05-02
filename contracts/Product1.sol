@@ -1,27 +1,27 @@
 pragma solidity ^0.4.7;
 import "./Measurements.sol";
+import "./Owned.sol";
 
-contract Product {
+contract Product is Owned{
 
     address public PRODUCT_FACTORY;
     struct Action {
         address handler;
         bytes32 description;
+        Attribute[] attributes;
         int lon;
         int lat;
         uint timestamp;
         uint blockNumber;
-        bytes[] measurements;
-
+        Measurements [] measurements;
     }
 
     struct Attribute {
-        bytes32 identifer;
-        int min;
-        int max;
+        bytes32 attributeName;
+        int value;
     }
 
-
+    Attribute [] public attributes;
 
 
     modifier notConsumed {
@@ -30,15 +30,14 @@ contract Product {
         _;
     }
 
-    function setAttributes(bytes32 [] _attributeName, int [] _values) onlyOwner {
-        stage = Stages.HasAttributes;
+    function setAttributes(bytes32 [] _attributeName, int [] _values) onlyOwner  {
         if (_attributeName.length != _values.length) throw;
         for (uint i = 0; i < _attributeName.length; i++) {
             attributes.push(Attribute(_attributeName[i], _values[i]));
         }
     }
 
-    function getAttributes() constant returns (bytes32 [], int [], int []) {
+    function getAttributes() constant returns (bytes32 [], int []) {
         bytes32 [] memory attributeNames = new bytes32[](attributes.length);
         int [] memory values = new int[](attributes.length);
         for (uint i = 0; i < attributes.length; i++) {
@@ -58,24 +57,23 @@ contract Product {
     Measurements [] public measurements;
     Action[] public actions;
 
-    function Product(bytes32 _name, bytes32[] _attributeName, bytes32[] _values, address[] _parentProducts, int _lon, int _lat, bytes32[] _measurements, address _PRODUCT_FACTORY) {
-        Attribute []  attributes;
+    function Product(bytes32 _name, bytes32[] _attributeName, int[] _values, address[] _parentProducts, int _lon, int _lat, Measurements[] _measurements, address _PRODUCT_FACTORY) {
         name = _name;
         isConsumed = false;
         parentProducts = _parentProducts;
-        attributes=setAttributes(_attributeName,_values);
+        setAttributes(_attributeName,_values);
         measurements=_measurements;
         PRODUCT_FACTORY = _PRODUCT_FACTORY;
 
         Action memory creation;
         creation.handler = msg.sender;
         creation.description = "Product creation";
-        creation.attributes = _attributes;
+        creation.attributes = attributes;
         creation.lon = _lon;
         creation.lat = _lat;
         creation.timestamp = now;
         creation.blockNumber = block.number;
-        creation.measurements =["Initialized measurements"];
+        creation.measurements = _measurements;
         actions.push(creation);
     }
 
@@ -93,12 +91,19 @@ contract Product {
        @param _newProductsAdditionalInformation In case that this Action creates more products from
               this Product, the additional information of the new products should be provided here.
        @param _consumed True if the product becomes consumed after the action. */
-    function addAction(bytes32 description, int lon, int lat, bytes32[] newProductsNames, bytes32[] newProductsAdditionalInformation, bool _consumed) notConsumed {
-        if (newProductsNames.length != newProductsAdditionalInformation.length) throw;
+    // bytes32 _name, bytes32[] _attributeName, int[] _values, address[] _parentProducts, int _lon, int _lat, Measurements[] _measurements, address _PRODUCT_FACTORY) {
+
+
+    function addAction(bytes32 _newProductsNames, bytes32 description, bytes32 []_newAttributeNames,int[] _newValues,int lon,int lat, bool _consumed) notConsumed {
+
 
         Action memory action;
         action.handler = msg.sender;
         action.description = description;
+
+        setAttributes(_newAttributeNames,_newValues);
+
+
         action.lon = lon;
         action.lat = lat;
         action.timestamp = now;
@@ -108,11 +113,10 @@ contract Product {
 
         ProductFactory productFactory = ProductFactory(PRODUCT_FACTORY);
 
-        for (uint i = 0; i < newProductsNames.length; ++i) {
-            address[] memory parentProducts = new address[](1);
-            parentProducts[0] = this;
-            productFactory.createProduct(newProductsNames[i], newProductsAdditionalInformation[i], parentProducts, lon, lat, measurements);
-        }
+        address[] memory parentProducts = new address[](1);
+        parentProducts[0] = this;
+        productFactory.createProduct(_newProductsNames, _newAttributeNames,_newValues, parentProducts, lon, lat, measurements);
+
 
         isConsumed = _consumed;
     }
@@ -125,7 +129,9 @@ contract Product {
        @param _lat Latitude x10^10 where the merge is done. */
     function merge(address[] otherProducts, bytes32 newProductName, bytes32[] _newAttributeName, bytes32[] _newValues, int lon, int lat) notConsumed {
         ProductFactory productFactory = ProductFactory(PRODUCT_FACTORY);
-        address newProduct = productFactory.createProduct(newProductName, _newAttributeName,  _newValues, otherProducts, lon, lat);
+
+
+        address newProduct = productFactory.createProduct(newProductName, _newAttributeName,  _newValues, otherProducts, lon, lat,measurements);
 
         this.collaborateInMerge(newProduct, lon, lat);
         for (uint i = 0; i < otherProducts.length; ++i) {
@@ -157,11 +163,6 @@ contract Product {
     }
 }
 
-/* @title Product Factory Contract
-   @author Andreu Rodíguez i Donaire
-   @dev This contract represents a product factory which represents products to be tracked in
-   the TODO put name of platform ** platform. This product lets the handlers to register actions
-   on it or even combine it with other products. */
 contract ProductFactory {
 
     /////////////////
@@ -176,7 +177,7 @@ contract ProductFactory {
         throw;
     }
 
-    function createProduct(bytes32 _name, bytes32[] _newAttributeName, bytes32[] _newValues, address[] _parentProducts, int _lon, int _lat, bytes32 [] _measurements) returns(address) {
+    function createProduct(bytes32 _name, bytes32[] _newAttributeName, int [] _newValues, address[] _parentProducts, int _lon, int _lat, Measurements [] _measurements) returns(address) {
         return new Product(_name, _newAttributeName,  _newValues, _parentProducts, _lon, _lat, _measurements, this);
     }
 }

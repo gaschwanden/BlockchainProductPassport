@@ -57,7 +57,7 @@ contract DeliveryContract {
 
     function inviteParticipants(address [] _parties, uint [] _amounts)
     onlyOwner
-    onlyStage(Stages.HasAttributes)
+    onlyStage(Stages.hasAttributes)
     {
         stage = Stages.WaitingForParties;
         escrowed_amount = sum(_amounts);
@@ -102,7 +102,7 @@ contract DeliveryContract {
     }
 
     function reimburse() onlyOwner onlyStage(Stages.InProgress) {
-        stage = Stages.Reimbursed;
+        stage = Stages.reimburse;
         uint amount = escrowed_amount;
         escrowed_amount = 0;
         ppcoin.transfer(owner, amount);

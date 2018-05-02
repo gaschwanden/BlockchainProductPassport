@@ -23,5 +23,4 @@ contract Owned is OwnedEvents {
         SetTheOwner(owner);
     }
 
-
 }

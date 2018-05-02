@@ -6,6 +6,7 @@ import "./TokenStandard.sol";
 import "./SafeMath.sol";
 import "./TokenEvents.sol";
 
+
 contract PPcoin is TokenStandard, TokenEvents {
 
     function () {

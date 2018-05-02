@@ -1,5 +1,11 @@
 pragma solidity ^0.4.4;
 
+contract ERC20Events {
+    event Transfer( address indexed from, address indexed to, uint256 value);
+    event Approval( address indexed owner, address indexed spender, uint256 value);
+}
+
+
 contract TokenStandard {
     function totalSupply() public view returns (uint256 supply);
     function balanceOf( address who ) public  view returns (uint256 value);
