@@ -1,25 +1,25 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.21;
 
-import "../authority/Roles.sol";
+import "./authority/Roles.sol";
 import "./TokenLogic.sol";
 import "./TokenStandard.sol";
 import "./SafeMath.sol";
 import "./TokenEvents.sol";
+import "./Owned.sol";
+
+contract PPcoin is TokenStandard, TokenEvents,rolesTest {
 
 
-contract PPcoin is TokenStandard, TokenEvents {
-
-    function () {
-        //if ether is sent to this address, send it back.
-        throw;
-    }
+    mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
+    uint256 public totalSupply;
 
     string public name;
     uint8 public decimals;
     string public symbol;
 
-    TokenLogic public logic;
-
+    TokenLogicI public logic;
+    bool public stopped = false;
     function PPcoin() {
         balances[msg.sender] = 10;
         totalSupply = 1000000;
@@ -39,7 +39,10 @@ contract PPcoin is TokenStandard, TokenEvents {
         return true;
     }
 
-
+    modifier stoppable() {
+        require(!stopped);
+        _;
+    }
     modifier logicOnly {
         require(address(logic) == address(0x0) || address(logic) == msg.sender);
         _;
@@ -60,19 +63,27 @@ contract PPcoin is TokenStandard, TokenEvents {
     function triggerTransfer(address src, address dst, uint256 wad) public logicOnly {
         Transfer(src, dst, wad);
     }
-
+    /**
+     * @dev Transfer the specified amount of tokens to the specified address.
+     *      Invokes the `tokenFallback` function if the recipient is a contract.
+     *      The token transfer fails if the recipient is a contract
+     *      but does not implement the `tokenFallback` function
+     *      or the fallback function to receive funds.
+     */
     function setLogic(address logic_) public logicOnly {
         assert(logic_ != address(0));
-        logic = TokenLogic(logic_);
+        logic = TokenLogicI(logic_);
         LogLogicReplaced(logic);
     }
 
-    function transfer(address _to, uint256 _value) returns (bool success) {
-       return logic.transfer( _to, _value);
+    function transfer(address dst, uint256 wad) public stoppable returns (bool) {
+        bool retVal = logic.transfer(msg.sender, dst, wad);
+        return retVal;
     }
 
-    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
-        return logic.transferFrom( _from,  _to, _value);
+    function transferFrom(address src, address dst, uint256 wad) public stoppable returns (bool) {
+        bool retVal = logic.transferFrom(src, dst, wad);
+        return retVal;
     }
 
     function approve(address guy, uint256 wad) public stoppable returns (bool) {
@@ -100,4 +111,5 @@ contract PPcoin is TokenStandard, TokenEvents {
     function setName(string name_) public roleOrOwner("admin") {
         name = name_;
     }
+
 }

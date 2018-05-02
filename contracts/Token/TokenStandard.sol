@@ -1,9 +1,4 @@
-pragma solidity ^0.4.4;
-
-contract ERC20Events {
-    event Transfer( address indexed from, address indexed to, uint256 value);
-    event Approval( address indexed owner, address indexed spender, uint256 value);
-}
+pragma solidity ^0.4.21;
 
 
 contract TokenStandard {

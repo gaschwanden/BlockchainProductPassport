@@ -1,4 +1,4 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.21;
 
 // validate the processes
 contract Validator {

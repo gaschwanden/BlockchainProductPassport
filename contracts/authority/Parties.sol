@@ -1,5 +1,4 @@
-pragma solidity ^0.4.11;
-
+pragma solidity ^0.4.21;
 import "../Token/TokenStandard.sol";
 import "../authority/Owned.sol";
 import "../authority/Roles.sol";

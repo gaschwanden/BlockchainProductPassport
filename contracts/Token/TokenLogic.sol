@@ -1,4 +1,4 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.21;
 import "./Token/TokenStandard.sol";
 import "./Token/TokenEvents.sol";
 import "./Token/TokenData.sol";
@@ -14,7 +14,20 @@ contract TokenLogicEvents {
     event RemovalFromBlackList(address user);
 }
 
-contract TokenLogic is  TokenStandard,TokenLogicEvents, rolesTest {
+interface TokenLogicI {
+    function totalSupply() public view returns (uint256 supply);
+    function balanceOf( address who ) public view returns (uint256 value);
+    function allowance( address owner, address spender ) public view returns (uint256 _allowance);
+    function transferFrom( address from, address to, uint256 value) public returns (bool ok);
+    function transfer( address owner, address to, uint256 value) public returns (bool ok);
+    function approve( address owner, address spender, uint256 value ) public returns (bool ok);
+
+    function setToken(address token_) public;
+    function mintFor(address dest, uint256 wad) public;
+    function burn(address src, uint256 wad) public;
+}
+
+contract TokenLogic is  TokenLogicI,TokenLogicEvents, rolesTest {
 
     TokenData public data;
     PPcoin public token;
@@ -100,7 +113,6 @@ contract TokenLogic is  TokenStandard,TokenLogicEvents, rolesTest {
         data.setApprovals(src, dst, SafeMath.safeSub(data.approvals(src, dst), wad));
         data.setBalances(src, SafeMath.safeSub(data.balances(src), wad));
         data.setBalances(dst, SafeMath.safeAdd(data.balances(dst), wad));
-
         return true;
     }
 

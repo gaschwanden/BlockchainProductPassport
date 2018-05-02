@@ -2,23 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5cfffab-dce4-4439-ace8-b3ca26a21032" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/contracts/Token/TokenData.sol" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/contracts/Contribution.sol" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/contracts/Database.sol" afterPath="" />
       <change beforePath="$PROJECT_DIR$/contracts/DeliveryContract.sol" afterPath="$PROJECT_DIR$/contracts/DeliveryContract.sol" />
       <change beforePath="$PROJECT_DIR$/contracts/Measurements.sol" afterPath="$PROJECT_DIR$/contracts/Measurements.sol" />
-      <change beforePath="$PROJECT_DIR$/contracts/Parties.sol" afterPath="$PROJECT_DIR$/contracts/authority/Parties.sol" />
-      <change beforePath="$PROJECT_DIR$/contracts/PathsRecord.sol" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/contracts/PaymentForward.sol" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/contracts/Migrations.sol" afterPath="$PROJECT_DIR$/contracts/Migrations.sol" />
       <change beforePath="$PROJECT_DIR$/contracts/Product.sol" afterPath="$PROJECT_DIR$/contracts/Product.sol" />
       <change beforePath="$PROJECT_DIR$/contracts/Product1.sol" afterPath="$PROJECT_DIR$/contracts/Product1.sol" />
+      <change beforePath="$PROJECT_DIR$/contracts/RangeValidator.sol" afterPath="$PROJECT_DIR$/contracts/RangeValidator.sol" />
       <change beforePath="$PROJECT_DIR$/contracts/Token/PPcoin.sol" afterPath="$PROJECT_DIR$/contracts/Token/PPcoin.sol" />
+      <change beforePath="$PROJECT_DIR$/contracts/Token/SafeMath.sol" afterPath="$PROJECT_DIR$/contracts/Token/SafeMath.sol" />
+      <change beforePath="$PROJECT_DIR$/contracts/Token/TokenData.sol" afterPath="$PROJECT_DIR$/contracts/Token/TokenData.sol" />
+      <change beforePath="$PROJECT_DIR$/contracts/Token/TokenEvents.sol" afterPath="$PROJECT_DIR$/contracts/Token/TokenEvents.sol" />
       <change beforePath="$PROJECT_DIR$/contracts/Token/TokenLogic.sol" afterPath="$PROJECT_DIR$/contracts/Token/TokenLogic.sol" />
       <change beforePath="$PROJECT_DIR$/contracts/Token/TokenStandard.sol" afterPath="$PROJECT_DIR$/contracts/Token/TokenStandard.sol" />
-      <change beforePath="$PROJECT_DIR$/contracts/Token/safeMath.sol" afterPath="$PROJECT_DIR$/contracts/Token/SafeMath.sol" />
-      <change beforePath="$PROJECT_DIR$/contracts/Wallet.sol" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/contracts/Validator.sol" afterPath="$PROJECT_DIR$/contracts/Validator.sol" />
+      <change beforePath="$PROJECT_DIR$/contracts/Verify.sol" afterPath="$PROJECT_DIR$/contracts/Verify.sol" />
       <change beforePath="$PROJECT_DIR$/contracts/authority/Owned.sol" afterPath="$PROJECT_DIR$/contracts/authority/Owned.sol" />
+      <change beforePath="$PROJECT_DIR$/contracts/authority/Parties.sol" afterPath="$PROJECT_DIR$/contracts/authority/Parties.sol" />
       <change beforePath="$PROJECT_DIR$/contracts/authority/Roles.sol" afterPath="$PROJECT_DIR$/contracts/authority/Roles.sol" />
       <change beforePath="$PROJECT_DIR$/contracts/authority/Users.sol" afterPath="$PROJECT_DIR$/contracts/authority/Users.sol" />
     </list>
@@ -35,8 +35,18 @@
       <file leaf-file-name="Product.sol" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/Product.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state relative-caret-position="0">
+              <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Product1.sol" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contracts/Product1.sol">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -45,68 +55,48 @@
       <file leaf-file-name="Migrations.sol" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/Migrations.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeliveryContract.sol" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contracts/DeliveryContract.sol">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Users.sol" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/contracts/authority/Users.sol">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Roles.sol" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contracts/authority/Roles.sol">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SafeMath.sol" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contracts/Token/SafeMath.sol">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenData.sol" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contracts/Token/TokenData.sol">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenEvents.sol" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contracts/Token/TokenEvents.sol">
+      <file leaf-file-name="RangeValidator.sol" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contracts/RangeValidator.sol">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="23" />
+              <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Validator.sol" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contracts/Validator.sol">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Verify.sol" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contracts/Verify.sol">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PPcoin.sol" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contracts/Token/PPcoin.sol">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,8 +105,8 @@
       <file leaf-file-name="TokenLogic.sol" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/Token/TokenLogic.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="2032">
+              <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -125,8 +115,18 @@
       <file leaf-file-name="TokenStandard.sol" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contracts/Token/TokenStandard.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TokenData.sol" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/contracts/Token/TokenData.sol">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -184,35 +184,35 @@
         <option value="$PROJECT_DIR$/contracts/Token/Token.sol" />
         <option value="$PROJECT_DIR$/contracts/Token/safeMath.sol" />
         <option value="$PROJECT_DIR$/contracts/PRO.sol" />
-        <option value="$PROJECT_DIR$/contracts/Token/TokenEvents.sol" />
         <option value="$PROJECT_DIR$/test/CreatSign.js" />
         <option value="$PROJECT_DIR$/test/pathsRecord.js" />
         <option value="$PROJECT_DIR$/contracts/Contribution.sol" />
         <option value="$PROJECT_DIR$/contracts/TokenDemo/TokenDemo.sol" />
         <option value="$PROJECT_DIR$/contracts/Database.sol" />
         <option value="$PROJECT_DIR$/contracts/PathsRecord.sol" />
-        <option value="$PROJECT_DIR$/contracts/Validator.sol" />
-        <option value="$PROJECT_DIR$/contracts/Verify.sol" />
-        <option value="$PROJECT_DIR$/contracts/RangeValidator.sol" />
         <option value="$PROJECT_DIR$/contracts/Measurement.sol" />
         <option value="$PROJECT_DIR$/contracts/PaymentForward.sol" />
         <option value="$PROJECT_DIR$/contracts/Parties.sol" />
         <option value="$PROJECT_DIR$/contracts/Wallet.sol" />
-        <option value="$PROJECT_DIR$/contracts/authority/Owned.sol" />
         <option value="$PROJECT_DIR$/contracts/authority/Wallet.sol" />
+        <option value="$PROJECT_DIR$/contracts/authority/Roles.sol" />
+        <option value="$PROJECT_DIR$/contracts/authority/Owned.sol" />
         <option value="$PROJECT_DIR$/contracts/authority/Parties.sol" />
-        <option value="$PROJECT_DIR$/contracts/Token/PPcoin.sol" />
-        <option value="$PROJECT_DIR$/contracts/Product1.sol" />
+        <option value="$PROJECT_DIR$/contracts/authority/Users.sol" />
+        <option value="$PROJECT_DIR$/contracts/Token/SafeMath.sol" />
+        <option value="$PROJECT_DIR$/contracts/Token/TokenData.sol" />
+        <option value="$PROJECT_DIR$/contracts/Token/TokenEvents.sol" />
         <option value="$PROJECT_DIR$/contracts/DeliveryContract.sol" />
         <option value="$PROJECT_DIR$/contracts/Measurements.sol" />
         <option value="$PROJECT_DIR$/contracts/Migrations.sol" />
         <option value="$PROJECT_DIR$/contracts/Product.sol" />
-        <option value="$PROJECT_DIR$/contracts/authority/Roles.sol" />
-        <option value="$PROJECT_DIR$/contracts/Token/SafeMath.sol" />
-        <option value="$PROJECT_DIR$/contracts/Token/TokenData.sol" />
+        <option value="$PROJECT_DIR$/contracts/Product1.sol" />
+        <option value="$PROJECT_DIR$/contracts/RangeValidator.sol" />
+        <option value="$PROJECT_DIR$/contracts/Validator.sol" />
+        <option value="$PROJECT_DIR$/contracts/Verify.sol" />
+        <option value="$PROJECT_DIR$/contracts/Token/PPcoin.sol" />
         <option value="$PROJECT_DIR$/contracts/Token/TokenLogic.sol" />
         <option value="$PROJECT_DIR$/contracts/Token/TokenStandard.sol" />
-        <option value="$PROJECT_DIR$/contracts/authority/Users.sol" />
       </list>
     </option>
   </component>
@@ -412,7 +412,7 @@
       <workItem from="1524403567911" duration="22004000" />
       <workItem from="1524537951277" duration="2273000" />
       <workItem from="1524629372255" duration="39167000" />
-      <workItem from="1524891537211" duration="36525000" />
+      <workItem from="1524891537211" duration="40560000" />
     </task>
     <task id="LOCAL-00001" summary="update the deliveryContract.sol, product1.sol, measurements.sol to test">
       <created>1524823366542</created>
@@ -428,11 +428,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524976924867</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="remix compile bug-free version">
+      <created>1525237498736</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1525237498736</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130294000" />
+    <option name="totallyTimeSpent" value="134329000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -459,7 +466,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26680973" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26680973" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -484,7 +491,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update the deliveryContract.sol, product1.sol, measurements.sol to test" />
     <MESSAGE value="add wallet.sol" />
-    <option name="LAST_COMMIT_MESSAGE" value="add wallet.sol" />
+    <MESSAGE value="remix compile bug-free version" />
+    <option name="LAST_COMMIT_MESSAGE" value="remix compile bug-free version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -663,106 +671,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Verify.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Validator.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/RangeValidator.sol">
+    <entry file="file://$PROJECT_DIR$/contracts/authority/Users.sol">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Token/PPcoin.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Product1.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/authority/Parties.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="92" lean-forward="true" selection-start-line="39" selection-start-column="92" selection-end-line="39" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/authority/Owned.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Measurements.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Migrations.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Product.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contracts/authority/Roles.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/authority/Parties.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/authority/Owned.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contracts/Token/SafeMath.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenData.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -770,39 +714,103 @@
     <entry file="file://$PROJECT_DIR$/contracts/Token/TokenEvents.sol">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenLogic.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenStandard.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contracts/DeliveryContract.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/authority/Users.sol">
+    <entry file="file://$PROJECT_DIR$/contracts/Measurements.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Migrations.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Product.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Product1.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/RangeValidator.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Validator.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Verify.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Token/PPcoin.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenLogic.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2032">
+          <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenStandard.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenData.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding />
         </state>
       </provider>
