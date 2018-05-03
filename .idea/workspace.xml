@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c5cfffab-dce4-4439-ace8-b3ca26a21032" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/contracts/Product1.sol" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/contracts/Token/PPcoin.sol" afterPath="$PROJECT_DIR$/contracts/Token/PPcoin.sol" />
-      <change beforePath="$PROJECT_DIR$/contracts/Token/TokenLogic.sol" afterPath="$PROJECT_DIR$/contracts/Token/TokenLogic.sol" />
-      <change beforePath="$PROJECT_DIR$/contracts/Token/TokenStandard.sol" afterPath="$PROJECT_DIR$/contracts/Token/TokenStandard.sol" />
-      <change beforePath="$PROJECT_DIR$/contracts/authority/Owned.sol" afterPath="$PROJECT_DIR$/contracts/authority/Owned.sol" />
-      <change beforePath="$PROJECT_DIR$/contracts/authority/Roles.sol" afterPath="$PROJECT_DIR$/contracts/authority/Roles.sol" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,8 +47,8 @@
       <file leaf-file-name="DeliveryContract.sol" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/contracts/DeliveryContract.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -409,7 +403,7 @@
       <workItem from="1524403567911" duration="22004000" />
       <workItem from="1524537951277" duration="2273000" />
       <workItem from="1524629372255" duration="39167000" />
-      <workItem from="1524891537211" duration="48158000" />
+      <workItem from="1524891537211" duration="48188000" />
     </task>
     <task id="LOCAL-00001" summary="update the deliveryContract.sol, product1.sol, measurements.sol to test">
       <created>1524823366542</created>
@@ -439,11 +433,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525247014366</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="remix create bug-free version1">
+      <created>1525317477793</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1525317477793</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141927000" />
+    <option name="totallyTimeSpent" value="141957000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -497,7 +498,8 @@
     <MESSAGE value="add wallet.sol" />
     <MESSAGE value="remix compile bug-free version" />
     <MESSAGE value="remix compile bug-free version1" />
-    <option name="LAST_COMMIT_MESSAGE" value="remix compile bug-free version1" />
+    <MESSAGE value="remix create bug-free version1" />
+    <option name="LAST_COMMIT_MESSAGE" value="remix create bug-free version1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -821,8 +823,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/contracts/DeliveryContract.sol">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="420">
+          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
           <folding />
         </state>
       </provider>
