@@ -1,6 +1,6 @@
 pragma solidity ^0.4.21;
 
-
+//cannot
 contract TokenStandard {
     function totalSupply() public view returns (uint256 supply);
     function balanceOf( address who ) public  view returns (uint256 value);

@@ -10,7 +10,8 @@ contract RolesEvents {
     event LogRoleRevoked(bytes32 hashOfContract, string roleName, address user);
 }
 
-contract RolesFunction {
+//cannot be create
+interface RolesFunction {
     function knownRoleNames(bytes32 contractHash, bytes32 nameHash) public view returns (bool);
     function roleList(bytes32 contractHash, bytes32 nameHash, address member) public view returns (bool);
     function addContractRole(bytes32 ctrct, string roleName) public;
@@ -19,7 +20,7 @@ contract RolesFunction {
     function revokeUserRole(bytes32 ctrct, string roleName, address user) public;
 }
 
-contract rolesTest is Owned,RolesFunction{
+contract rolesTest is Owned{
     RolesFunction public roles;
     bytes32 public contractHash;
 

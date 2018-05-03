@@ -1,10 +1,10 @@
 pragma solidity ^0.4.21;
-import "./Token/TokenStandard.sol";
-import "./Token/TokenEvents.sol";
-import "./Token/TokenData.sol";
-import "./authority/Roles.sol";
-import "./Token/PPcoin.sol";
-import "./Token/SafeMath.sol";
+import "../Token/TokenStandard.sol";
+import "../Token/TokenEvents.sol";
+import "../Token/TokenData.sol";
+import "../authority/Roles.sol";
+import "../Token/PPcoin.sol";
+import "../Token/SafeMath.sol";
 
 
 
@@ -14,6 +14,7 @@ contract TokenLogicEvents {
     event RemovalFromBlackList(address user);
 }
 
+//cannot
 interface TokenLogicI {
     function totalSupply() public view returns (uint256 supply);
     function balanceOf( address who ) public view returns (uint256 value);
