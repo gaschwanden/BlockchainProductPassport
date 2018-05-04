@@ -1,6 +1,6 @@
-pragma solidity ^0.4.21;
-import "./authority/Owned.sol";
-import "./authority/Roles.sol";
+pragma solidity ^0.4.16;
+import "../authority/Owned.sol";
+import "../authority/Roles.sol";
 
 contract Users is Owned {
     struct User {

@@ -1,20 +1,21 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.16;
 import "../Token/TokenStandard.sol";
 import "../authority/Owned.sol";
 import "../authority/Roles.sol";
 import "../authority/Users.sol";
 
-contract Parties is Users,Roles,Owned {
+
+contract Parties is Owned,Roles,Users {
 
     struct Party {
-      address wallet;
-      uint amount;
-      bool has_accepted;
+        address wallet;
+        uint amount;
+        bool has_accepted;
     }
 
     enum State { New, Invited, Locked, Approved, Reimbursed}
 
-    Party [] parties;
+    Party[] parties;
 
     State public state;
 
@@ -36,7 +37,7 @@ contract Parties is Users,Roles,Owned {
         token = _token;
     }
 
-    function inviteParticipants(address [] _parties, uint [] _amounts) onlyState(State.New) roleOrOwner("User") {
+    function inviteParticipants(address[] _parties, uint[] _amounts) onlyState(State.New) roleOrOwner("User")public  {
         require(_parties.length == _amounts.length);    
         buyer = msg.sender;        
         for (uint i = 0; i < _parties.length; i++) {
@@ -46,7 +47,7 @@ contract Parties is Users,Roles,Owned {
         state = State.Invited;
     }
 
-    function getParticipants() constant returns (address [], uint []) {
+    function getParticipants() constant returns (address [], uint [])  {
         address [] memory wallets = new address[](parties.length);
         uint [] memory amounts = new uint[](parties.length);
         for (uint i = 0; i < parties.length; i++) {

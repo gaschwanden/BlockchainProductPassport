@@ -1,4 +1,4 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.16;
 
 contract TokenEvents {
     event LogBurn(address indexed src, uint256 wad);

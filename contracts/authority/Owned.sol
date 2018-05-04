@@ -1,4 +1,4 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.16;
 
 
 contract OwnedEvents {
@@ -22,6 +22,7 @@ contract Owned is OwnedEvents {
         owner = owner_;
         SetTheOwner(owner);
     }
+    
     function setOwner(address owner_) public onlyOwner {
         owner = owner_;
         SetTheOwner(owner);

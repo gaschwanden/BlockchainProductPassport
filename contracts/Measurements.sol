@@ -1,6 +1,6 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.16;
 import "./Product.sol";
-import "./Owned.sol";
+import "./authority/Owned.sol";
 
 
 // the measurement of products

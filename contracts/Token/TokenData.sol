@@ -1,6 +1,6 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.16;
 
-import "./Owned.sol";
+import "../authority/Owned.sol";
 
 
 contract TokenData is Owned {

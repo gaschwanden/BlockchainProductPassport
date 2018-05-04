@@ -1,10 +1,11 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.16;
 import "./Measurements.sol";
 import "./authority/Owned.sol";
 
 contract Product is Owned{
 
     address public PRODUCT_FACTORY;
+
     struct Action {
         address handler;
         bytes32 description;
@@ -12,7 +13,6 @@ contract Product is Owned{
         int lat;
         uint timestamp;
         uint blockNumber;
-        Measurements [] measurements;
     }
 
     struct Attribute {
@@ -54,6 +54,7 @@ contract Product is Owned{
     bytes32 public additionalInformation;
 
     Measurements [] public measurements;
+
     Action[] public actions;
 
     function Product(bytes32 _name, bytes32[] _attributeName, int[] _values, address[] _parentProducts, int _lon, int _lat, Measurements[] _measurements, address _PRODUCT_FACTORY) {
@@ -72,7 +73,7 @@ contract Product is Owned{
         creation.lat = _lat;
         creation.timestamp = now;
         creation.blockNumber = block.number;
-        creation.measurements = _measurements;
+
         actions.push(creation);
     }
 
@@ -115,8 +116,6 @@ contract Product is Owned{
         address[] memory parentProducts = new address[](1);
         parentProducts[0] = this;
         productFactory.createProduct(_newProductsNames, _newAttributeNames,_newValues, parentProducts, lon, lat, measurements);
-
-
         isConsumed = _consumed;
     }
 

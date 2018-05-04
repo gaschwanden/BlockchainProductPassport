@@ -1,6 +1,7 @@
-pragma solidity ^0.4.21;
-import "./PPcoin.sol";
+pragma solidity ^0.4.16;
+import "./Token/PPcoin.sol";
 import "./Measurements.sol";
+
 
 contract DeliveryContract {
 

@@ -1,8 +1,9 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.16;
 
 /// @title Overflow aware uint math functions.
 /// @author Melonport AG <team@melonport.com>
 /// @notice Inspired by https://github.com/MakerDAO/maker-otc/blob/master/contracts/simple_market.sol
+
 library SafeMath {
 
     function safeMul(uint a, uint b) internal returns (uint) {
@@ -18,7 +19,7 @@ library SafeMath {
 
     function safeAdd(uint a, uint b) internal returns (uint) {
         uint c = a + b;
-        assert(c>=a && c>=b);
+        assert(c >= a && c >= b);
         return c;
     }
 

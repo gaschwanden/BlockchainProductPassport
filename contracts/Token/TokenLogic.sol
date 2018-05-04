@@ -1,4 +1,4 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.16;
 import "../Token/TokenStandard.sol";
 import "../Token/TokenEvents.sol";
 import "../Token/TokenData.sol";
@@ -66,7 +66,7 @@ contract TokenLogic is  TokenLogicI,TokenLogicEvents, rolesTest {
         _;
     }
 
-    function notInBlackList(address user) returns (bool){
+    function notInBlackList(address user)public returns (bool){
         return ! blackList[user];
     }
     function listNamesLen() public view returns (uint256) {
