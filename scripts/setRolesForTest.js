@@ -3,8 +3,6 @@ var TokenLogic = artifacts.require('TokenLogic')
 var Roles = artifacts.require('Roles')
 var Users = artifacts.require('Users')
 
-
-
 const setRole = (contract, roleName)=>{
   const testUser = web3.eth.accounts[2]
   const coinbase = web3.eth.accounts[0]
