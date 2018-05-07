@@ -10,7 +10,7 @@ contract RolesEvents {
     event LogRoleRevoked(bytes32 hashOfContract, string roleName, address user);
 }
 
-//cannot be create
+
 interface RolesFunction {
     function knownRoleNames(bytes32 contractHash, bytes32 nameHash) public view returns (bool);
     function roleList(bytes32 contractHash, bytes32 nameHash, address member) public view returns (bool);
@@ -36,10 +36,17 @@ contract rolesTest is Owned{
         _;
     }
 
+
+
     modifier roleOrOwner(string role) {
         require(msg.sender == owner || senderHasRole(role));
         _;
     }
+
+    function contractHash() public view returns (bytes32){
+        return contractHash;
+    }
+
 
     function hasRole(string roleName) public view returns (bool){
         return roles.knownRoleNames(contractHash, keccak256(roleName));

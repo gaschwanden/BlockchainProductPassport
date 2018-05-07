@@ -1,0 +1,172 @@
+{
+  "contractName": "Validator",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a723058202ee2ef30272dfd2fdeede76275fdbbc4db6d744f7386b8114aeb3b285fd47d5d0029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a723058202ee2ef30272dfd2fdeede76275fdbbc4db6d744f7386b8114aeb3b285fd47d5d0029",
+  "sourceMap": "52:55:11:-;;;77:28;;;;;;;;52:55;;;;;;",
+  "deployedSourceMap": "52:55:11:-;;;;;",
+  "source": "pragma solidity ^0.4.16;\n\n// validate the processes\ncontract Validator {\n    function Validator(){\n\n    }\n}\n",
+  "sourcePath": "/Users/hao/onedrive/OneDrive - The University of Melbourne/project/Product_passport/contracts/Validator.sol",
+  "ast": {
+    "absolutePath": "/Users/hao/onedrive/OneDrive - The University of Melbourne/project/Product_passport/contracts/Validator.sol",
+    "exportedSymbols": {
+      "Validator": [
+        2645
+      ]
+    },
+    "id": 2646,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2640,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:11"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2645,
+        "linearizedBaseContracts": [
+          2645
+        ],
+        "name": "Validator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 2643,
+              "nodeType": "Block",
+              "src": "97:8:11",
+              "statements": []
+            },
+            "id": 2644,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "Validator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2641,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "95:2:11"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2642,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "97:0:11"
+            },
+            "scope": 2645,
+            "src": "77:28:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2646,
+        "src": "52:55:11"
+      }
+    ],
+    "src": "0:108:11"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/hao/onedrive/OneDrive - The University of Melbourne/project/Product_passport/contracts/Validator.sol",
+    "exportedSymbols": {
+      "Validator": [
+        2645
+      ]
+    },
+    "id": 2646,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2640,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:11"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2645,
+        "linearizedBaseContracts": [
+          2645
+        ],
+        "name": "Validator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 2643,
+              "nodeType": "Block",
+              "src": "97:8:11",
+              "statements": []
+            },
+            "id": 2644,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "Validator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2641,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "95:2:11"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2642,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "97:0:11"
+            },
+            "scope": 2645,
+            "src": "77:28:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2646,
+        "src": "52:55:11"
+      }
+    ],
+    "src": "0:108:11"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-05-03T05:52:33.508Z"
+}

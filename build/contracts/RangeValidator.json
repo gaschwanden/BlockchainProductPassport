@@ -1,0 +1,172 @@
+{
+  "contractName": "RangeValidator",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a723058201ed134869d2d3541b8b7036c7ba1fd2a45a979c3becfff1e4fd9e06fa4c663510029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a723058201ed134869d2d3541b8b7036c7ba1fd2a45a979c3becfff1e4fd9e06fa4c663510029",
+  "sourceMap": "39:65:4:-;;;69:33;;;;;;;;39:65;;;;;;",
+  "deployedSourceMap": "39:65:4:-;;;;;",
+  "source": "pragma solidity ^0.4.16;\n// from amber\ncontract RangeValidator {\n    function RangeValidator(){\n\n    }\n}\n",
+  "sourcePath": "/Users/hao/onedrive/OneDrive - The University of Melbourne/project/Product_passport/contracts/RangeValidator.sol",
+  "ast": {
+    "absolutePath": "/Users/hao/onedrive/OneDrive - The University of Melbourne/project/Product_passport/contracts/RangeValidator.sol",
+    "exportedSymbols": {
+      "RangeValidator": [
+        1413
+      ]
+    },
+    "id": 1414,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1408,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1413,
+        "linearizedBaseContracts": [
+          1413
+        ],
+        "name": "RangeValidator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1411,
+              "nodeType": "Block",
+              "src": "94:8:4",
+              "statements": []
+            },
+            "id": 1412,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "RangeValidator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1409,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "92:2:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1410,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "94:0:4"
+            },
+            "scope": 1413,
+            "src": "69:33:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1414,
+        "src": "39:65:4"
+      }
+    ],
+    "src": "0:105:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/hao/onedrive/OneDrive - The University of Melbourne/project/Product_passport/contracts/RangeValidator.sol",
+    "exportedSymbols": {
+      "RangeValidator": [
+        1413
+      ]
+    },
+    "id": 1414,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1408,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1413,
+        "linearizedBaseContracts": [
+          1413
+        ],
+        "name": "RangeValidator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1411,
+              "nodeType": "Block",
+              "src": "94:8:4",
+              "statements": []
+            },
+            "id": 1412,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "RangeValidator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1409,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "92:2:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1410,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "94:0:4"
+            },
+            "scope": 1413,
+            "src": "69:33:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1414,
+        "src": "39:65:4"
+      }
+    ],
+    "src": "0:105:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-05-03T05:52:33.500Z"
+}
