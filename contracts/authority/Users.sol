@@ -23,7 +23,7 @@ contract Users is Owned {
         user.age = _age;
         user.fName = _fName;
         user.lName = _lName;
-        userAccts.push(_address) -1;
+        userAccts.push(_address)-1 ;
         userInfo(_fName, _lName, _age);
     }
 
@@ -34,7 +34,7 @@ contract Users is Owned {
     function getUser(address _address) view public returns (uint, bytes16, bytes16) {
         return (users[_address].age, users[_address].fName, users[_address].lName);
     }
-
+    //cannot use this function in test
     function countUsers() view public returns (uint) {
         return userAccts.length;
     }

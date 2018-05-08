@@ -1,6 +1,6 @@
 var Roles = artifacts.require('Roles')
 var PPC = artifacts.require('PPcoin')
-let utils = require('./utils')
+//let utils = require('./utils')
 
 
 contract('Roles', function (accounts) {

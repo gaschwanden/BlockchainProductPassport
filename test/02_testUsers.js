@@ -28,15 +28,15 @@ contract("Test the User contract",function(accounts){
 
   it('can get user',async() =>{
     userInfromation= await user.getUser(accounts[4])
-
     console.log(userInfromation)
   })
 
   it('can getUSers',async()=>{
     usrAccounts=await user.getUsers()
-    assert.deepEqual(usrAccounts,[ (accounts[4]),
-    (accounts[5])])
+    assert.deepEqual(usrAccounts,[ (accounts[4]),(accounts[5])])
   })
+
+
 
 
 

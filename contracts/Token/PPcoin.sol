@@ -11,8 +11,8 @@ contract PPcoin is  TokenStandard,TokenEvents,rolesTest {
 
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
-
-    uint public  totalSupply=1000000;
+    //1000000
+    uint public  totalSupply=1e26;
     string public constant name= "PP Token";
     uint8 public constant decimals = 18;
     string public constant symbol="PPC";
