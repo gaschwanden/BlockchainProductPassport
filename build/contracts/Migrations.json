@@ -64,10 +64,10 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506102db8061005e6000396000f300606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630900f01014610067578063445df0ac146100a05780638da5cb5b146100c9578063fdacd5761461011e575b600080fd5b341561007257600080fd5b61009e600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610141565b005b34156100ab57600080fd5b6100b3610224565b6040518082815260200191505060405180910390f35b34156100d457600080fd5b6100dc61022a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561012957600080fd5b61013f600480803590602001909190505061024f565b005b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610220578190508073ffffffffffffffffffffffffffffffffffffffff1663fdacd5766001546040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b151561020b57600080fd5b6102c65a03f1151561021c57600080fd5b5050505b5050565b60015481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156102ac57806001819055505b505600a165627a7a72305820c99709fb4957b4f80175d2d87bf41863c9b75929af1e411bcb1f0e328316095c0029",
-  "deployedBytecode": "0x606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630900f01014610067578063445df0ac146100a05780638da5cb5b146100c9578063fdacd5761461011e575b600080fd5b341561007257600080fd5b61009e600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610141565b005b34156100ab57600080fd5b6100b3610224565b6040518082815260200191505060405180910390f35b34156100d457600080fd5b6100dc61022a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561012957600080fd5b61013f600480803590602001909190505061024f565b005b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415610220578190508073ffffffffffffffffffffffffffffffffffffffff1663fdacd5766001546040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b151561020b57600080fd5b6102c65a03f1151561021c57600080fd5b5050505b5050565b60015481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156102ac57806001819055505b505600a165627a7a72305820c99709fb4957b4f80175d2d87bf41863c9b75929af1e411bcb1f0e328316095c0029",
-  "sourceMap": "27:500:2:-;;;191:58;;;;;;;;234:10;226:5;;:18;;;;;;;;;;;;;;;;;;27:500;;;;;;",
-  "deployedSourceMap": "27:500:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;360:165;;;;;;;;;;;;;;;;;;;;;;;;;;;;79:36;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;53:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;253:103;;;;;;;;;;;;;;;;;;;;;;;;;;360:165;422:19;172:5;;;;;;;;;;;158:19;;:10;:19;;;154:26;;;455:11;422:45;;473:8;:21;;;495:24;;473:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;154:26;360:165;;:::o;79:36::-;;;;:::o;53:20::-;;;;;;;;;;;;;:::o;253:103::-;172:5;;;;;;;;;;;158:19;;:10;:19;;;154:26;;;342:9;315:24;:36;;;;154:26;253:103;:::o",
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506102f8806100606000396000f300608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630900f01014610067578063445df0ac146100aa5780638da5cb5b146100d5578063fdacd5761461012c575b600080fd5b34801561007357600080fd5b506100a8600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610159565b005b3480156100b657600080fd5b506100bf610241565b6040518082815260200191505060405180910390f35b3480156100e157600080fd5b506100ea610247565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561013857600080fd5b506101576004803603810190808035906020019092919050505061026c565b005b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561023d578190508073ffffffffffffffffffffffffffffffffffffffff1663fdacd5766001546040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b15801561022457600080fd5b505af1158015610238573d6000803e3d6000fd5b505050505b5050565b60015481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156102c957806001819055505b505600a165627a7a723058204feb040d0b5331f43bea1cb57243db2b0eb35bf3a0ab21e4cc2b65a7ad9418b50029",
+  "deployedBytecode": "0x608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630900f01014610067578063445df0ac146100aa5780638da5cb5b146100d5578063fdacd5761461012c575b600080fd5b34801561007357600080fd5b506100a8600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610159565b005b3480156100b657600080fd5b506100bf610241565b6040518082815260200191505060405180910390f35b3480156100e157600080fd5b506100ea610247565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561013857600080fd5b506101576004803603810190808035906020019092919050505061026c565b005b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561023d578190508073ffffffffffffffffffffffffffffffffffffffff1663fdacd5766001546040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b15801561022457600080fd5b505af1158015610238573d6000803e3d6000fd5b505050505b5050565b60015481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156102c957806001819055505b505600a165627a7a723058204feb040d0b5331f43bea1cb57243db2b0eb35bf3a0ab21e4cc2b65a7ad9418b50029",
+  "sourceMap": "27:500:2:-;;;191:58;8:9:-1;5:2;;;30:1;27;20:12;5:2;191:58:2;234:10;226:5;;:18;;;;;;;;;;;;;;;;;;27:500;;;;;;",
+  "deployedSourceMap": "27:500:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;360:165;;8:9:-1;5:2;;;30:1;27;20:12;5:2;360:165:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;79:36;;8:9:-1;5:2;;;30:1;27;20:12;5:2;79:36:2;;;;;;;;;;;;;;;;;;;;;;;53:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;53:20:2;;;;;;;;;;;;;;;;;;;;;;;;;;;253:103;;8:9:-1;5:2;;;30:1;27;20:12;5:2;253:103:2;;;;;;;;;;;;;;;;;;;;;;;;;;360:165;422:19;172:5;;;;;;;;;;;158:19;;:10;:19;;;154:26;;;455:11;422:45;;473:8;:21;;;495:24;;473:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;473:47:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;473:47:2;;;;154:26;360:165;;:::o;79:36::-;;;;:::o;53:20::-;;;;;;;;;;;;;:::o;253:103::-;172:5;;;;;;;;;;;158:19;;:10;:19;;;154:26;;;342:9;315:24;:36;;;;154:26;253:103;:::o",
   "source": "pragma solidity ^0.4.16;\n\n\ncontract Migrations {\n    address public owner;\n    uint public last_completed_migration;\n\n    modifier restricted() {\n        if (msg.sender == owner) _;\n    }\n\n  function Migrations() public {\n    owner = msg.sender;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n\n  function upgrade(address new_address) public restricted {\n    Migrations upgraded = Migrations(new_address);\n    upgraded.setCompleted(last_completed_migration);\n  }\n}\n",
   "sourcePath": "/Users/hao/onedrive/OneDrive - The University of Melbourne/project/Product_passport/contracts/Migrations.sol",
   "ast": {
@@ -182,7 +182,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3658,
+                        "referencedDeclaration": 3660,
                         "src": "158:3:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -236,6 +236,7 @@
                 }
               ]
             },
+            "documentation": null,
             "id": 773,
             "name": "restricted",
             "nodeType": "ModifierDefinition",
@@ -285,7 +286,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3658,
+                        "referencedDeclaration": 3660,
                         "src": "234:3:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -318,6 +319,7 @@
                 }
               ]
             },
+            "documentation": null,
             "id": 782,
             "implemented": true,
             "isConstructor": true,
@@ -398,13 +400,14 @@
                 }
               ]
             },
+            "documentation": null,
             "id": 794,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
-                "arguments": [],
+                "arguments": null,
                 "id": 787,
                 "modifierName": {
                   "argumentTypes": null,
@@ -636,13 +639,14 @@
                 }
               ]
             },
+            "documentation": null,
             "id": 814,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
-                "arguments": [],
+                "arguments": null,
                 "id": 799,
                 "modifierName": {
                   "argumentTypes": null,
@@ -828,7 +832,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3658,
+                        "referencedDeclaration": 3660,
                         "src": "158:3:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -882,6 +886,7 @@
                 }
               ]
             },
+            "documentation": null,
             "id": 773,
             "name": "restricted",
             "nodeType": "ModifierDefinition",
@@ -931,7 +936,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3658,
+                        "referencedDeclaration": 3660,
                         "src": "234:3:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -964,6 +969,7 @@
                 }
               ]
             },
+            "documentation": null,
             "id": 782,
             "implemented": true,
             "isConstructor": true,
@@ -1044,13 +1050,14 @@
                 }
               ]
             },
+            "documentation": null,
             "id": 794,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
-                "arguments": [],
+                "arguments": null,
                 "id": 787,
                 "modifierName": {
                   "argumentTypes": null,
@@ -1282,13 +1289,14 @@
                 }
               ]
             },
+            "documentation": null,
             "id": 814,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
-                "arguments": [],
+                "arguments": null,
                 "id": 799,
                 "modifierName": {
                   "argumentTypes": null,
@@ -1364,7 +1372,7 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+    "version": "0.4.23+commit.124ca40d.Emscripten.clang"
   },
   "networks": {
     "1520951129016": {
@@ -1408,8 +1416,62 @@
       "links": {},
       "address": "0xc719ecb70ebbc57bfa31e0c296ca8722a490a225",
       "transactionHash": "0x7fe48b215092c1451f4ec9302cc7985a59dd7a42664352b7e38b52c5c15d8c13"
+    },
+    "1525713715615": {
+      "events": {},
+      "links": {},
+      "address": "0x9ec42964a99e5c841bfcb7df6e5c335e7eb0e60a",
+      "transactionHash": "0xd300ca7b43088bc62ef8762a90e9f1b6f9a4ade9952be754e27dbe3264ee4b85"
+    },
+    "1525757038322": {
+      "events": {},
+      "links": {},
+      "address": "0x1b3a188fc05cd7f84206a0ca5ee3ef7c52a549b0",
+      "transactionHash": "0xaeb275bb808aacb56f4f45e8e50a36a60401828b9d361f6614f6c17f4b4e8f4a"
+    },
+    "1525758323792": {
+      "events": {},
+      "links": {},
+      "address": "0x6fe6d91a0f093d12b3fdf58242b86f50f6250fc2",
+      "transactionHash": "0xc5f3b52470b3bb230818408ba310737cf2a641fcf0e8ed582fc0d30c31283dd6"
+    },
+    "1525789931731": {
+      "events": {},
+      "links": {},
+      "address": "0x600a39ce08855e13ceec6ac151c742a76cd14f58",
+      "transactionHash": "0x25c9d13bc9eae2c301ab42a7f33e45e77ce275046bcc9bfbcfef0a68a7ed02c4"
+    },
+    "1525839166265": {
+      "events": {},
+      "links": {},
+      "address": "0x766ff72d234c1436abde9e746da0c8ab494bef81",
+      "transactionHash": "0x419e5ace626c897a3276ba0d748721a7f21c9eaaf8dfc1425b8e3afb1f1375ce"
+    },
+    "1525850475277": {
+      "events": {},
+      "links": {},
+      "address": "0x5d059a43c44fa5219c5fbd215228cc80b5d534b0",
+      "transactionHash": "0x87935b7a11a2778223b72e5e98a24973947566ee4b7ddc5ecae6ec858644238c"
+    },
+    "1525865672116": {
+      "events": {},
+      "links": {},
+      "address": "0x3b371143e3b9e08023ac43967652993f2559e0f4",
+      "transactionHash": "0x347bdd4da2a81918f18f35a8e2daa417817eca7620984e2b59948973652931d2"
+    },
+    "1525914438566": {
+      "events": {},
+      "links": {},
+      "address": "0xbcfbd1c4ed0bba69b2a71c523adcfc72da5319e9",
+      "transactionHash": "0x394b1c21688b9fea4840c6a170e13c3a06b020fd9da220871fc38c8ba6e5c3e0"
+    },
+    "1525927719808": {
+      "events": {},
+      "links": {},
+      "address": "0x04f991693a70ba471d7ab42b8700295328ee2296",
+      "transactionHash": "0x394b1c21688b9fea4840c6a170e13c3a06b020fd9da220871fc38c8ba6e5c3e0"
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-05-07T15:41:01.055Z"
+  "updatedAt": "2018-05-10T04:52:34.725Z"
 }

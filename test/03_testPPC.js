@@ -48,7 +48,44 @@ contract('PPC', function (accounts) {
       })
   })
 
+  it('transfers tokens', async() => {
+    await ppcoin.transfer(accounts[1], 5e25, {from: accounts[0]})
+    .then(tx => {
+      fs.appendFile('gas.csv', 'token;transfer;' + tx.receipt.gasUsed + '\n', fscb)
+      return Promise.all([
+        ppcoin.balanceOf(accounts[0]),
+        ppcoin.balanceOf(accounts[1]),
+        ppcoin.totalSupply()])
+    })
+    .then(res => {
+      //1e25 tokens were transfered 19e25 remaining
+      assert.equal(res[0].toNumber(), 15e25)
+      //1e17 tokens were received
+      assert.equal(res[1].toNumber(), 5e25)
+      assert.equal(res[2].toNumber(), totalSupply)
+    })
+  })
 
-  
+  it('cannot tranfer between accounts which more than one of them is in the black list and setFreeTransfer is false', async() => {
+    await logic.setFreeTransfer(false)
+    await logic.addToBlackList(accounts[3])
+    .then(tx => logic.freeTransfer())
+    .then(ft => {
+    assert.isNotOk(ft)
+       return ppcoin.transfer(accounts[3], 5e24, {from: accounts[1]})
+    })
+    .then(() => assert.fail())
+    .catch(error => assert(error.message.indexOf('transaction: revert') >= 0))
+  })
+
+  it('can mint for somebody new tokens', () => {
+    return ppcoin.mintFor(accounts[4], 1e18, {from: accounts[0]})
+      .then(tx => {
+        fs.appendFile('gas.csv', 'ppcoin;mintFor;' + tx.receipt.gasUsed + '\n', fscb)
+        return ppcoin.balanceOf(accounts[4])
+      })
+      .then(balance => assert.equal(balance.toNumber(), 1e18))
+  })
+
 
 })

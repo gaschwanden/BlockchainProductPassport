@@ -10,8 +10,7 @@ contract("Test the User contract",function(accounts){
   let userInfromation
   beforeEach(async () => {
     roles = await Roles.deployed()
-    user = await Users.deployed()
-    
+    user = await Users.deployed() 
   })
 
   it("Deploy the User Contract and can catch an instance of the User contract",async()=>{

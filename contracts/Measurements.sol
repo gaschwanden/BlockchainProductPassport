@@ -1,10 +1,9 @@
 pragma solidity ^0.4.16;
-import "./Product.sol";
-import "./authority/Owned.sol";
+import "./authority/Roles.sol";
 
 
 // the measurement of products
-contract Measurements {
+contract Measurements is Roles {
 
     struct Measurement {
         address handler;
@@ -17,11 +16,11 @@ contract Measurements {
         //v Block when the Measurement is done.
         uint blockNumber;
     }
-
-
+    mapping (address => Measurement) measurement;
+    
     Measurement [] measurements;
 
-    function addMeasurements(address [] _handlers,bytes32 [] _attributes, int [] _values, bytes32 [] _events, bytes32 [] _descriptions, uint [] _timestamps, uint [] _blockNumbers)  {
+    function addMeasurements(address [] _handlers,bytes32 [] _attributes, int [] _values, bytes32 [] _events, bytes32 [] _descriptions, uint [] _timestamps, uint [] _blockNumbers) roleOrOwner('productOwner') {
         require (_events.length == _attributes.length&&_events.length == _values.length&&
         _events.length == _timestamps.length&&_events.length == _descriptions.length&&
         _events.length == _blockNumbers.length&&_events.length == _handlers.length);
@@ -32,7 +31,7 @@ contract Measurements {
     }
 
 
-    function getMeasurements(bytes32 [])constant returns(address [], bytes32[],  int [] , bytes32 [] , bytes32 [] , uint [] , uint [] ) {
+    function getMeasurements (bytes32 []) roleOrOwner('productOwner') constant returns(address [], bytes32[],  int [] , bytes32 [] , bytes32 [] , uint [] , uint [] )  {
 
         address [] memory handles= new address[](measurements.length);
         bytes32 [] memory attributes = new bytes32[](measurements.length);
@@ -56,7 +55,7 @@ contract Measurements {
 
 
 
-    function getMeasurement(uint i, uint[]) constant returns (bytes32, int){
+    function getMeasurement(uint i, uint[]) roleOrOwner('productOwner') constant returns (bytes32, int){
         return (measurements[i].attribute_id, measurements[i].value);
     }
 

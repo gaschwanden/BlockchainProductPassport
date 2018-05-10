@@ -166,10 +166,6 @@ contract Product is Owned{
    on it or even combine it with other products. */
 contract ProductFactory {
 
-    /////////////////
-    // Constructor //
-    /////////////////
-
     /* @notice Constructor to create a Product Factory */
     function ProductFactory() {}
 

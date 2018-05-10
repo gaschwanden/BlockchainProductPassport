@@ -2,6 +2,7 @@ var PPC = artifacts.require('PPcoin')
 var TokenLogic = artifacts.require('TokenLogic')
 var Roles = artifacts.require('Roles')
 var Users = artifacts.require('Users')
+var Users = artifacts.require('Users')
 
 const setRole = (contract, roleName)=>{
   const testUser = web3.eth.accounts[2]
@@ -33,5 +34,6 @@ module.exports = function (deployer, network) {
         .then(() => setRole(TokenLogic, 'admin'))
         .then(() => setRole(Roles, 'admin'))
         .then(() => setRole(Users, 'userManager'))
+        .then(() => setRole(Measurement, 'tester'))
       .catch(console.log)
   }
