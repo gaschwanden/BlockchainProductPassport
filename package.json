@@ -21,14 +21,21 @@
   },
   "homepage": "https://github.com/gaschwanden/BlockchainProductPassport#readme",
   "dependencies": {
-    "ajv": "^6.4.0",
+    "ajv": "^6.5.0",
+    "bower": "^1.8.4",
+    "component": "^1.1.0",
+    "es6-shim": "^0.35.3",
     "jquery": "^3.3.1",
     "truffle-core": "^4.1.8",
     "web3": "github:ethereum/web3.js",
     "webpack": "github:webpack/webpack",
-    "webpack-cli": "github:webpack/webpack-cli"
+    "webpack-cli": "github:webpack/webpack-cli",
+    "yo-yoify": "^4.3.0"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-yo-yoify": "^2.0.0",
     "lite-server": "^2.3.0"
   }
 }

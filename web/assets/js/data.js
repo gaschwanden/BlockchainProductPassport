@@ -4,8 +4,47 @@ const ACT = 'A';
 const LINK = 'L';
 const MORE = 'M';
 
-//fucntion createProduct/createAction/createLink/createMore
+function createProduct(name, actions, isConsumed, parents, hasChilds) {
+    obj = {
+        TYP: PRO,
+        name: name,
+        actions: actions,
+        isConsumed: isConsumed,
+        parents: parents,
+        hasChilds: hasChilds
+    };
+    return obj;
+}
 
+function createAction(handler, desc, lon, lat, timestamp, blockNumber) {
+    obj = {
+        TYP: ACT,
+        handler: handler,
+        desc: desc,
+        lon: lon,
+        lat: lat,
+        timestamp: timestamp,
+        blockNumber: blockNumber
+    };
+    return obj;
+}
+
+function createLink(col, type){
+    obj = {
+        TYP: LINK,
+        col: col,
+        type: type
+    };
+    return obj;
+}
+
+function createMore(type){
+    obj = {
+        TYP: MORE,
+        type: type
+    };
+    return obj;
+}
 
 p1 = createProduct('1', [], true, [], true);
 p2 = createProduct('2', [], true, [p1], false);

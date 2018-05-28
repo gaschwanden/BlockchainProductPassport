@@ -7,7 +7,7 @@ contract Measurements is Roles {
 
     struct Measurement {
         address handler;
-        bytes32 attribute_id;
+        bytes32 attributeName;
         int value;
         bytes32 event_id;
         bytes32 description;
@@ -42,7 +42,7 @@ contract Measurements is Roles {
         uint [] memory blockNumbers=new uint[](measurements.length);
         for (uint i=0; i< measurements.length; i++){
             handles[i] = measurements[i].handler;
-            attributes[i] = measurements[i].attribute_id;
+            attributes[i] = measurements[i].attributeName;
             values[i] = measurements[i].value;
             events[i] = measurements[i].event_id;
             descriptions[i] = measurements[i].description;
@@ -53,10 +53,8 @@ contract Measurements is Roles {
         return (handles,attributes,values,events,descriptions,timestamps,blockNumbers);
     }
 
-
-
-    function getMeasurement(uint i, uint[]) roleOrOwner('productOwner') constant returns (bytes32, int){
-        return (measurements[i].attribute_id, measurements[i].value);
+    function getNameAndValeOfMeasurement(uint i) roleOrOwner('productOwner') constant returns (bytes32, int){
+        return (measurements[i].attributeName, measurements[i].value);
     }
 
 

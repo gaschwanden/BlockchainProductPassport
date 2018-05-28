@@ -1,4 +1,5 @@
 
+exports = module.exports = {};
 
 exports.setRole = function(contract, roles, roleName) {
   let hash = ''

@@ -1,19 +1,11 @@
 let utils = require('./utils')
-var Product = artifacts.require("Product");
+var ProductFactory = artifacts.require("ProductFactory");
 
 module.exports = function (deployer) {
-    return deployer.deploy(Product)
-      .then(() => Product.deployed())
-
+    return deployer.deploy(ProductFactory)
+      .then(() => ProductFactory.deployed())
+      
 }
-
-// var ProductFactory = artifacts.require("ProductFactory");
-
-// module.exports = function (deployer) {
-//     return deployer.deploy(ProductFactory)
-//       .then(() => ProductFactory.deployed())
-
-// }
 
 // module.exports = function (deployer, network) {
 //     let ctrctHash

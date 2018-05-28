@@ -14,6 +14,7 @@ contract('PPC', function (accounts) {
   //console.log(web3.currentProvider)
   before(async () => {
      ppcoin = await PPcoin.deployed()
+     console.log("ppcoin is "+ppcoin);
     // web3.version.getNetwork(function(err,res) {console.log(err,res);});
      logic = await TokenLogic.at(await ppcoin.logic())
   })
