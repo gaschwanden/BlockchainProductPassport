@@ -2,7 +2,7 @@ pragma solidity ^0.4.21;
 import "../authority/Owned.sol";
 import "../authority/Roles.sol";
 
-contract Users is Owned {
+contract Users is Owned,Roles {
     struct User {
         uint age;
         bytes16 fName;

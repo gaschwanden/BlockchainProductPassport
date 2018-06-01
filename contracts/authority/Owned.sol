@@ -28,4 +28,7 @@ contract Owned is OwnedEvents {
         SetTheOwner(owner);
     }
 
+    function getOwner() public constant returns (address) {
+        return owner;
+    }
 }

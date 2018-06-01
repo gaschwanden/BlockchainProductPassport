@@ -30,10 +30,12 @@
 	<script type="text/javascript" src="assets/js/llqrcode.js"></script>
 	<script type="text/javascript" src="assets/js/webqr.js"></script>
 	<!-- <script type="text/javascript" src="../node_modules/jquery/dist/jquery.subwayMap-0.5.0.js"></script> -->
+    <!-- <script type="text/javascript" src="./assets/js/ProductFactoryABI.js"></script> -->
+    <script type="text/javascript" src="./assets/js/ProductABI.js"></script>
 
-	<script type="text/javascript" src="./assets/js/ProductABI.js"></script>
     <script type="text/javascript" src="./Bytescode/ProductBytecode.js"></script>
-
+    <script type="text/javascript" src="./Bytescode/ProductFactoryBytecode.js"></script>
+    
 
 	<!-- Custom src -->
 	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
@@ -41,14 +43,18 @@
 	<script src="../node_modules/jquery/dist/jquery.scrolly.min.js"></script>
     <script src="../node_modules/jquery/dist/jquery.scrollgress.min.js"></script>
 	<script src="../node_modules/jquery/dist/jquery.scrollgress.min.js"></script>
+	
 
 	<!-- <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>	 -->
 	<script src="../node_modules/web3/dist/web3.min.js"></script>
 
 	<script src="assets/js/data.js"></script>
+	<script src="assets/js/truffle-contract.js"></script>
+
+	<script src="assets/js/addActionToProduct.js"></script>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> 
-
+	<script type="text/javascript" src="./assets/js/jsonify.js"></script>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -106,7 +112,10 @@
 		<!-- header wrapper -->
 		<div class="header-wrapper sm-padding bg-grey">
 			<div class="container">
-				<h2>Create Your Product</h2>
+				<h2>Add actions to Your Product</h2>
+				<div class = "loginInfo"></div>
+				<h3 id="accountAddress" ></h3>
+
 				<!-- <ul class="breadcrumb">
 					<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
 					<li class="breadcrumb-item"><a href="../index.html#blog">Blog</a></li>
@@ -136,24 +145,24 @@
 					
 
 						<div class="Input Information">
-								<h3 class="title">Create your product</h3>
-
-								
+								<h3 class="title">Add actions to your product</h3>
 								<form onsubmit="return false;" id="myForm">
-									<input class="input" id="ProductName" type="text" placeholder="ProductName">
-									<input class="input" id="attributeNames" type="text" placeholder="attributeNames">
-									<input class="input" id="values" type="text" placeholder="values">
-									<input class="input" id="parentProducts" type="text" placeholder="parentProducts">
+									<input class="input" id="productAddress" type="text" placeholder="productAddress">
+									<input class="input" id="description" type="text" placeholder="description about action">
+									<input class="input" id="newProductName" type="text" placeholder="newProductName">
+									<input class="input" id="newAttributeName" type="text" placeholder="newAttributeName">
+									<input class="input" id="newValues" type="text" placeholder="newValues">
 									<input class="input" id="longitude" type="text" placeholder="longitude">
 									<input class="input" id="latitude" type="text" placeholder="latitude">
-									<input class="PRODUCT_FACTORY" type="text" placeholder="PRODUCT_FACTORY">
+									<input class="consumed" type="text" placeholder="consumed or not">
 									<!-- <input class="input" type="email" placeholder="Email"> -->
 									<textarea placeholder="Add Your Commment"></textarea>
 									<button type="submit" class="main-btn">Submit</button>
-									<button id="button"  class="main-btn">Create product</button>
-									<button id="button2"  class="main-btn">Create product address</button>
-									<button id="button3"  class="main-btn">reset product address</button>
-									<button id="button4"  class="main-btn">test address</button>
+									<button id="addAction"  class="main-btn">addAction</button>
+									<button id="getAction"  class="main-btn">getAction</button>
+									<button id="getEvent"  class="main-btn">getEvent</button>
+									<button id="getproduct"  class="main-btn">getproduct</button>
+									
 									<h3 id="ProductsName"></h3>
 									<h3 id="ProductsInfo"></h3>
 									<h4 id="insTrans"></h4>
@@ -161,151 +170,12 @@
 									
 
 									<script>
-											window.addEventListener('load', function() {
-												// Checking if Web3 has been injected by the browser (Mist/MetaMask)
-												if (typeof web3 !== 'undefined') {
-													// Use the browser's ethereum provider
-													var provider = web3.currentProvider
-													console.log(provider)
-													console.log('web3?')
-													console.log(web3.eth.accounts[0])
-												} else {
-													console.log('No web3? You should consider trying MetaMask!')
-												}
-											})
-											//ProductFactory:0xecfcab0a285d3380e488a39b4bb21e777f8a4eac
-											var productAddress = sessionStorage.getItem('productAddress');
-											console.log("getProductContractAddress" + productAddress)
-											var browser_product_sol_productContract = web3.eth.contract(ProductABI);
-
-
-
-
-											 var browser_product_sol_product=browser_product_sol_productContract.at(productAddress);
-											 console.log("browser_product_sol_product",browser_product_sol_product);
-						
-											 var ProductsEvent =browser_product_sol_product.ProductInfo({},'latest');
-											console.log("ProductsEvent",ProductsEvent);
+										
 											
-											ProductsEvent.watch(function(error, result) {
-														if (!error) {
-															if (result.blockHash != $("#insTrans").html())
-																	$("#loader").hide();
-															$("#insTrans").html('Block hash: '+ result.blockHash );
-															console.log("successfule get event") 
-															console.log('myEvent: ' + JSON.stringify(result.args));
-															console.log("with web32"+JSON.stringify("the first attibutes is " + web3.toAscii(result.args.attributeNames[0]).replace(/\u0000/g, '')));
-															console.log("with web33"+result.args.values)
-															var attributes = browser_product_sol_product.attibutes;
-															console.log(attributes)
-															$("#ProductsName").html("Successful Create your "+web3.toAscii(result.args.name)+ ' And the Info is following' );
-															$("#ProductsInfo").html(web3.toAscii(result.args.attributeNames[0]).replace(/\u0000/g, '') + ' is ' + result.args.values[0]+" "+web3.toAscii(result.args.attributeNames[1]).replace(/\u0000/g, '') + ' is ' + result.args.values[1]);
-														} else {
-															console.log(error)
-															$("#loader").hide();
-														}
-											});
-											
-											// product milkshake: 0xeec918d74c746167564401103096d45bbd494b74
-											// coffee 0x38cf23c52bb4b13f051aec09580a2de845a7fa35
-											// milk 0xbaaa2a3237035a2c7fa2a33c76b44a8c6fe18e87
-
-											$("#button").click(function() {
-												   // $("#loader").show();
-													
-													var getData2 = browser_product_sol_product.logProductInfo.getData();
-													web3.eth.sendTransaction(
-														{to:productAddress, from:web3.eth.accounts[0], data: getData2},
-														function (e,res){
-															if(!e){
-																console.log(res);
-																console.log("the event log successfully2")
-															} else{
-																
-																console.log(e);
-															}
-														}
-													);
-													
-												}); 
-												$("#button4").click(function() {
-													var _name = $("#ProductName").val();
-													var _attributeName = $("#attributeNames").val().split(" ");
-													// var _values = $("#values").val();
-													// var _parentProducts =$("#parentProducts").val();
-													// var _lon = $("#longitude").val();
-													// var _lat = $("#latitude").val();
-													// var _PRODUCT_FACTORY = $("#PRODUCT_FACTORY").val();
-													console.log("the name is _name"+_name)
-													console.log("the attribute is"+_attributeName)
-													console.log("the attribute is"+_attributeName[0])
-													console.log("the attribute is"+_attributeName[1])
-													//console.log("the value is"+_values);
-													
-												});
 												
-												$("#button2").click(function() {
-													// Object.keys(a).forEach(function (key){
-													// 	console.log(a[key]);
-													// });
-													var _name = $("#ProductName").val();
-													var _attributeName = $("#attributeNames").val().split(" ");
-													var _values = $("#values").val().split(" ");
-													var _parentProducts =$("#parentProducts").val().split(" ");
-													var _lon = $("#longitude").val();
-													var _lat = $("#latitude").val();
-													var _PRODUCT_FACTORY = $("#PRODUCT_FACTORY").val();
-													console.log('before');
-													setTimeout(function(){
-														
-														console.log("the name is _name"+_name);
-														console.log("the attribute is"+_attributeName);
-														console.log("the value is"+_values);
-													},500);
-													
-													// var _name ='milk';
-													// var _attributeName = ["color","weight"];
-													// var _values =[10,200];
-													// var _parentProducts =[];
-													// var _lon =34;
-													// var _lat =49;
-													// var _PRODUCT_FACTORY = "0x345ca3e014aaf5dca488057592ee47305d9b3e10";
-						
-													console.log("111111111111111111111")
-													var browser_product_sol_product = browser_product_sol_productContract.new(
-													_name,
-													_attributeName,
-													_values,
-													_parentProducts,
-													_lon,
-													_lat,
-													_PRODUCT_FACTORY,
-													{
-														from: web3.eth.accounts[0], 
-														data: ProductBytecode, 
-														gas: '4277086'
-													}, 
-														function (e,contract){
-															if(!e){
-																console.log(contract);
-															} else{
-																console.log(e);
-															}
-														if (typeof contract.address !== 'undefined') {
-															console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
-															getProductContractAddress=contract.address+""
-															console.log(getProductContractAddress)
-															sessionStorage.setItem('productAddress',getProductContractAddress);
-														}
-													   
-													}
-												)   
-												});
-												$("#button3").click(function() {
-															sessionStorage.removeItem('productAddress');  
-												});
-										</script>
+									</script>
 								</form>
+								<button id="deployDatabase"  class="main-btn">deployDatabase</button>
 						</div>
 
 

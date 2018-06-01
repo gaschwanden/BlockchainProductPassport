@@ -15,16 +15,16 @@ module.exports = function (deployer, network) {
 
         
     })
-      .then(ctrct => {
-        mesrment = Measurements.at(Measurements.address)
-        return mesrment.contractHash()
-      })
-      .then(hash => {
-        ctrctHash = hash
-        return mesrment.addContractRole(ctrctHash, 'admin')
-      })
-      .then(() => {
-        return mesrment.grantUserRole(ctrctHash, 'admin', web3.eth.accounts[5])
-      })
+      // .then(ctrct => {
+      //   mesrment = Measurements.at(Measurements.address)
+      //   return mesrment.contractHash()
+      // })
+      // .then(hash => {
+      //   ctrctHash = hash
+      //   return mesrment.addContractRole(ctrctHash, 'admin')
+      // })
+      // .then(() => {
+      //   return mesrment.grantUserRole(ctrctHash, 'admin', web3.eth.accounts[5])
+      // })
   }
   

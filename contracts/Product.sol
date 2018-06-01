@@ -4,7 +4,7 @@ import "./authority/Owned.sol";
 import "./Database.sol";
 
 contract Product {
-
+    address public owner;
     address public PRODUCT_FACTORY;
     address public DATABASE_CONTRACT;
     struct Action {
@@ -19,6 +19,12 @@ contract Product {
     struct Attribute {
         bytes32 attributeName;
         uint value;
+    }
+    function transferOwner(address owner_) public {
+        owner = owner_;
+    }
+    function getOwner() public returns (address){
+       return owner;
     }
 
     Attribute [] public attributes;
@@ -69,7 +75,12 @@ contract Product {
         }
         return names;
     }
-    
+    function getActionCount() public constant returns(uint) {
+        return actions.length;
+    }
+    function getActionByCount(uint index) public constant returns(address, bytes32, uint,uint,uint,uint) {
+        return (actions[index].handler, actions[index].description, actions[index].lon, actions[index].lat, actions[index].timestamp,actions[index].blockNumber);
+    }
     function getAttributeValues() constant returns (uint [] ) {
         uint[] values;
         for (uint i = 0; i < attributes.length; i++) {
@@ -100,7 +111,8 @@ contract Product {
         address DATABASE_CONTRACT
         ) ;
 
-    function Product(bytes32 _name, bytes32[] _attributeName, uint[] _values, address[] _parentProducts, uint _lon, uint _lat ,address _DATABASE_CONTRACT,address _PRODUCT_FACTORY) {
+    function Product(address _owner, bytes32 _name, bytes32[] _attributeName, uint[] _values, address[] _parentProducts, uint _lon, uint _lat ,address _DATABASE_CONTRACT,address _PRODUCT_FACTORY) {
+        owner = _owner;
         name = _name;
         isConsumed = false;
         parentProducts = _parentProducts;
@@ -140,28 +152,13 @@ contract Product {
         throw;
     }
 
-    /* @notice Function to add an Action to the product.
-       @param _description The description of the Action.
-       @param _lon Longitude x10^10 where the Action is done.
-       @param _lat Latitude x10^10 where the Action is done.
-       @param _newProductNames In case that this Action creates more products from
-              this Product, the names of the new products should be provided here.
-       @param _newProductsAdditionalInformation In case that this Action creates more products from
-              this Product, the additional information of the new products should be provided here.
-       @param _consumed True if the product becomes consumed after the action. */
-    // bytes32 _name, bytes32[] _attributeName, uint[] _values, address[] _parentProducts, uint _lon, uint _lat, Measurements[] _measurements, address _PRODUCT_FACTORY) {
-
-
-    function addAction(bytes32 _newProductsNames, bytes32 description, bytes32 []_newAttributeNames,uint[] _newValues,uint lon,uint lat, bool _consumed) notConsumed {
+    function addAction( bytes32 _newProductsNames, bytes32 description, bytes32 []_newAttributeNames,uint[] _newValues,uint lon, uint lat, bool _consumed) notConsumed {
 
 
         Action memory action;
         action.handler = msg.sender;
         action.description = description;
-
         setAttributes(_newAttributeNames,_newValues);
-
-
         action.lon = lon;
         action.lat = lat;
         action.timestamp = now;
@@ -177,12 +174,9 @@ contract Product {
         isConsumed = _consumed;
     }
 
-    /* @notice Function to merge some products to build a new one.
-       @param otherProducts addresses of the other products to be merged.
-       @param newProductsName Name of the new product resulting of the merge.
-       @param newProductAdditionalInformation Additional information of the new product resulting of the merge.
-       @param _lon Longitude x10^10 where the merge is done.
-       @param _lat Latitude x10^10 where the merge is done. */
+    
+
+
     function merge(address[] otherProducts, bytes32 newProductName, bytes32[] _newAttributeName, uint[] _newValues, uint lon, uint lat) notConsumed {
         ProductFactory productFactory = ProductFactory(PRODUCT_FACTORY);
         address newProduct = productFactory.createProduct(newProductName, _newAttributeName,  _newValues, otherProducts, lon, lat,DATABASE_CONTRACT);
@@ -194,8 +188,6 @@ contract Product {
         }
     }
 
-    /* @notice Function to collaborate in a merge with some products to build a new one.
-       @param newProductsAddress Address of the new product resulting of the merge. */
     function collaborateInMerge(address newProductAddress, uint lon, uint lat) notConsumed {
         childProducts.push(newProductAddress);
 
@@ -217,29 +209,21 @@ contract Product {
     }
 }
 
-/* @title Product Factory Contract
-   @author Andreu Rodíguez i Donaire
-   @dev This contract represents a product factory which represents products to be tracked in
-   the TODO put name of platform ** platform. This product lets the handlers to register actions
-   on it or even combine it with other products. */
-contract ProductFactory {
-
+contract ProductFactory{
+    address public owner;
+    
     /* @notice Constructor to create a Product Factory */
-    function ProductFactory() {}
+    function ProductFactory() {
+        owner=msg.sender;
+    }
 
     function () {
         // If anyone wants to send Ether to this contract, the transaction gets rejected
         throw;
     }
-    string testele;
-    function test1(string input)  public{
-        testele=input;
-    }
-    function gettest1()public constant returns (string){
-        return testele;
-    }
+  
 
     function createProduct(bytes32 _name, bytes32[] _newAttributeName, uint [] _newValues, address[] _parentProducts, uint _lon, uint _lat, address DATABASE_CONTRACT) returns(address) {
-        return new Product(_name, _newAttributeName,  _newValues, _parentProducts, _lon, _lat, DATABASE_CONTRACT, this);
+        return new Product(owner,_name, _newAttributeName,  _newValues, _parentProducts, _lon, _lat, DATABASE_CONTRACT, this);
     }
 }

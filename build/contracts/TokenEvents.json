@@ -102,14 +102,14 @@
     "absolutePath": "/Users/hao/onedrive/OneDrive - The University of Melbourne/project/Product_passport/contracts/Token/TokenEvents.sol",
     "exportedSymbols": {
       "TokenEvents": [
-        2796
+        2864
       ]
     },
-    "id": 2797,
+    "id": 2865,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2763,
+        "id": 2831,
         "literals": [
           "solidity",
           "^",
@@ -125,9 +125,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 2796,
+        "id": 2864,
         "linearizedBaseContracts": [
-          2796
+          2864
         ],
         "name": "TokenEvents",
         "nodeType": "ContractDefinition",
@@ -135,20 +135,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2769,
+            "id": 2837,
             "name": "LogBurn",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2768,
+              "id": 2836,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2765,
+                  "id": 2833,
                   "indexed": true,
                   "name": "src",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2769,
+                  "scope": 2837,
                   "src": "67:19:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -157,7 +157,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2764,
+                    "id": 2832,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "67:7:12",
@@ -171,11 +171,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2767,
+                  "id": 2835,
                   "indexed": false,
                   "name": "wad",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2769,
+                  "scope": 2837,
                   "src": "88:11:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -184,7 +184,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2766,
+                    "id": 2834,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "88:7:12",
@@ -204,20 +204,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2775,
+            "id": 2843,
             "name": "LogMint",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2774,
+              "id": 2842,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2771,
+                  "id": 2839,
                   "indexed": true,
                   "name": "src",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2775,
+                  "scope": 2843,
                   "src": "120:19:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -226,7 +226,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2770,
+                    "id": 2838,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "120:7:12",
@@ -240,11 +240,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2773,
+                  "id": 2841,
                   "indexed": false,
                   "name": "wad",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2775,
+                  "scope": 2843,
                   "src": "141:11:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -253,7 +253,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2772,
+                    "id": 2840,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "141:7:12",
@@ -273,20 +273,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2779,
+            "id": 2847,
             "name": "LogLogicReplaced",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2778,
+              "id": 2846,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2777,
+                  "id": 2845,
                   "indexed": false,
                   "name": "newLogic",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2779,
+                  "scope": 2847,
                   "src": "182:16:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -295,7 +295,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2776,
+                    "id": 2844,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "182:7:12",
@@ -315,20 +315,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2787,
+            "id": 2855,
             "name": "Transfer",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2786,
+              "id": 2854,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2781,
+                  "id": 2849,
                   "indexed": true,
                   "name": "from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2787,
+                  "scope": 2855,
                   "src": "220:20:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -337,7 +337,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2780,
+                    "id": 2848,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "220:7:12",
@@ -351,11 +351,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2783,
+                  "id": 2851,
                   "indexed": true,
                   "name": "to",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2787,
+                  "scope": 2855,
                   "src": "242:18:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -364,7 +364,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2782,
+                    "id": 2850,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "242:7:12",
@@ -378,11 +378,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2785,
+                  "id": 2853,
                   "indexed": false,
                   "name": "value",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2787,
+                  "scope": 2855,
                   "src": "262:13:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -391,7 +391,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2784,
+                    "id": 2852,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "262:7:12",
@@ -411,20 +411,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2795,
+            "id": 2863,
             "name": "Approval",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2794,
+              "id": 2862,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2789,
+                  "id": 2857,
                   "indexed": true,
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2795,
+                  "scope": 2863,
                   "src": "297:21:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -433,7 +433,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2788,
+                    "id": 2856,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "297:7:12",
@@ -447,11 +447,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2791,
+                  "id": 2859,
                   "indexed": true,
                   "name": "spender",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2795,
+                  "scope": 2863,
                   "src": "320:23:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -460,7 +460,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2790,
+                    "id": 2858,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "320:7:12",
@@ -474,11 +474,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2793,
+                  "id": 2861,
                   "indexed": false,
                   "name": "value",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2795,
+                  "scope": 2863,
                   "src": "345:13:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -487,7 +487,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2792,
+                    "id": 2860,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "345:7:12",
@@ -505,7 +505,7 @@
             "src": "282:78:12"
           }
         ],
-        "scope": 2797,
+        "scope": 2865,
         "src": "26:336:12"
       }
     ],
@@ -515,14 +515,14 @@
     "absolutePath": "/Users/hao/onedrive/OneDrive - The University of Melbourne/project/Product_passport/contracts/Token/TokenEvents.sol",
     "exportedSymbols": {
       "TokenEvents": [
-        2796
+        2864
       ]
     },
-    "id": 2797,
+    "id": 2865,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2763,
+        "id": 2831,
         "literals": [
           "solidity",
           "^",
@@ -538,9 +538,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 2796,
+        "id": 2864,
         "linearizedBaseContracts": [
-          2796
+          2864
         ],
         "name": "TokenEvents",
         "nodeType": "ContractDefinition",
@@ -548,20 +548,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2769,
+            "id": 2837,
             "name": "LogBurn",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2768,
+              "id": 2836,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2765,
+                  "id": 2833,
                   "indexed": true,
                   "name": "src",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2769,
+                  "scope": 2837,
                   "src": "67:19:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -570,7 +570,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2764,
+                    "id": 2832,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "67:7:12",
@@ -584,11 +584,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2767,
+                  "id": 2835,
                   "indexed": false,
                   "name": "wad",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2769,
+                  "scope": 2837,
                   "src": "88:11:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -597,7 +597,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2766,
+                    "id": 2834,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "88:7:12",
@@ -617,20 +617,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2775,
+            "id": 2843,
             "name": "LogMint",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2774,
+              "id": 2842,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2771,
+                  "id": 2839,
                   "indexed": true,
                   "name": "src",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2775,
+                  "scope": 2843,
                   "src": "120:19:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -639,7 +639,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2770,
+                    "id": 2838,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "120:7:12",
@@ -653,11 +653,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2773,
+                  "id": 2841,
                   "indexed": false,
                   "name": "wad",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2775,
+                  "scope": 2843,
                   "src": "141:11:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -666,7 +666,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2772,
+                    "id": 2840,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "141:7:12",
@@ -686,20 +686,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2779,
+            "id": 2847,
             "name": "LogLogicReplaced",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2778,
+              "id": 2846,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2777,
+                  "id": 2845,
                   "indexed": false,
                   "name": "newLogic",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2779,
+                  "scope": 2847,
                   "src": "182:16:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -708,7 +708,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2776,
+                    "id": 2844,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "182:7:12",
@@ -728,20 +728,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2787,
+            "id": 2855,
             "name": "Transfer",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2786,
+              "id": 2854,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2781,
+                  "id": 2849,
                   "indexed": true,
                   "name": "from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2787,
+                  "scope": 2855,
                   "src": "220:20:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -750,7 +750,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2780,
+                    "id": 2848,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "220:7:12",
@@ -764,11 +764,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2783,
+                  "id": 2851,
                   "indexed": true,
                   "name": "to",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2787,
+                  "scope": 2855,
                   "src": "242:18:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -777,7 +777,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2782,
+                    "id": 2850,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "242:7:12",
@@ -791,11 +791,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2785,
+                  "id": 2853,
                   "indexed": false,
                   "name": "value",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2787,
+                  "scope": 2855,
                   "src": "262:13:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -804,7 +804,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2784,
+                    "id": 2852,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "262:7:12",
@@ -824,20 +824,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2795,
+            "id": 2863,
             "name": "Approval",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2794,
+              "id": 2862,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2789,
+                  "id": 2857,
                   "indexed": true,
                   "name": "owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2795,
+                  "scope": 2863,
                   "src": "297:21:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -846,7 +846,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2788,
+                    "id": 2856,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "297:7:12",
@@ -860,11 +860,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2791,
+                  "id": 2859,
                   "indexed": true,
                   "name": "spender",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2795,
+                  "scope": 2863,
                   "src": "320:23:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -873,7 +873,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2790,
+                    "id": 2858,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "320:7:12",
@@ -887,11 +887,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2793,
+                  "id": 2861,
                   "indexed": false,
                   "name": "value",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2795,
+                  "scope": 2863,
                   "src": "345:13:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -900,7 +900,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2792,
+                    "id": 2860,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "345:7:12",
@@ -918,7 +918,7 @@
             "src": "282:78:12"
           }
         ],
-        "scope": 2797,
+        "scope": 2865,
         "src": "26:336:12"
       }
     ],
@@ -930,5 +930,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-05-28T22:44:17.766Z"
+  "updatedAt": "2018-05-30T06:37:56.556Z"
 }

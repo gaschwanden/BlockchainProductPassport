@@ -4,6 +4,16 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>My Google Map</title>
+	<style>
+		#map{
+		height:400px;
+		width:100%;
+		}
+	</style>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -32,7 +42,7 @@
 	<!-- <script type="text/javascript" src="../node_modules/jquery/dist/jquery.subwayMap-0.5.0.js"></script> -->
     <!-- <script type="text/javascript" src="./assets/js/ProductFactoryABI.js"></script> -->
     <script type="text/javascript" src="./assets/js/ProductABI.js"></script>
-
+	<script type="text/javascript" src="./assets/js/simple-excel.js"></script> 
     <script type="text/javascript" src="./Bytescode/ProductBytecode.js"></script>
     <script type="text/javascript" src="./Bytescode/ProductFactoryBytecode.js"></script>
     
@@ -51,7 +61,7 @@
 	<script src="assets/js/data.js"></script>
 	<script src="assets/js/truffle-contract.js"></script>
 
-	<script src="assets/js/createProduct.js"></script>
+	<script src="assets/js/track.js"></script>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> 
 	<script type="text/javascript" src="./assets/js/jsonify.js"></script>
@@ -112,10 +122,9 @@
 		<!-- header wrapper -->
 		<div class="header-wrapper sm-padding bg-grey">
 			<div class="container">
-				<h2>Create Your Product</h2>
+				<h2>Track Your Product</h2>
 				<div class = "loginInfo"></div>
 				<h3 id="accountAddress" ></h3>
-				
 				<!-- <ul class="breadcrumb">
 					<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
 					<li class="breadcrumb-item"><a href="../index.html#blog">Blog</a></li>
@@ -145,66 +154,28 @@
 					
 
 						<div class="Input Information">
-								<h3 class="title">Create your product</h3>
-
-								
+								<h3 class="title">track your product</h3>
 								<form onsubmit="return false;" id="myForm">
-									<input class="input" id="ProductName" type="text" placeholder="ProductName">
-									<input class="input" id="attributeNames" type="text" placeholder="attributeNames">
-									<input class="input" id="values" type="text" placeholder="values">
-									<input class="input" id="parentProducts" type="text" placeholder="parentProducts">
-									<input class="input" id="longitude" type="text" placeholder="longitude">
-									<input class="input" id="latitude" type="text" placeholder="latitude">
-									<input class="PRODUCT_FACTORY" type="text" placeholder="PRODUCT_FACTORY">
-									<!-- <input class="input" type="email" placeholder="Email"> -->
-									<textarea placeholder="Add Your Commment"></textarea>
-									<button type="submit" class="main-btn">Submit</button>
-									<button id="createProduct"  class="main-btn">Create product</button>
-									<button id="button2"  class="main-btn">Create product address</button>
-									<button id="getEvent"  class="main-btn">getEvent</button>
-									<button id="getproduct"  class="main-btn">getproduct</button>
+									<input class="input" id="productAddress" type="text" placeholder="please entrer your productAddress">
+									<button id="getAction"  class="main-btn">getAction</button>
+									<button id="getAllProductInformations"  class="main-btn">Track all information by product address</button>
 									
-									<h3 id="ProductsName"></h3>
+									<button id="getEvent"  class="main-btn">Get prodcut information by address</button>
+									<button id="getproduct"  class="main-btn">Get your personal productList</button>
+									
+									<!-- <h3 id="ProductsName"></h3>
 									<h3 id="ProductsInfo"></h3>
-									<h4 id="insTrans"></h4>
+									<h4 id="insTrans"></h4> -->
 									
-									
 
-									<script>
-										    var information = sessionStorage.infor;
-    										console.log("infor 2         "+information);
-											window.addEventListener('load', function() {
-												// Checking if Web3 has been injected by the browser (Mist/MetaMask)
-												if (typeof web3 !== 'undefined') {
-													// Use the browser's ethereum provider
-													var provider = web3.currentProvider
-													console.log(provider)
-													console.log('web3?')
-													console.log(web3.eth.accounts[0])
-												} else {
-													console.log('No web3? You should consider trying MetaMask!')
-												}
-											})
-                                            //ProductFactory:0xecfcab0a285d3380e488a39b4bb21e777f8a4eac
-                                           
-
-                                        
-
-                                   
-													var _name2 ='cappu';
-													var _attributeName2 = ["color","weight"];
-													var _values2 =[10,200];
-													var _parentProducts2 =[];
-													var _lon2 =1;
-													var _lat2 =2;
-											
-										
-						
-												
-												
-										</script>
 								</form>
-								<button id="deployDatabase"  class="main-btn">deployDatabase</button>
+								
+
+								<div class = "table"></div>
+								
+								
+								
+								
 						</div>
 
 
@@ -212,7 +183,7 @@
 						<!-- <div class="blog-img">
 							<img class="img-responsive" src="assets/img/blog-post.jpg" alt="">
 						</div> -->
-			
+						<p id="myLog"></p>
 
 						<!-- blog author -->
 						<div class="load your picture">
@@ -222,28 +193,122 @@
 								</div>
 								<div class="media-body">
 									<div class="media-heading">
-										<h3>Load your picture here</h3>
-										<button type="submit" class="main-btn">choose from local</button>
+										<h3> Your product information is here</h3>
+										<div class = "mydatabase"></div>
+										<div class = "productInformation1"></div>
+										<div class = "parentInfo"></div>
 										
 									</div>
-									<p>Choose the picture of your product</p>
+									<p>Please input your product address</p>
 								</div>
 							</div>
 						</div>
 						<!-- /blog author -->
 
-						<!-- reply form -->
-						<div class="reply-form">
-							<h3 class="title">Leave a reply</h3>
-							<form>
-								<input class="input" type="text" placeholder="Name">
-								<input class="input" type="email" placeholder="Email">
-								<textarea placeholder="Add Your Commment"></textarea>
-								<button type="submit" class="main-btn">Submit</button>
-							</form>
-						</div>
-						<!-- /reply form -->
+
 					</div>
+
+					<h2>My Google Map</h2>
+					<div id="map"></div>
+					<div class = "markers"></div>
+					<script>
+					  function initMap(){
+						// Map options
+						var options = {
+						  zoom:1,
+						  center:{lat:42.3601,lng:-71.0589}
+						}
+				  
+						// New map
+						var map = new google.maps.Map(document.getElementById('map'), options);
+				  
+						// Listen for click on map
+						google.maps.event.addListener(map, 'click', function(event){
+						  // Add marker
+						  addMarker({coords:event.latLng});
+						});
+				  
+						/*
+						// Add marker
+						var marker = new google.maps.Marker({
+						  position:{lat:42.4668,lng:-70.9495},
+						  map:map,
+						  icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+						});
+				  
+						var infoWindow = new google.maps.InfoWindow({
+						  content:'<h1>Lynn MA</h1>'
+						});
+				  
+						marker.addListener('click', function(){
+						  infoWindow.open(map, marker);
+						});
+						*/
+					
+            
+						// Array of markers
+						//var markers;
+						 var markers =localStorage.markers;
+						 console.log("markers			"+markers)
+						// console.log("localStorage.markers	"+localStorage.markers);
+						var markers =JSON.parse(localStorage.getItem("markers") || "[]");
+						// Loop through markers
+						// var markers = [
+						// 		{
+						// 		coords:{lat:43.4668,lng:-70.9495},
+						// 		iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+						// 		content:'<h1>Lynn MA</h1>'
+						// 		},
+						// 		{
+						// 		coords:{lat:41.8584,lng:-70.9300},
+						// 		content:'<h1>Amesbury MA</h1>'
+						// 		},
+						// 		{
+						// 		coords:{lat:42.7762,lng:-71.0773}
+						// 		}
+						// 	];
+
+						for(var i = 0;i < markers.length;i++){
+						  // Add marker
+						  addMarker(markers[i]);
+						}
+				  
+						// Add Marker Function
+						function addMarker(props){
+							var lat1= props.coords.lat;
+							 console.log("lat1	"+lat1);
+							var lat2=parseFloat(lat1);
+							var lng1= props.coords.lng;
+							var lng2=parseFloat(lng1);
+							
+						  var marker = new google.maps.Marker({
+							position:{lat:lat2,lng:lng2},
+							map:map,
+							//icon:props.iconImage
+						  });
+				  
+						  // Check for customicon
+						  if(props.iconImage){
+							// Set icon image
+							marker.setIcon(props.iconImage);
+						  }
+				  
+						  // Check content
+						  if(props.content){
+							var infoWindow = new google.maps.InfoWindow({
+							  content:props.content
+							});
+				  
+							marker.addListener('click', function(){
+							  infoWindow.open(map, marker);
+							});
+						  }
+						}
+					  }
+					</script>
+					<script async defer
+					  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCypYpdHA5BGp-cybRznoExQAaEyYwiOmU&callback=initMap">
+					  </script>
 				</main>
 				<!-- /Main -->
 

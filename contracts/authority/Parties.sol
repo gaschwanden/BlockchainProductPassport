@@ -1,11 +1,9 @@
 pragma solidity ^0.4.16;
-import "../Token/TokenStandard.sol";
-import "../authority/Owned.sol";
-import "../authority/Roles.sol";
-import "../authority/Users.sol";
+import "./Owned.sol";
+import "./Roles.sol";
 
 
-contract Parties is Owned,Roles,Users {
+contract Parties is Owned,Roles {
 
     struct Party {
         address wallet;
@@ -25,25 +23,22 @@ contract Parties is Owned,Roles,Users {
 
     uint accepted_count;
 
-    TokenStandard public token;
 
     modifier onlyState(State _state) {
         require(state == _state);
         _;
     }
 
-    function Parties(TokenStandard _token) {
+    function Parties() {
         owner = msg.sender;
-        token = _token;
     }
 
-    function inviteParticipants(address[] _parties, uint[] _amounts) onlyState(State.New) roleOrOwner("User")public  {
+    function inviteParticipants(address[] _parties, uint[] _amounts) onlyState(State.New) public  {
         require(_parties.length == _amounts.length);    
         buyer = msg.sender;        
         for (uint i = 0; i < _parties.length; i++) {
             parties.push(Party(_parties[i], _amounts[i], false));
         }
-        assert(token.transferFrom(buyer, this, sum(_amounts)));
         state = State.Invited;
     }
 
@@ -78,16 +73,13 @@ contract Parties is Owned,Roles,Users {
     }
 
     function approve() onlyState(State.Locked) onlyOwner {
-        for (uint i = 0; i < parties.length; i++) {
-            assert(token.transfer(parties[i].wallet, parties[i].amount));
-        } 
         state = State.Approved;
     }
 
-    function reimburse() onlyState(State.Locked) onlyOwner {
-        token.transfer(buyer, token.balanceOf(this));
-        state = State.Reimbursed;      
-    }
+    // function reimburse() onlyState(State.Locked) onlyOwner {
+    //     token.transfer(buyer, token.balanceOf(this));
+    //     state = State.Reimbursed;      
+    // }
 
     function sum(uint[] memory self) internal constant returns (uint result) {
         result = self[0];

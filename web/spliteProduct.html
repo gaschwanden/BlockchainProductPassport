@@ -51,7 +51,7 @@
 	<script src="assets/js/data.js"></script>
 	<script src="assets/js/truffle-contract.js"></script>
 
-	<script src="assets/js/createProduct.js"></script>
+	<script src="assets/js/spliteProduct.js"></script>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> 
 	<script type="text/javascript" src="./assets/js/jsonify.js"></script>
@@ -112,10 +112,9 @@
 		<!-- header wrapper -->
 		<div class="header-wrapper sm-padding bg-grey">
 			<div class="container">
-				<h2>Create Your Product</h2>
+				<h2>Splite your product to subProduct</h2>
 				<div class = "loginInfo"></div>
 				<h3 id="accountAddress" ></h3>
-				
 				<!-- <ul class="breadcrumb">
 					<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
 					<li class="breadcrumb-item"><a href="../index.html#blog">Blog</a></li>
@@ -145,64 +144,27 @@
 					
 
 						<div class="Input Information">
-								<h3 class="title">Create your product</h3>
-
-								
+								<h3 class="title">Split your product to subProduct</h3>
 								<form onsubmit="return false;" id="myForm">
-									<input class="input" id="ProductName" type="text" placeholder="ProductName">
-									<input class="input" id="attributeNames" type="text" placeholder="attributeNames">
-									<input class="input" id="values" type="text" placeholder="values">
-									<input class="input" id="parentProducts" type="text" placeholder="parentProducts">
+									<input class="input" id="productAddress" type="text" placeholder="productAddress">
+									<input class="input" id="description" type="text" placeholder="description about action">
+									<input class="input" id="newProductName" type="text" placeholder="input all of your NewProductsName">
+									<input class="input" id="newAttributeName" type="text" placeholder="newAttributeName">
+									<input class="input" id="newValues" type="text" placeholder="newValues">
 									<input class="input" id="longitude" type="text" placeholder="longitude">
 									<input class="input" id="latitude" type="text" placeholder="latitude">
-									<input class="PRODUCT_FACTORY" type="text" placeholder="PRODUCT_FACTORY">
+									<input class="consumed" type="text" placeholder="consumed or not">
 									<!-- <input class="input" type="email" placeholder="Email"> -->
 									<textarea placeholder="Add Your Commment"></textarea>
 									<button type="submit" class="main-btn">Submit</button>
-									<button id="createProduct"  class="main-btn">Create product</button>
-									<button id="button2"  class="main-btn">Create product address</button>
+									<button id="splitProduct"  class="main-btn">splitProduct</button>
+									<button id="getAction"  class="main-btn">getAction</button>
 									<button id="getEvent"  class="main-btn">getEvent</button>
 									<button id="getproduct"  class="main-btn">getproduct</button>
 									
 									<h3 id="ProductsName"></h3>
 									<h3 id="ProductsInfo"></h3>
 									<h4 id="insTrans"></h4>
-									
-									
-
-									<script>
-										    var information = sessionStorage.infor;
-    										console.log("infor 2         "+information);
-											window.addEventListener('load', function() {
-												// Checking if Web3 has been injected by the browser (Mist/MetaMask)
-												if (typeof web3 !== 'undefined') {
-													// Use the browser's ethereum provider
-													var provider = web3.currentProvider
-													console.log(provider)
-													console.log('web3?')
-													console.log(web3.eth.accounts[0])
-												} else {
-													console.log('No web3? You should consider trying MetaMask!')
-												}
-											})
-                                            //ProductFactory:0xecfcab0a285d3380e488a39b4bb21e777f8a4eac
-                                           
-
-                                        
-
-                                   
-													var _name2 ='cappu';
-													var _attributeName2 = ["color","weight"];
-													var _values2 =[10,200];
-													var _parentProducts2 =[];
-													var _lon2 =1;
-													var _lat2 =2;
-											
-										
-						
-												
-												
-										</script>
 								</form>
 								<button id="deployDatabase"  class="main-btn">deployDatabase</button>
 						</div>

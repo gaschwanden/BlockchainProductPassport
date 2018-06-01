@@ -1,5 +1,5 @@
 pragma solidity ^0.4.16;
-import "./Token/PPcoin.sol";
+
 import "./Measurements.sol";
 
 
@@ -37,7 +37,7 @@ contract DeliveryContract {
 
     mapping(address => uint) party_from_address;
 
-    PPcoin public ppcoin;
+   // PPcoin public ppcoin;
 
     modifier onlyOwner {
         assert(msg.sender == owner);
@@ -53,7 +53,7 @@ contract DeliveryContract {
         owner = msg.sender;
         name = _name;
         code = _code;
-        ppcoin = PPcoin(_ppcoinAddress);
+        //ppcoin = PPcoin(_ppcoinAddress);
     }
 
     function inviteParticipants(address [] _parties, uint [] _amounts)
@@ -66,7 +66,7 @@ contract DeliveryContract {
             parties.push(Party(_parties[i], _amounts[i], false));
             party_from_address[_parties[i]] = i;
         }
-        assert(ppcoin.transferFrom(owner, this, escrowed_amount));
+        //assert(ppcoin.transferFrom(owner, this, escrowed_amount));
     }
 
     function processInvite(address _party, bool response) onlyStage(Stages.WaitingForParties) returns (uint)
@@ -98,7 +98,7 @@ contract DeliveryContract {
     function approve() onlyOwner onlyStage(Stages.InProgress)  {
         stage = Stages.Complete;
         for (uint i = 0; i < parties.length; i++) {
-            assert(ppcoin.transfer(parties[i].wallet, parties[i].amount));
+           // assert(ppcoin.transfer(parties[i].wallet, parties[i].amount));
         }
     }
 
@@ -106,7 +106,7 @@ contract DeliveryContract {
         stage = Stages.reimburse;
         uint amount = escrowed_amount;
         escrowed_amount = 0;
-        ppcoin.transfer(owner, amount);
+        //ppcoin.transfer(owner, amount);
     }
 
     function getParticipants() constant returns (address [], uint []) {
