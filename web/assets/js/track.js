@@ -335,7 +335,7 @@ App = {
 
            
             localStorage.setItem('markers', JSON.stringify(oldItems)); 
-            // $('#map').load("http://localhost:3000/web/track.html?" +  ' #map');
+            // $('#map').load("track.html?" +  ' #map');
 
             var eventlogtitude='The longtitude is '+'&nbsp;'+event.args.lon+"<br>";
             var eventlatitude='The latitude is '+'&nbsp;'+event.args.lat+"<br>";

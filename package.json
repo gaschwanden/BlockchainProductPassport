@@ -35,9 +35,7 @@
     "yo-yoify": "^4.3.0"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
-    "babel-plugin-yo-yoify": "^2.0.0",
     "lite-server": "^2.3.0"
   }
 }
