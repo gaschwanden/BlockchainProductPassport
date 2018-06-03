@@ -21,6 +21,7 @@ contract RangeRequirements{
         }
     }
 
+
     function getAttributes() constant returns (bytes32 [],  int [], int []) {
         bytes32 []memory  attributesNames = new bytes32[](rangeAttributes.length);
         int [] memory mins = new int[](rangeAttributes.length);
