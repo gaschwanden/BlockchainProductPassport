@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>HTML Template</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+
+	<!-- Owl Carousel -->
+	<link type="text/css" rel="stylesheet" href="./assets/css/owl.carousel.css" />
+	<link type="text/css" rel="stylesheet" href="./assets/css/owl.theme.default.css" />
+
+	<!-- Magnific Popup -->
+	<link type="text/css" rel="stylesheet" href="./assets/css/magnific-popup.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="./assets/css/style.css" />
+	<script type="text/javascript" src="assets/js/llqrcode.js"></script>
+	<script type="text/javascript" src="assets/js/webqr.js"></script>
+	<!-- <script type="text/javascript" src="../node_modules/jquery/dist/jquery.subwayMap-0.5.0.js"></script> -->
+    <!-- <script type="text/javascript" src="./assets/js/ProductFactoryABI.js"></script> -->
+
+    <script type="text/javascript" src="./Bytescode/ProductBytecode.js"></script>
+    <script type="text/javascript" src="./Bytescode/ProductFactoryBytecode.js"></script>
+    
+
+	<!-- Custom src -->
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../node_modules/jquery/dist/jquery.dropotron.min.js"></script>
+	<script src="../node_modules/jquery/dist/jquery.scrolly.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.scrollgress.min.js"></script>
+	<script src="../node_modules/jquery/dist/jquery.scrollgress.min.js"></script>
+	
+
+	<!-- <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>	 -->
+	<script src="../node_modules/web3/dist/web3.min.js"></script>
+
+	<script src="assets/js/data.js"></script>
+	<script src="assets/js/truffle-contract.js"></script>
+
+	<script src="assets/js/login.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> 
+	<script type="text/javascript" src="./assets/js/jsonify.js"></script>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header>
+
+		<!-- Nav -->
+		<nav id="nav" class="navbar">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a href="../index.html">
+							<img class="logo" src="assets/img/logo.png" alt="logo">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Collapse nav button -->
+					<div class="nav-collapse">
+						<span></span>
+					</div>
+					<!-- /Collapse nav button -->
+				</div>
+
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<li><a href="../index.html#home">Home</a></li>
+					<li><a href="http://localhost:3000/web/Services.html?">Services</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<button id="logOff"  class="main-btn" onclick="logout();">logOut</button>
+				</ul>
+				<!-- /Main navigation -->
+
+
+			</div>
+		</nav>
+		<!-- /Nav -->
+
+		<!-- header wrapper -->
+		<div class="header-wrapper sm-padding bg-grey">
+			<div class="container">
+				<div class = "loginInfo"></div>
+				<h3 id="accountAddress" ></h3>
+				<!-- <ul class="breadcrumb">
+					<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+					<li class="breadcrumb-item"><a href="../index.html#blog">Blog</a></li>
+					<li class="breadcrumb-item active">Single Post</li>
+				</ul> -->
+			</div>
+		</div>
+		<!-- /header wrapper -->
+		<script type="text/javascript">
+		
+			function logout() {
+			   alert ("You have successfully logged out!");
+			 //   document.write ("This is a warning message!");
+			}	 
+	  </script>
+
+	</header>
+	<!-- /Header -->
+
+	<!-- Blog -->
+	<div id="blog" class="section md-padding">
+		
+
+		<!-- Container -->
+		<div class="container">
+			
+			
+			<!-- Row -->
+			<div class="row">
+					
+				<!-- Main -->
+				<main id="main" class="col-md-9">
+					
+
+			<!-- Container -->
+			<div class="container">
+	
+				<!-- Row -->
+				<div class="row">
+	
+					<!-- Section header -->
+					<div class="section-header text-center">
+						<h2 class="title">Go to your services</h2>
+					</div>
+					<!-- /Section header -->
+					<!-- service -->
+					<div  class="col-md-4 col-sm-2">
+						<div class="service">
+							<i class="fa fa-diamond"></i>
+							<h3>User</h3>
+							<form action="UserServices.html" class="inline">
+									<button id="GoUser" class="main-btn">Go to User services</button>
+							</form>
+						</div>
+					</div>
+					<!-- /service -->
+	
+					<!-- service -->
+					<div class="col-md-4 col-sm-2">
+						<div class="service">
+							<i class="fa fa-rocket"></i>
+							<h3>Supplier</h3>
+							<form action="SupplierServices.html" class="inline">
+									<button id="GoSupplier" class="main-btn">Go to Supplier services</button>
+							</form>
+						</div>
+					</div>
+					<!-- /service -->
+	
+					<!-- service -->
+					<div class="col-md-4 col-sm-2">
+						<div class="service">
+							<i class="fa fa-cogs"></i>
+							<h3>Courier</h3>
+							<form action="CourierServices.html" class="inline">
+									<button id="GoCourier" class="main-btn">Go to Courier services</button>
+							</form>
+						</div>
+					</div>
+					<!-- /service -->
+	
+					<!-- service -->
+					<div class="col-md-4 col-sm-2">
+						<div class="service">
+							<i class="fa fa-diamond"></i>
+							<h3>Modifier</h3>
+							<form action="ModifierServices.html" class="inline">
+									<button id="GoModifier" class="main-btn">Go to Modifier services</button>
+							</form>
+						</div>
+					</div>
+					<!-- /service -->
+	
+	
+				</div>
+				<!-- /Row -->
+	
+			</div>
+			<!-- /Container -->
+	
+		</div>
+		<!-- /Service -->
+						
+						</div>
+
+
+					<div class="info">
+						<!-- <div class="blog-img">
+							<img class="img-responsive" src="assets/img/blog-post.jpg" alt="">
+						</div> -->
+			
+
+
+
+				
+					</div>
+				</main>
+				<!-- /Main -->
+
+
+				
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Blog -->
+
+	<!-- Footer -->
+	<footer id="footer" class="sm-padding bg-dark">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<!-- footer logo -->
+					<div class="footer-logo">
+						<a href="../index.html"><img src="assets/img/logo-alt.png" alt="logo"></a>
+					</div>
+					<!-- /footer logo -->
+
+					<!-- footer follow -->
+					<ul class="footer-follow">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+					</ul>
+					<!-- /footer follow -->
+
+
+				</div>
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</footer>
+	<!-- /Footer -->
+
+	<!-- Back to top -->
+	<div id="back-to-top"></div>
+	<!-- /Back to top -->
+
+	<!-- Preloader -->
+	<div id="preloader">
+		<div class="preloader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<!-- /Preloader -->
+
+	<!-- jQuery Plugins -->
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.magnific-popup.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

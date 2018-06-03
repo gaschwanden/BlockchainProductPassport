@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>TrackProduct</title>
+	<style>
+		#map{
+		height:400px;
+		width:100%;
+		}
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>HTML Template</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+
+	<!-- Owl Carousel -->
+	<link type="text/css" rel="stylesheet" href="./assets/css/owl.carousel.css" />
+	<link type="text/css" rel="stylesheet" href="./assets/css/owl.theme.default.css" />
+
+	<!-- Magnific Popup -->
+	<link type="text/css" rel="stylesheet" href="./assets/css/magnific-popup.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="./assets/css/style.css" />
+	<script type="text/javascript" src="assets/js/llqrcode.js"></script>
+	<script type="text/javascript" src="assets/js/webqr.js"></script>
+	<!-- <script type="text/javascript" src="../node_modules/jquery/dist/jquery.subwayMap-0.5.0.js"></script> -->
+    <!-- <script type="text/javascript" src="./assets/js/ProductFactoryABI.js"></script> -->
+
+	<script type="text/javascript" src="./assets/js/simple-excel.js"></script> 
+    <script type="text/javascript" src="./Bytescode/ProductBytecode.js"></script>
+    <script type="text/javascript" src="./Bytescode/ProductFactoryBytecode.js"></script>
+    
+
+	<!-- Custom src -->
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../node_modules/jquery/dist/jquery.dropotron.min.js"></script>
+	<script src="../node_modules/jquery/dist/jquery.scrolly.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.scrollgress.min.js"></script>
+	<script src="../node_modules/jquery/dist/jquery.scrollgress.min.js"></script>
+	
+
+	<!-- <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>	 -->
+	<script src="../node_modules/web3/dist/web3.min.js"></script>
+
+	<script src="assets/js/data.js"></script>
+	<script src="assets/js/truffle-contract.js"></script>
+
+	<script src="assets/js/rangeValidate.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> 
+	<script type="text/javascript" src="./assets/js/jsonify.js"></script>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header>
+
+		<!-- Nav -->
+		<nav id="nav" class="navbar">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a href="../index.html">
+							<img class="logo" src="assets/img/logo.png" alt="logo">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Collapse nav button -->
+					<div class="nav-collapse">
+						<span></span>
+					</div>
+					<!-- /Collapse nav button -->
+				</div>
+
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<li><a href="../index.html#home">Home</a></li>
+					
+					<li><a href="http://localhost:3000/web/Services.html?">Services</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<button id="logOff"  class="main-btn" onclick="logout();">logOut</button>
+				</ul>
+				<!-- /Main navigation -->
+
+
+			</div>
+		</nav>
+		<!-- /Nav -->
+
+		<!-- header wrapper -->
+		<div class="header-wrapper sm-padding bg-grey">
+			<div class="container">
+				<h2>Track Your Product</h2>
+				<div class = "loginInfo"></div>
+				<h3 id="accountAddress" ></h3>
+				<!-- <ul class="breadcrumb">
+					<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+					<li class="breadcrumb-item"><a href="../index.html#blog">Blog</a></li>
+					<li class="breadcrumb-item active">Single Post</li>
+				</ul> -->
+			</div>
+		</div>
+		<!-- /header wrapper -->
+		<script type="text/javascript">
+		
+			function logout() {
+			   alert ("You have successfully logged out!");
+			 //   document.write ("This is a warning message!");
+			}	 
+	  </script>
+
+	</header>
+	<!-- /Header -->
+
+	<!-- Blog -->
+	<div id="blog" class="section md-padding">
+		
+
+		<!-- Container -->
+		<div class="container">
+
+				
+			
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Main -->
+				<main id="main" class="col-md-9">
+					
+
+						<div class="Input Information">
+								<h3 class="title">check your product in range</h3>
+								<form onsubmit="return false;" id="myForm">
+									<input class="input" id="productAddress" type="text" placeholder="please entrer your productAddress which is you want to vadiliate">
+								
+									<input class="input" id="attributeName" type="text" placeholder="attributeName">
+									<input class="input" id="maxValues" type="text" placeholder="maxValues">
+									<input class="input" id="minValues" type="text" placeholder="minValues">
+									
+									
+								
+									<button id="range"  class="main-btn">input your requirement</button>
+									<button id="check"  class="main-btn">check the result</button>
+									
+									<!-- <h3 id="ProductsName"></h3>
+									<h3 id="ProductsInfo"></h3>
+									<h4 id="insTrans"></h4> -->
+									
+
+								</form>
+								
+
+								<div class = "table"></div>
+								
+								
+								
+								
+						</div>
+
+
+					<div class="info">
+						<!-- <div class="blog-img">
+							<img class="img-responsive" src="assets/img/blog-post.jpg" alt="">
+						</div> -->
+						<p id="myLog"></p>
+
+						<!-- blog author -->
+						<div class="load your picture">
+							<div class="media">
+								<div class="media-left">
+									<!-- <img class="media-object" src="assets/img/author.jpg" alt=""> -->
+								</div>
+								<div class="media-body">
+									<div class="media-heading">
+										<h3> Your validate result is here</h3>
+	
+										<div class = "validate"></div>
+							
+										
+									</div>
+									<p>Please input your product address</p>
+								</div>
+							</div>
+						</div>
+						<!-- /blog author -->
+
+
+					</div>
+
+				
+				</main>
+				<!-- /Main -->
+
+
+				<!-- Aside -->
+				<aside id="aside" class="col-md-3">
+
+					<!-- Search -->
+					<div class="widget">
+						<div class="widget-search">
+							<input class="search-input" type="text" placeholder="search">
+							<button class="search-btn" type="button"><i class="fa fa-search"></i></button>
+						</div>
+					</div>
+					<!-- /Search -->
+
+					<!-- Recent Create -->
+					<div class="widget">
+						<h3 class="title">Recent Create</h3>
+						<div class="widget-category">
+							<a href="#">January<span>(7)</span></a>
+							<a href="#">February<span>(142)</span></a>
+							<a href="#">March<span>(74)</span></a>
+						</div>
+					</div>
+					<!-- /Category -->
+
+					<!-- Posts sidebar -->
+					<div class="widget">
+						<h3 class="title">Populare Buyer</h3>
+
+						<!-- single post -->
+						<div class="widget-post">
+							<a href="#">
+								<img src="assets/img/people1.png" alt=""> Buyer 1
+							</a>
+							
+						</div>
+						<!-- /single post -->
+
+						<!-- single post -->
+						<div class="widget-post">
+							<a href="#">
+								<img src="assets/img/people2.png" alt=""> Buyer 2
+							</a>
+							
+						</div>
+						<!-- /single post -->
+
+
+						<!-- single post -->
+						<div class="widget-post">
+							<a href="#">
+								<img src="assets/img/people3.png" alt=""> Buyer 3
+							</a>
+							
+						</div>
+						<!-- /single post -->
+
+					</div>
+					<!-- /Posts sidebar -->
+
+					<!-- Tags -->
+					<div class="widget">
+						<h3 class="title">Tags</h3>
+						<div class="widget-tags">
+							<a href="#">Web</a>
+							<a href="#">Blockchain</a>
+							
+						</div>
+					</div>
+					<!-- /Tags -->
+
+				</aside>
+				<!-- /Aside -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Blog -->
+
+	<!-- Footer -->
+	<footer id="footer" class="sm-padding bg-dark">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<!-- footer logo -->
+					<div class="footer-logo">
+						<a href="../index.html"><img src="assets/img/logo-alt.png" alt="logo"></a>
+					</div>
+					<!-- /footer logo -->
+
+					<!-- footer follow -->
+					<ul class="footer-follow">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+					</ul>
+					<!-- /footer follow -->
+
+
+				</div>
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</footer>
+	<!-- /Footer -->
+
+	<!-- Back to top -->
+	<div id="back-to-top"></div>
+	<!-- /Back to top -->
+
+	<!-- Preloader -->
+	<div id="preloader">
+		<div class="preloader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<!-- /Preloader -->
+
+	<!-- jQuery Plugins -->
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.magnific-popup.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
