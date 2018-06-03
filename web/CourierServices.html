@@ -31,7 +31,7 @@
 	<script type="text/javascript" src="assets/js/webqr.js"></script>
 	<!-- <script type="text/javascript" src="../node_modules/jquery/dist/jquery.subwayMap-0.5.0.js"></script> -->
     <!-- <script type="text/javascript" src="./assets/js/ProductFactoryABI.js"></script> -->
-    <script type="text/javascript" src="./assets/js/ProductABI.js"></script>
+
 
     <script type="text/javascript" src="./Bytescode/ProductBytecode.js"></script>
     <script type="text/javascript" src="./Bytescode/ProductFactoryBytecode.js"></script>
@@ -88,26 +88,20 @@
 					<!-- /Collapse nav button -->
 				</div>
 
-				<!--  Main navigation  -->
-				<ul class="main-nav nav navbar-nav navbar-right">
-					<li><a href="../index.html#home">Home</a></li>
-					<li><a href="../index.html#about">About</a></li>
-					<li><a href="../index.html#portfolio">Portfolio</a></li>
-					<li><a href="../index.html#service">Services</a></li>
-					<li><a href="../index.html#pricing">Prices</a></li>
-					<li><a href="../index.html#team">Team</a></li>
-					<li class="has-dropdown"><a>Blog</a>
-						<ul class="dropdown">
-							<li><a href="#">blog post</a></li>
-						</ul>
-					</li>
-					<li><a href="../index.html#contact">Contact</a></li>
-				</ul>
-				<!-- /Main navigation -->
+			
+					<!--  Main navigation  -->
+					<ul class="main-nav nav navbar-nav navbar-right">
+						<li><a href="../index.html#home">Home</a></li>
+						<li><a href="http://localhost:3000/web/Services.html?">Services</a></li>
+						<li><a href="#contact">Contact</a></li>
+						<button id="logOff"  class="main-btn" onclick="logout();">logOut</button>
+					</ul>
+					<!-- /Main navigation -->
 
 			</div>
 		</nav>
 		<!-- /Nav -->
+		
 
 		<!-- header wrapper -->
 		<div class="header-wrapper sm-padding bg-grey">
@@ -115,15 +109,67 @@
 				<h2>Which service do you want?</h2>
 				<div class = "loginInfo"></div>
 				<h3 id="accountAddress" ></h3>
-
-				<!-- <ul class="breadcrumb">
-					<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-					<li class="breadcrumb-item"><a href="../index.html#blog">Blog</a></li>
-					<li class="breadcrumb-item active">Single Post</li>
-				</ul> -->
 			</div>
 		</div>
 		<!-- /header wrapper -->
+		<script type="text/javascript">
+		
+			function logout() {
+			   alert ("You have successfully logged out!");
+			 //   document.write ("This is a warning message!");
+			}	 
+	  </script>
+
+		<div id="service" class="section md-padding">
+
+			<!-- Container -->
+			<div class="container">
+	
+				<!-- Row -->
+				<div class="row">
+	
+					<!-- Section header -->
+					<div class="section-header text-center">
+						<h2 class="title">Go to your services</h2>
+					</div>
+					<!-- /Section header -->
+	
+					<!-- service -->
+					<div  class="col-md-4 col-sm-2">
+						<div class="service">
+							<i class="fa fa-diamond"></i>
+							<h3>TrackService</h3>
+							<form action="track.html" class="inline">
+									<button id="TrackService" class="main-btn">Track your product</button>
+							</form>
+							
+						</div>
+					</div>
+					<!-- /service -->
+	
+					<!-- service -->
+					<div class="col-md-4 col-sm-2">
+						<div class="service">
+							<i class="fa fa-rocket"></i>
+							<h3>Add action Service</h3>
+							<form action="addAction.html" class="inline">
+									<button id="BuyProductService"  class="main-btn">Add Action</button>
+							</form>
+							
+						</div>
+					</div>
+					<!-- /service -->
+	
+	
+				</div>
+				<!-- /Row -->
+	
+			</div>
+			<!-- /Container -->
+	
+		</div>
+		<!-- /Service -->
+		
 
 	</header>
 	<!-- /Header -->
@@ -143,55 +189,7 @@
 				<!-- Main -->
 				<main id="main" class="col-md-9">
 						
-						<div id="service" class="section md-padding">
-
-								<!-- Container -->
-								<div class="container">
-						
-									<!-- Row -->
-									<div class="row">
-						
-										<!-- Section header -->
-										<div class="section-header text-center">
-											<h2 class="title">Go to your services</h2>
-										</div>
-										<!-- /Section header -->
-						
-										<!-- service -->
-										<div  class="col-md-4 col-sm-2">
-											<div class="service">
-												<i class="fa fa-diamond"></i>
-												<h3>TrackService</h3>
-												<form action="track.html" class="inline">
-														<button id="TrackService" class="main-btn">Track your product</button>
-												</form>
-												<p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero.</p>
-											</div>
-										</div>
-										<!-- /service -->
-						
-										<!-- service -->
-										<div class="col-md-4 col-sm-2">
-											<div class="service">
-												<i class="fa fa-rocket"></i>
-												<h3>BuyProductService</h3>
-												<form action="track.html" class="inline">
-														<button id="BuyProductService"  class="main-btn">BuyProduct</button>
-												</form>
-												<p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero.</p>
-											</div>
-										</div>
-										<!-- /service -->
-						
-						
-									</div>
-									<!-- /Row -->
-						
-								</div>
-								<!-- /Container -->
-						
-							</div>
-							<!-- /Service -->
+					
 
 
 

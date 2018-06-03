@@ -84,25 +84,7 @@ App = {
           console.warn(error);
         });
       },
-      //database function
-    addhandler: function(){
-        App.contracts.Database.deployed().then(function(instance) {
-            databaseInstance = instance;
-            return instance.addHandler(
-                App.account,
-                "Demo Handler",
-                "This is an unreal Handler for demo purposes", { from: App.account });
-        }).then(function(result){
-            console.log(result);
-            return databaseInstance.addressToHandler(App.account);
-        }).then(function(result){ 
-            console.log("database.address2   "+databaseInstance.address);
-            console.log("result"+result);
-        }).catch(function(error) {
-          console.warn(error);
-        });
-       
-    },
+     
     getproduct: function(){
         App.contracts.Database.deployed().then(function(instance) {
             databaseInstance = instance;
@@ -256,11 +238,11 @@ App = {
                 lon,
                 lat,
                 consumed,
-                { from: App.account,gas: '4700000' },
+                { from: App.account,gas: '5700000' },
                       function (e,contract){
                           console.log(contract);
                     if(!e){
-                        console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+                        console.log('add the new action to this prodcut' + contract.address + ' transactionHash: ' + contract.transactionHash);
                     } else{
                         
                         console.log(e);
@@ -276,6 +258,11 @@ App = {
           console.warn(error);
         });
        
+    },
+    logOff: function() {          
+        var information ="<h3>You have successfully logged out！</h3>'"
+        localStorage.infor=information;
+        location.reload();
     }
 
 
@@ -290,9 +277,7 @@ App = {
         
       App.init();
     });
-    $("#deployDatabase").click(function() {
-        App.addhandler();
-    });
+
     $("#addAction").click(function() {
         App.addAction();
     });
@@ -305,4 +290,9 @@ App = {
     $("#getAction").click(function() {
         App.getAction();
     });
+    $("#logOff").click(function() {
+        App.logOff();
+    });
+
+
   })

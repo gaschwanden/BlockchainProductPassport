@@ -1,12 +1,9 @@
+
+
 pragma solidity ^0.4.16;
 
 
-contract OwnedEvents {
-    event SetTheOwner (address newOwner);
-}
-
-
-contract Owned is OwnedEvents {
+contract Owned  {
     address public owner;
 
     function Owned() public {
@@ -20,12 +17,11 @@ contract Owned is OwnedEvents {
 
     function transferOwnerShip(address owner_) public onlyOwner {
         owner = owner_;
-        SetTheOwner(owner);
+       
     }
     
     function setOwner(address owner_) public onlyOwner {
         owner = owner_;
-        SetTheOwner(owner);
     }
 
     function getOwner() public constant returns (address) {

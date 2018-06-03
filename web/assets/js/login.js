@@ -66,8 +66,6 @@ App = {
         });
       },
       checkYourRoles: function() {
-        localStorage.removeItem("infor");  
-      
         var infor='<h3>Your role is</h3>'
         App.contracts.Roles.deployed().then(function(instance) {
             rolesInstance = instance;
@@ -75,8 +73,7 @@ App = {
         }).then(function(rolesInstance){
             var userAddress1 = $("#userAddress").val();
             var userAddress =userAddress1+"";
-            
-
+            //web3.sha3("Modifier")
             return rolesInstance.checkUserRole("Modifier",userAddress);
         }).then(function(result){
             if(result){
@@ -115,43 +112,53 @@ App = {
           console.warn(error);
         })
     },
-      User: function() { 
-          
+      User: function() {  
         var infor='<h3>Your role is</h3>';
         App.contracts.Roles.deployed().then(function(instance) {
             rolesInstance = instance;
             return  rolesInstance;
         }).then(function(rolesInstance){
-            console.log("the logProductInfo log successfully3")
+           
             var userAddress1 = $("#userAddress").val();
             var userAddress =userAddress1+"";
-            infor=infor+'<h3>Users</h3>';
-            localStorage.infor = infor;
-            rolesInstance.grantUserRole("User",userAddress);
-            setTimeout(function () {
-                location.reload()
-            }, 1000);
-           
+            //rolesInstance.revokeUserRole("Modifier",userAddress);
+            return rolesInstance.checkUserRole("User",userAddress);
+        })
+        .then(function(result){
+            if(result==true){
+                window.location.href = "UserServices.html";
+            }else{
+                window.alert ("You haven't registrated with User!");
+            }
         })
         .catch(function(error) {
           console.warn(error);
         })
     },
-    
+
+    logOff: function() {          
+        var information ="<h3>You have successfully logged out！</h3>'"
+        localStorage.infor=information;
+        location.reload();
+    },
     Courier: function() {  
         var infor='<h3>Your role is</h3>';
         App.contracts.Roles.deployed().then(function(instance) {
             rolesInstance = instance;
             return  rolesInstance;
         }).then(function(rolesInstance){
+           
             var userAddress1 = $("#userAddress").val();
             var userAddress =userAddress1+"";
-            rolesInstance.grantUserRole("Courier",userAddress);
-            infor=infor+'<h3>Courier</h3>';
-            localStorage.infor = infor;
-            setTimeout(function () {
-                location.reload()
-            }, 1000);
+            //rolesInstance.revokeUserRole("Modifier",userAddress);
+            return rolesInstance.checkUserRole("Courier",userAddress);
+        })
+        .then(function(result){
+            if(result==true){
+                window.location.href = "CourierServices.html";
+            }else{
+                window.alert ("You haven't registrated with Courier!");
+            }
         })
         .catch(function(error) {
           console.warn(error);
@@ -163,16 +170,21 @@ App = {
             rolesInstance = instance;
             return  rolesInstance;
         }).then(function(rolesInstance){
+           
             var userAddress1 = $("#userAddress").val();
             var userAddress =userAddress1+"";
-            rolesInstance.grantUserRole("Modifier",userAddress);
-            infor=infor+'<h3>Modifier</h3>';
-            localStorage.infor = infor;
-            setTimeout(function () {
-                location.reload()
-            }, 1000);
+            //rolesInstance.revokeUserRole("Modifier",userAddress);
+            return rolesInstance.checkUserRole("Modifier",userAddress);
+        })
+        .then(function(result){
+            if(result==true){
+                window.location.href = "ModifierServices.html";
+            }else{
+                window.alert ("You haven't registrated with Modifier!");
+            }
         })
         .catch(function(error) {
+
           console.warn(error);
         })
     },
@@ -182,20 +194,24 @@ App = {
             rolesInstance = instance;
             return  rolesInstance;
         }).then(function(rolesInstance){
+            
             var userAddress1 = $("#userAddress").val();
             var userAddress =userAddress1+"";
-            rolesInstance.grantUserRole("Supplier",userAddress);
-            infor=infor+'<h3>Supplier</h3>';
-            localStorage.infor = infor;
-            setTimeout
-            setTimeout(function () {
-                location.reload()
-            }, 1000);
+           
+            return rolesInstance.checkUserRole("Supplier",userAddress);
+        })
+        .then(function(result){
+            console.log(result);
+            if(result==true){
+                window.location.href = "SupplierServices.html";
+            }else{
+                window.alert ("You haven't registrated with Supplier!");
+            }
         })
         .catch(function(error) {
           console.warn(error);
         })
-    }
+    },
         
 
 };
@@ -222,5 +238,10 @@ App = {
     $("#checkYourRoles").click(function() {
         App.checkYourRoles();
     });
+    $("#logOff").click(function() {
+        App.logOff();
+    });
+
+    
     
   })

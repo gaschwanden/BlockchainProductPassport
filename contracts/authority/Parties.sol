@@ -1,90 +1,104 @@
 pragma solidity ^0.4.16;
-import "./Owned.sol";
-import "./Roles.sol";
 
+contract Parties {
+    bool response;
+    uint escrowed_amount;
 
-contract Parties is Owned,Roles {
+    enum Stages {
+        New,
+        Waiting,
+        Progressing,
+        Completed,
+        Canceled
+    }
 
     struct Party {
-        address wallet;
+        address user;
         uint amount;
         bool has_accepted;
     }
 
-    enum State { New, Invited, Locked, Approved, Reimbursed}
+    uint accepted_no;
 
-    Party[] parties;
+    Stages public stage = Stages.New;
 
-    State public state;
+    Party [] parties;
 
-    address public owner;
-
-    address public buyer;
-
-    uint accepted_count;
+    mapping(address => uint) party_from_address;
 
 
-    modifier onlyState(State _state) {
-        require(state == _state);
+    modifier onlyStage(Stages desired_stage) {
+          assert(stage == desired_stage);
         _;
+       
     }
 
-    function Parties() {
-        owner = msg.sender;
-    }
 
-    function inviteParticipants(address[] _parties, uint[] _amounts) onlyState(State.New) public  {
-        require(_parties.length == _amounts.length);    
-        buyer = msg.sender;        
+
+    function inviteParties  (address [] _parties, uint [] _amounts)public
+    onlyStage(Stages.New)
+    {
+        stage = Stages.Waiting;
+        escrowed_amount = sum(_amounts);
         for (uint i = 0; i < _parties.length; i++) {
             parties.push(Party(_parties[i], _amounts[i], false));
+            party_from_address[_parties[i]] = i;
         }
-        state = State.Invited;
     }
-
-    function getParticipants() constant returns (address [], uint [])  {
-        address [] memory wallets = new address[](parties.length);
-        uint [] memory amounts = new uint[](parties.length);
-        for (uint i = 0; i < parties.length; i++) {
-            wallets[i] = parties[i].wallet;
-            amounts[i] = parties[i].amount;
-        }
-        return (wallets, amounts);
+     
+     function transferTo(address dst, uint256 wad) public {
+        
+       dst.transfer(wad);
+      
     }
+    
+    function processInvite(address _party, bool response) onlyStage(Stages.Waiting)public returns (uint) 
+    {
+        uint party_index = party_from_address[_party];
+        assert(party_index < parties.length);
+        assert(msg.sender == parties[party_index].user);
+        assert(!parties[party_index].has_accepted);
 
-    function getPartyByAddress(address _address) constant internal returns (Party) {
-        for (uint i = 0; i < parties.length; i++) {
-            if (parties[i].wallet == _address) {
-                return parties[i];
+        if(response)
+        {
+            parties[party_index].has_accepted = true;
+            accepted_no += 1;
+
+            // All accepted.
+            if(accepted_no == parties.length)
+            {
+                stage = Stages.Progressing;
             }
         }
-        require(false);
-    }
-
-
-    function acceptInvite() onlyState(State.Invited) {
-        Party memory party = getPartyByAddress(msg.sender);
-        require(!party.has_accepted);
-        party.has_accepted = true;
-        accepted_count++;        
-        if (accepted_count == parties.length) {
-            state = State.Locked;
+        else
+        {
+            stage = Stages.Canceled;
         }
     }
 
-    function approve() onlyState(State.Locked) onlyOwner {
-        state = State.Approved;
+    function approve()  onlyStage(Stages.Progressing) public {
+        stage = Stages.Completed;
+        for (uint i = 0; i < parties.length; i++) {
+            transferTo(parties[i].user, parties[i].amount);
+        }
+         escrowed_amount = 0;
     }
 
-    // function reimburse() onlyState(State.Locked) onlyOwner {
-    //     token.transfer(buyer, token.balanceOf(this));
-    //     state = State.Reimbursed;      
-    // }
+    function getParticipants() public constant returns (address [], uint [])  {
+        address [] memory users = new address[](parties.length);
+        uint [] memory amounts = new uint[](parties.length);
+        for (uint i = 0; i < parties.length; i++) {
+            users[i] = parties[i].user;
+            amounts[i] = parties[i].amount;
+        }
+        return (users, amounts);
+    }
 
-    function sum(uint[] memory self) internal constant returns (uint result) {
-        result = self[0];
+    function sum(uint[] memory self) internal constant returns (uint r) {
+        r = self[0];
         for (uint i = 1; i < self.length; i++) {
-            result += self[i];
+            r += self[i];
         }
     }
+
 }

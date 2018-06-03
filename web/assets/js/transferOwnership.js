@@ -297,6 +297,11 @@ App = {
                  });
                 })
              },
+             logOff: function() {          
+              var information ="<h3>You have successfully logged out！</h3>'"
+              localStorage.infor=information;
+              location.reload();
+          },
 
         };
 
@@ -314,6 +319,10 @@ App = {
     $("#getOwner").click(function() {
       App.getOwner();
   });
+  $("#logOff").click(function() {
+    App.logOff();
+});
+
 
 
 

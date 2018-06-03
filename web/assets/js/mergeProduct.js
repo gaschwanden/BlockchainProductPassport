@@ -81,25 +81,7 @@ App = {
           console.warn(error);
         });
       },
-      //database function
-    addhandler: function(){
-        App.contracts.Database.deployed().then(function(instance) {
-            databaseInstance = instance;
-            return instance.addHandler(
-                App.account,
-                "Demo Handler",
-                "This is an unreal Handler for demo purposes", { from: App.account });
-        }).then(function(result){
-            console.log(result);
-            return databaseInstance.addressToHandler(App.account);
-        }).then(function(result){ 
-            console.log("database.address2   "+databaseInstance.address);
-            console.log("result"+result);
-        }).catch(function(error) {
-          console.warn(error);
-        });
-       
-    },
+
     getproduct: function(){
         App.contracts.Database.deployed().then(function(instance) {
             databaseInstance = instance;
@@ -369,9 +351,7 @@ App = {
         
       App.init();
     });
-    $("#deployDatabase").click(function() {
-        App.addhandler();
-    });
+
     $("#merge").click(function() {
         App.merge();
     });

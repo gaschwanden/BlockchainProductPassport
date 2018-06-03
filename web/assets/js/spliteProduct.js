@@ -82,25 +82,7 @@ App = {
           console.warn(error);
         });
       },
-      //database function
-    addhandler: function(){
-        App.contracts.Database.deployed().then(function(instance) {
-            databaseInstance = instance;
-            return instance.addHandler(
-                App.account,
-                "Demo Handler",
-                "This is an unreal Handler for demo purposes", { from: App.account });
-        }).then(function(result){
-            console.log(result);
-            return databaseInstance.addressToHandler(App.account);
-        }).then(function(result){ 
-            console.log("database.address2   "+databaseInstance.address);
-            console.log("result"+result);
-        }).catch(function(error) {
-          console.warn(error);
-        });
-       
-    },
+
     getproduct: function(){
         App.contracts.Database.deployed().then(function(instance) {
             databaseInstance = instance;
@@ -320,6 +302,11 @@ App = {
           console.warn(error);
         });
        
+    },
+    logOff: function() {          
+        var information ="<h3>You have successfully logged out！</h3>'"
+        localStorage.infor=information;
+        location.reload();
     }
 
 
@@ -333,9 +320,6 @@ App = {
     $(window).load(function() {
         
       App.init();
-    });
-    $("#deployDatabase").click(function() {
-        App.addhandler();
     });
     $("#splitProduct").click(function() {
         App.splitProduct();
@@ -352,4 +336,8 @@ App = {
     $("#numberOfSubproduct").click(function() {
         App.numberOfSubproduct();
     });
+    $("#logOff").click(function() {
+        App.logOff();
+    });
+
   })

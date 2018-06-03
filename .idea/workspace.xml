@@ -2,78 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5cfffab-dce4-4439-ace8-b3ca26a21032" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/contracts/DataBase.sol" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/contracts/ECVerify.sol" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/contracts/RangeRequirements.sol" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/07_testParties.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/testutils.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/CourierServices.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/ModifierServices.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/SupplierServices.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/UserServices.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/addAction.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/addActionToProduct.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/login.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/simple-excel.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/spliteProduct.1.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/spliteProduct.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/track.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/transferOwnership.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/login.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/spliteProduct.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/track.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/transferOwnership.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/build/contracts/DeliveryContract.json" afterPath="$PROJECT_DIR$/build/contracts/DeliveryContract.json" />
       <change beforePath="$PROJECT_DIR$/build/contracts/Measurements.json" afterPath="$PROJECT_DIR$/build/contracts/Measurements.json" />
       <change beforePath="$PROJECT_DIR$/build/contracts/Migrations.json" afterPath="$PROJECT_DIR$/build/contracts/Migrations.json" />
       <change beforePath="$PROJECT_DIR$/build/contracts/Owned.json" afterPath="$PROJECT_DIR$/build/contracts/Owned.json" />
       <change beforePath="$PROJECT_DIR$/build/contracts/OwnedEvents.json" afterPath="$PROJECT_DIR$/build/contracts/OwnedEvents.json" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/PPcoin.json" afterPath="$PROJECT_DIR$/build/contracts/PPcoin.json" />
       <change beforePath="$PROJECT_DIR$/build/contracts/Parties.json" afterPath="$PROJECT_DIR$/build/contracts/Parties.json" />
       <change beforePath="$PROJECT_DIR$/build/contracts/Product.json" afterPath="$PROJECT_DIR$/build/contracts/Product.json" />
       <change beforePath="$PROJECT_DIR$/build/contracts/ProductFactory.json" afterPath="$PROJECT_DIR$/build/contracts/ProductFactory.json" />
       <change beforePath="$PROJECT_DIR$/build/contracts/RangeValidator.json" afterPath="$PROJECT_DIR$/build/contracts/RangeValidator.json" />
       <change beforePath="$PROJECT_DIR$/build/contracts/Roles.json" afterPath="$PROJECT_DIR$/build/contracts/Roles.json" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/RolesEvents.json" afterPath="$PROJECT_DIR$/build/contracts/RolesEvents.json" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/RolesFunction.json" afterPath="$PROJECT_DIR$/build/contracts/RolesFunction.json" />
       <change beforePath="$PROJECT_DIR$/build/contracts/SafeMath.json" afterPath="$PROJECT_DIR$/build/contracts/SafeMath.json" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/TokenData.json" afterPath="$PROJECT_DIR$/build/contracts/TokenData.json" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/TokenEvents.json" afterPath="$PROJECT_DIR$/build/contracts/TokenEvents.json" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/TokenLogic.json" afterPath="$PROJECT_DIR$/build/contracts/TokenLogic.json" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/TokenLogicEvents.json" afterPath="$PROJECT_DIR$/build/contracts/TokenLogicEvents.json" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/TokenLogicI.json" afterPath="$PROJECT_DIR$/build/contracts/TokenLogicI.json" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/TokenStandard.json" afterPath="$PROJECT_DIR$/build/contracts/TokenStandard.json" />
       <change beforePath="$PROJECT_DIR$/build/contracts/Users.json" afterPath="$PROJECT_DIR$/build/contracts/Users.json" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/rolesTest.json" afterPath="$PROJECT_DIR$/build/contracts/rolesTest.json" />
-      <change beforePath="$PROJECT_DIR$/contracts/DeliveryContract.sol" afterPath="$PROJECT_DIR$/contracts/DeliveryContract.sol" />
+      <change beforePath="$PROJECT_DIR$/contracts/DataBase.sol" afterPath="$PROJECT_DIR$/contracts/DataBase.sol" />
+      <change beforePath="$PROJECT_DIR$/contracts/DeliveryContract.sol" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/contracts/Measurements.sol" afterPath="" />
       <change beforePath="$PROJECT_DIR$/contracts/Product.sol" afterPath="$PROJECT_DIR$/contracts/Product.sol" />
-      <change beforePath="$PROJECT_DIR$/contracts/Token/PPcoin.sol" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/contracts/Token/SafeMath.sol" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/contracts/Token/TokenData.sol" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/contracts/Token/TokenEvents.sol" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/contracts/Token/TokenLogic.sol" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/contracts/Token/TokenStandard.sol" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/contracts/RangeRequirements.sol" afterPath="$PROJECT_DIR$/contracts/RangeRequirements.sol" />
+      <change beforePath="$PROJECT_DIR$/contracts/RangeValidator.sol" afterPath="$PROJECT_DIR$/contracts/RangeValidator.sol" />
       <change beforePath="$PROJECT_DIR$/contracts/authority/Owned.sol" afterPath="$PROJECT_DIR$/contracts/authority/Owned.sol" />
       <change beforePath="$PROJECT_DIR$/contracts/authority/Parties.sol" afterPath="$PROJECT_DIR$/contracts/authority/Parties.sol" />
       <change beforePath="$PROJECT_DIR$/contracts/authority/Roles.sol" afterPath="$PROJECT_DIR$/contracts/authority/Roles.sol" />
-      <change beforePath="$PROJECT_DIR$/contracts/authority/Users.sol" afterPath="$PROJECT_DIR$/contracts/authority/Users.sol" />
-      <change beforePath="$PROJECT_DIR$/gas.csv" afterPath="$PROJECT_DIR$/gas.csv" />
-      <change beforePath="$PROJECT_DIR$/migrations/5_deployPPC.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/migrations/6_deployMeasurement.js" afterPath="$PROJECT_DIR$/migrations/6_deployMeasurement.js" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/test/03_testPPC.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/test/05_testProduct.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/Registration.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/assets/js/ProductABI.js" afterPath="$PROJECT_DIR$/web/assets/js/ProductABI.js" />
+      <change beforePath="$PROJECT_DIR$/contracts/authority/Users.sol" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change beforePath="$PROJECT_DIR$/scripts/setRolesForTest.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/CourierServices.html" afterPath="$PROJECT_DIR$/web/CourierServices.html" />
+      <change beforePath="$PROJECT_DIR$/web/ModifierServices.html" afterPath="$PROJECT_DIR$/web/ModifierServices.html" />
+      <change beforePath="$PROJECT_DIR$/web/RegistrateProduct.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/SupplierServices.html" afterPath="$PROJECT_DIR$/web/SupplierServices.html" />
+      <change beforePath="$PROJECT_DIR$/web/UserServices.html" afterPath="$PROJECT_DIR$/web/UserServices.html" />
+      <change beforePath="$PROJECT_DIR$/web/addAction.html" afterPath="$PROJECT_DIR$/web/addAction.html" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/about1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/about2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/author.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/blog-post.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/logo-alt.png" afterPath="$PROJECT_DIR$/web/assets/img/logo-alt.png" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/logo.png" afterPath="$PROJECT_DIR$/web/assets/img/logo.png" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/work1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/work2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/work3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/work4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/work5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/work6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/ProductABI.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/ProductABI1.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/ProductFactoryABI.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/UsersABI.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/addActionToProduct.js" afterPath="$PROJECT_DIR$/web/assets/js/addActionToProduct.js" />
       <change beforePath="$PROJECT_DIR$/web/assets/js/createProduct.js" afterPath="$PROJECT_DIR$/web/assets/js/createProduct.js" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/login.js" afterPath="$PROJECT_DIR$/web/assets/js/login.js" />
       <change beforePath="$PROJECT_DIR$/web/assets/js/mergeProduct.js" afterPath="$PROJECT_DIR$/web/assets/js/mergeProduct.js" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/spliteProduct.1.js" afterPath="$PROJECT_DIR$/web/assets/js/spliteProduct.1.js" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/spliteProduct.js" afterPath="$PROJECT_DIR$/web/assets/js/spliteProduct.js" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/track.js" afterPath="$PROJECT_DIR$/web/assets/js/track.js" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/transferOwnership.js" afterPath="$PROJECT_DIR$/web/assets/js/transferOwnership.js" />
+      <change beforePath="$PROJECT_DIR$/web/blog-single.html" afterPath="$PROJECT_DIR$/web/blog-single.html" />
       <change beforePath="$PROJECT_DIR$/web/createProduct.html" afterPath="$PROJECT_DIR$/web/createProduct.html" />
-      <change beforePath="$PROJECT_DIR$/web/productCreate.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/test.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/tracker.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/userInfo.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/login.html" afterPath="$PROJECT_DIR$/web/login.html" />
+      <change beforePath="$PROJECT_DIR$/web/mergeProduct.html" afterPath="$PROJECT_DIR$/web/mergeProduct.html" />
+      <change beforePath="$PROJECT_DIR$/web/spliteProduct.html" afterPath="$PROJECT_DIR$/web/spliteProduct.html" />
+      <change beforePath="$PROJECT_DIR$/web/track.html" afterPath="$PROJECT_DIR$/web/track.html" />
+      <change beforePath="$PROJECT_DIR$/web/transferOwnership.html" afterPath="$PROJECT_DIR$/web/transferOwnership.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,76 +75,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="3_deployUsers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/migrations/3_deployUsers.js">
+      <file leaf-file-name="Owned.sol" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contracts/authority/Owned.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2_deployRoles.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/migrations/2_deployRoles.js">
+      <file leaf-file-name="Parties.sol" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contracts/authority/Parties.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <marker date="1525714131166" expanded="true" signature="225:287" ph="//..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="02_testUsers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/02_testUsers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="01_testRoles.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/01_testRoles.js">
+      <file leaf-file-name="Product.sol" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contracts/Product.sol">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="-757">
+              <caret line="177" column="24" lean-forward="false" selection-start-line="177" selection-start-column="24" selection-end-line="177" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataBase.sol" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contracts/DataBase.sol">
+      <file leaf-file-name="RangeRequirements.sol" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/contracts/RangeRequirements.sol">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="06_verify.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/06_verify.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrateProduct.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/RegistrateProduct.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1526910183362" expanded="true" signature="17096:17124" ph="{...}" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -266,9 +222,6 @@
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
-    <handled-path value="$PROJECT_DIR$/productDapp/.meteor/local/dev_bundle/lib/node_modules" />
-    <handled-path value="$PROJECT_DIR$/productDapp/.meteor/local/dev_bundle/server-lib/node_modules" />
-    <handled-path value="$PROJECT_DIR$/productDapp/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
@@ -290,6 +243,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -302,14 +257,23 @@
               <item name="Product_passport" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Product_passport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Product_passport" type="462c0819:PsiDirectoryNode" />
+              <item name="contracts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Product_passport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Product_passport" type="462c0819:PsiDirectoryNode" />
+              <item name="contracts" type="462c0819:PsiDirectoryNode" />
+              <item name="authority" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -454,7 +418,8 @@
       <workItem from="1525955325790" duration="2996000" />
       <workItem from="1526287196613" duration="438000" />
       <workItem from="1527548555746" duration="1366000" />
-      <workItem from="1527815100141" duration="85000" />
+      <workItem from="1527815100141" duration="624000" />
+      <workItem from="1528052593533" duration="712000" />
     </task>
     <task id="LOCAL-00001" summary="update the deliveryContract.sol, product1.sol, measurements.sol to test">
       <created>1524823366542</created>
@@ -575,11 +540,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527549349510</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="almost functions work">
+      <created>1527815708976</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1527815708977</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194598000" />
+    <option name="totallyTimeSpent" value="195849000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -600,12 +572,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23891273" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24248926" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.008583691" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -640,14 +612,14 @@
     <MESSAGE value="add demo index.html and testPPC" />
     <MESSAGE value="add WEB PAGES and measurement and product testing" />
     <MESSAGE value="add frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="add frontend" />
+    <MESSAGE value="almost functions work" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost functions work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/TestPathsRecord.sol" />
     <entry file="file://$PROJECT_DIR$/contracts/TokenDemo/safeMath.sol" />
     <entry file="file://$PROJECT_DIR$/contracts/TokenDemo/TokenDemo.sol" />
     <entry file="file://$PROJECT_DIR$/contracts/TokenDemo/TokenDemo1.sol" />
@@ -694,13 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/authority/Parties.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contracts/authority/Users.sol">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -709,55 +674,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html" />
-    <entry file="file://$PROJECT_DIR$/contracts/authority/Owned.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Token/SafeMath.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="47" lean-forward="false" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Token/PPcoin.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenData.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenEvents.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenStandard.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenLogic.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="20" lean-forward="false" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Token/SafeMath.sol" />
+    <entry file="file://$PROJECT_DIR$/contracts/Token/PPcoin.sol" />
+    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenData.sol" />
+    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenEvents.sol" />
+    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenStandard.sol" />
+    <entry file="file://$PROJECT_DIR$/contracts/Token/TokenLogic.sol" />
     <entry file="file://$PROJECT_DIR$/contracts/Migrations.sol">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -791,13 +713,6 @@
     <entry file="file://$PROJECT_DIR$/web/img/pic04.jpg" />
     <entry file="file://$PROJECT_DIR$/web/img/pic03.jpg" />
     <entry file="file://$PROJECT_DIR$/web/img/trasport.jpg" />
-    <entry file="file://$PROJECT_DIR$/contracts/Product.sol">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2655">
-          <caret line="177" column="24" lean-forward="false" selection-start-line="177" selection-start-column="24" selection-end-line="177" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/migrations/4_delpyMath.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -830,14 +745,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/5_deployPPC.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/5_deployPPC.js" />
     <entry file="file://$PROJECT_DIR$/test/02_testUsers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -846,30 +754,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/03_testPPC.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="69" column="112" lean-forward="false" selection-start-line="69" selection-start-column="112" selection-end-line="69" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test/03_testPPC.js" />
     <entry file="file://$PROJECT_DIR$/contracts/Verify.sol" />
-    <entry file="file://$PROJECT_DIR$/test/06_verify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/RegistrateProduct.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1526910183362" expanded="true" signature="17096:17124" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -881,6 +772,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contracts/Validator.sol" />
+    <entry file="file://$PROJECT_DIR$/test/01_testRoles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/contracts/DataBase.sol">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -889,10 +788,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/01_testRoles.js">
+    <entry file="file://$PROJECT_DIR$/test/06_verify.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/authority/Owned.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/authority/Parties.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/Product.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-757">
+          <caret line="177" column="24" lean-forward="false" selection-start-line="177" selection-start-column="24" selection-end-line="177" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contracts/RangeRequirements.sol">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

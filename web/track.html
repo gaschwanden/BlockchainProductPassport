@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>My Google Map</title>
+	<title>TrackProduct</title>
 	<style>
 		#map{
 		height:400px;
@@ -41,7 +41,7 @@
 	<script type="text/javascript" src="assets/js/webqr.js"></script>
 	<!-- <script type="text/javascript" src="../node_modules/jquery/dist/jquery.subwayMap-0.5.0.js"></script> -->
     <!-- <script type="text/javascript" src="./assets/js/ProductFactoryABI.js"></script> -->
-    <script type="text/javascript" src="./assets/js/ProductABI.js"></script>
+
 	<script type="text/javascript" src="./assets/js/simple-excel.js"></script> 
     <script type="text/javascript" src="./Bytescode/ProductBytecode.js"></script>
     <script type="text/javascript" src="./Bytescode/ProductFactoryBytecode.js"></script>
@@ -101,19 +101,13 @@
 				<!--  Main navigation  -->
 				<ul class="main-nav nav navbar-nav navbar-right">
 					<li><a href="../index.html#home">Home</a></li>
-					<li><a href="../index.html#about">About</a></li>
-					<li><a href="../index.html#portfolio">Portfolio</a></li>
-					<li><a href="../index.html#service">Services</a></li>
-					<li><a href="../index.html#pricing">Prices</a></li>
-					<li><a href="../index.html#team">Team</a></li>
-					<li class="has-dropdown"><a>Blog</a>
-						<ul class="dropdown">
-							<li><a href="#">blog post</a></li>
-						</ul>
-					</li>
-					<li><a href="../index.html#contact">Contact</a></li>
+					
+					<li><a href="http://localhost:3000/web/Services.html?">Services</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<button id="logOff"  class="main-btn" onclick="logout();">logOut</button>
 				</ul>
 				<!-- /Main navigation -->
+
 
 			</div>
 		</nav>
@@ -133,6 +127,13 @@
 			</div>
 		</div>
 		<!-- /header wrapper -->
+		<script type="text/javascript">
+		
+			function logout() {
+			   alert ("You have successfully logged out!");
+			 //   document.write ("This is a warning message!");
+			}	 
+	  </script>
 
 	</header>
 	<!-- /Header -->
@@ -194,6 +195,7 @@
 								<div class="media-body">
 									<div class="media-heading">
 										<h3> Your product information is here</h3>
+	
 										<div class = "mydatabase"></div>
 										<div class = "productInformation1"></div>
 										<div class = "parentInfo"></div>
@@ -208,7 +210,7 @@
 
 					</div>
 
-					<h2>My Google Map</h2>
+					<h2>Tracking Map</h2>
 					<div id="map"></div>
 					<div class = "markers"></div>
 					<script>
@@ -252,22 +254,8 @@
 						 console.log("markers			"+markers)
 						// console.log("localStorage.markers	"+localStorage.markers);
 						var markers =JSON.parse(localStorage.getItem("markers") || "[]");
-						// Loop through markers
-						// var markers = [
-						// 		{
-						// 		coords:{lat:43.4668,lng:-70.9495},
-						// 		iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-						// 		content:'<h1>Lynn MA</h1>'
-						// 		},
-						// 		{
-						// 		coords:{lat:41.8584,lng:-70.9300},
-						// 		content:'<h1>Amesbury MA</h1>'
-						// 		},
-						// 		{
-						// 		coords:{lat:42.7762,lng:-71.0773}
-						// 		}
-						// 	];
-
+						
+						
 						for(var i = 0;i < markers.length;i++){
 						  // Add marker
 						  addMarker(markers[i]);
@@ -309,6 +297,8 @@
 					<script async defer
 					  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCypYpdHA5BGp-cybRznoExQAaEyYwiOmU&callback=initMap">
 					  </script>
+
+				
 				</main>
 				<!-- /Main -->
 
@@ -343,7 +333,7 @@
 						<!-- single post -->
 						<div class="widget-post">
 							<a href="#">
-								<img src="assets/img/post1.jpg" alt=""> Buyer 1
+								<img src="assets/img/people1.png" alt=""> Buyer 1
 							</a>
 							
 						</div>
@@ -352,7 +342,7 @@
 						<!-- single post -->
 						<div class="widget-post">
 							<a href="#">
-								<img src="assets/img/post2.jpg" alt=""> Buyer 2
+								<img src="assets/img/people2.png" alt=""> Buyer 2
 							</a>
 							
 						</div>
@@ -362,7 +352,7 @@
 						<!-- single post -->
 						<div class="widget-post">
 							<a href="#">
-								<img src="assets/img/post3.jpg" alt=""> Buyer 3
+								<img src="assets/img/people3.png" alt=""> Buyer 3
 							</a>
 							
 						</div>
@@ -422,11 +412,6 @@
 					</ul>
 					<!-- /footer follow -->
 
-					<!-- footer copyright -->
-					<div class="footer-copyright">
-						<p>Copyright © 2017. All Rights Reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-					</div>
-					<!-- /footer copyright -->
 
 				</div>
 

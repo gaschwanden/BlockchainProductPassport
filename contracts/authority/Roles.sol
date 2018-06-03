@@ -6,9 +6,6 @@ contract Roles is Owned {
     // mapping is role -> sender_address -> boolean
     mapping (bytes32 => mapping (address => bool)) public roleList;
 
-
-    //add roles user pair
-
     function Roles() public {
 
     }
@@ -37,8 +34,9 @@ contract Roles is Owned {
         
     }
 
-    function revokeUserRole( string roleName, address user) public roleOrOwner("admin") {
-        delete roleList[keccak256(roleName)][user];
+    function revokeUserRole( string roleName, address user) public  roleOrOwner("admin") {
+        roleList[keccak256(roleName)][user] = false;
+        
     }
 
 }

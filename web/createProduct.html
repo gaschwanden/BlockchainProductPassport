@@ -31,7 +31,6 @@
 	<script type="text/javascript" src="assets/js/webqr.js"></script>
 	<!-- <script type="text/javascript" src="../node_modules/jquery/dist/jquery.subwayMap-0.5.0.js"></script> -->
     <!-- <script type="text/javascript" src="./assets/js/ProductFactoryABI.js"></script> -->
-    <script type="text/javascript" src="./assets/js/ProductABI.js"></script>
 
     <script type="text/javascript" src="./Bytescode/ProductBytecode.js"></script>
     <script type="text/javascript" src="./Bytescode/ProductFactoryBytecode.js"></script>
@@ -88,23 +87,16 @@
 					<!-- /Collapse nav button -->
 				</div>
 
-				<!--  Main navigation  -->
-				<ul class="main-nav nav navbar-nav navbar-right">
-					<li><a href="../index.html#home">Home</a></li>
-					<li><a href="../index.html#about">About</a></li>
-					<li><a href="../index.html#portfolio">Portfolio</a></li>
-					<li><a href="../index.html#service">Services</a></li>
-					<li><a href="../index.html#pricing">Prices</a></li>
-					<li><a href="../index.html#team">Team</a></li>
-					<li class="has-dropdown"><a>Blog</a>
-						<ul class="dropdown">
-							<li><a href="#">blog post</a></li>
-						</ul>
-					</li>
-					<li><a href="../index.html#contact">Contact</a></li>
-				</ul>
-				<!-- /Main navigation -->
-
+	<!--  Main navigation  -->
+	<ul class="main-nav nav navbar-nav navbar-right">
+		<li><a href="../index.html#home">Home</a></li>
+		<li><a href="http://localhost:3000/web/Services.html?">Services</a></li>
+		<li><a href="#contact">Contact</a></li>
+	
+		
+		<button id="logOff"  class="main-btn" onclick="logout();">logOut</button>
+	</ul>
+	<!-- /Main navigation -->
 			</div>
 		</nav>
 		<!-- /Nav -->
@@ -124,6 +116,13 @@
 			</div>
 		</div>
 		<!-- /header wrapper -->
+		<script type="text/javascript">
+		
+			function logout() {
+			   alert ("You have successfully logged out!");
+			 //   document.write ("This is a warning message!");
+			}	 
+	  </script>
 
 	</header>
 	<!-- /Header -->
@@ -158,10 +157,10 @@
 									<input class="PRODUCT_FACTORY" type="text" placeholder="PRODUCT_FACTORY">
 									<!-- <input class="input" type="email" placeholder="Email"> -->
 									<textarea placeholder="Add Your Commment"></textarea>
-									<button type="submit" class="main-btn">Submit</button>
+								
 									<button id="createProduct"  class="main-btn">Create product</button>
-									<button id="button2"  class="main-btn">Create product address</button>
-									<button id="getEvent"  class="main-btn">getEvent</button>
+								
+
 									<button id="getproduct"  class="main-btn">getproduct</button>
 									
 									<h3 id="ProductsName"></h3>
@@ -204,7 +203,7 @@
 												
 										</script>
 								</form>
-								<button id="deployDatabase"  class="main-btn">deployDatabase</button>
+								
 						</div>
 
 
@@ -214,23 +213,6 @@
 						</div> -->
 			
 
-						<!-- blog author -->
-						<div class="load your picture">
-							<div class="media">
-								<div class="media-left">
-									<!-- <img class="media-object" src="assets/img/author.jpg" alt=""> -->
-								</div>
-								<div class="media-body">
-									<div class="media-heading">
-										<h3>Load your picture here</h3>
-										<button type="submit" class="main-btn">choose from local</button>
-										
-									</div>
-									<p>Choose the picture of your product</p>
-								</div>
-							</div>
-						</div>
-						<!-- /blog author -->
 
 						<!-- reply form -->
 						<div class="reply-form">
@@ -273,12 +255,12 @@
 
 					<!-- Posts sidebar -->
 					<div class="widget">
-						<h3 class="title">Populare Buyer</h3>
+						<h3 class="title">Recent Buyer</h3>
 
 						<!-- single post -->
 						<div class="widget-post">
 							<a href="#">
-								<img src="assets/img/post1.jpg" alt=""> Buyer 1
+								<img src="assets/img/people1.png" alt=""> Buyer 1
 							</a>
 							
 						</div>
@@ -287,7 +269,7 @@
 						<!-- single post -->
 						<div class="widget-post">
 							<a href="#">
-								<img src="assets/img/post2.jpg" alt=""> Buyer 2
+								<img src="assets/img/people2.png" alt=""> Buyer 2
 							</a>
 							
 						</div>
@@ -297,7 +279,7 @@
 						<!-- single post -->
 						<div class="widget-post">
 							<a href="#">
-								<img src="assets/img/post3.jpg" alt=""> Buyer 3
+								<img src="assets/img/people3.png" alt=""> Buyer 3
 							</a>
 							
 						</div>
@@ -357,11 +339,6 @@
 					</ul>
 					<!-- /footer follow -->
 
-					<!-- footer copyright -->
-					<div class="footer-copyright">
-						<p>Copyright © 2017. All Rights Reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-					</div>
-					<!-- /footer copyright -->
 
 				</div>
 

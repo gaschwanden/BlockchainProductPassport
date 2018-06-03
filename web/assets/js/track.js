@@ -100,6 +100,7 @@ App = {
     getproduct: function(){
         App.contracts.Database.deployed().then(function(instance) {
             databaseInstance = instance;
+            
             return instance.getProductReference({ from: App.account });
         }).then(function(result){
             productABI =JSON.parse(localStorage.productABI);
@@ -118,10 +119,12 @@ App = {
                 product.owner(
                         function(error,result){
                             var owner=result+'';
+                            console.log(owner)
                             ownerlist.push(owner);     
                         });
             }
             var mydatabaselist=[];
+            
             setTimeout(function(){
                 console.log("ownerlist[i]      add "+ownerlist);
                 for(var i=0;i<databaselist.length;i++){
@@ -137,11 +140,19 @@ App = {
                 setTimeout(function(){
                     console.log(mydatabaselist.length)
                     console.log("databaselist[i]      add "+mydatabaselist);
-                    mydatabaselist='My product list is<br>'+mydatabaselist+'';
+                    mydatabaselist='<p>My product list is<br>'+mydatabaselist+'</p>';
 
                     var str = mydatabaselist.split(",").join('<br>');
                     //var res = mydatabaselist.replace(/,/<br>, '');(',','<br>');
+
+                    $(".mydatabase>p").remove()
+                    $(".productInformation1>p").remove()
+                    $(".parentInfo>p").remove()
+                   
+
                     setTimeout(function(){
+                        
+           
                         $( ".mydatabase" ).append( $.parseHTML(str) );
                     },500);
                     
@@ -206,6 +217,9 @@ App = {
       });
     },
       listenForEvents: function(productAddress) {
+        $(".productInformation1>p").remove()
+        $(".parentInfo>p").remove()
+        $(".mydatabase>p").remove()
         productABI =JSON.parse(localStorage.productABI);
         var productContract = web3.eth.contract(productABI);
         product = productContract.at(productAddress);
@@ -223,10 +237,13 @@ App = {
             var productInfors1;
             var productInfors='';    
             var proName;
+            
             proName=(web3.toAscii(event.args.name).replace(/\u0000/g, ''))+''  ; 
-            productInfors1="Your product is       "+proName+"<br>";
-            $( ".productInformation1" ).append( $.parseHTML(productInfors1) );
-            $( ".productInformation1" ).append( $.parseHTML('And the Infor is following') );
+            productInfors1="<p>Your product is       "+proName+"<br>";
+
+           
+           // $( ".productInformation1" ).append( $.parseHTML(productInfors1) );
+
             
             for(var i=0;i<event.args.attributeNames.length;i++){       
                 var k=i+1;
@@ -251,7 +268,7 @@ App = {
             var eventlatitude='The latitude is '+'&nbsp;'+event.args.lat+"<br>";
             var eventfactory='The factory is '+'&nbsp;'+event.args.PRODUCT_FACTORY+"<br>";
             productInfors=productInfors+eventlogtitude+eventlatitude+eventfactory;
-            var productInformation='<p>'+productInfors+'</p>';
+            var productInformation=productInfors1+productInfors+'</p>';
             console.log("productInformation     "+productInformation);
             $( ".productInformation1" ).append( $.parseHTML(productInformation) );
            
@@ -278,10 +295,10 @@ App = {
             var productInfors='';    
             var proName;      
             proName=(web3.toAscii(event.args.name).replace(/\u0000/g, ''))+''  ; 
-            productInfors1="Your product is       "+proName+"<br>";
-            $( ".productInformation1" ).append( $.parseHTML(productInfors1) );
-            $( ".productInformation1" ).append( $.parseHTML('And the Infor is following') );
-            //parseFloat() 
+            productInfors1="<p>Your product is       "+proName+"<br>";
+           // $( ".productInformation1" ).append( $.parseHTML(productInfors1) );
+            // $( ".productInformation1" ).append( $.parseHTML('And the Infor is following') );
+            // parseFloat() 
            
             for(var i=0;i<event.args.attributeNames.length;i++){       
                 var k=i+1;
@@ -314,17 +331,20 @@ App = {
                 
                 productInfors=productInfors+parentaddress+"<br>";
 
-            }   
+            }
+
            
             localStorage.setItem('markers', JSON.stringify(oldItems)); 
+            // $('#map').load("http://localhost:3000/web/track.html?" +  ' #map');
 
             var eventlogtitude='The longtitude is '+'&nbsp;'+event.args.lon+"<br>";
             var eventlatitude='The latitude is '+'&nbsp;'+event.args.lat+"<br>";
 
             var eventfactory='The factory is '+'&nbsp;'+event.args.PRODUCT_FACTORY+"<br>";
             productInfors=productInfors+eventlogtitude+eventlatitude+eventfactory;
-            var productInformation='<p>'+productInfors+'</p>';
+            var productInformation=productInfors1+productInfors+'</p>';
             console.log("productInformation     "+productInformation);
+            
             $( ".productInformation1" ).append( $.parseHTML(productInformation) );
 
             
@@ -344,12 +364,17 @@ App = {
         var productAddress = productAddress1+"";
         // var productAddress ="0x42cf5772c5f1e972f0b3b00dcbbcb917b3c7c59b";
         localStorage.removeItem("markers");
+        $(".productInformation1>p").remove()
+        $(".parentInfo>p").remove()
+        $(".mydatabase>p").remove()
         App.showTrack(productAddress);
     },
         
 
            
          getAction: function(){
+             
+            $(".table>table").remove()
             App.contracts.Database.deployed().then(function(instance) {
                 databaseInstance = instance;
                 return instance.getProductReference({ from: App.account });
@@ -405,6 +430,7 @@ App = {
                     } else{
                         console.log(e);
                     }
+                  
                     setTimeout(function(){
                         tableForActions=tableForActions+'</table>';
                         $( ".table" ).append( $.parseHTML(tableForActions) );
@@ -412,7 +438,12 @@ App = {
                 });
                
                 })
-             },
+             },    
+             logOff: function() {          
+                var information ="<h3>You have successfully logged out！</h3>'"
+                localStorage.infor=information;
+                location.reload();
+            },
 
         };
 
@@ -433,6 +464,10 @@ App = {
     $("#getAllProductInformations").click(function() {
         App.getAll();
     });
+    $("#logOff").click(function() {
+        App.logOff();
+    });
+
     
 
 
