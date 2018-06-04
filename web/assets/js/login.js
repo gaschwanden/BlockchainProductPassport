@@ -128,7 +128,7 @@ App = {
             if(result==true){
                 window.location.href = "UserServices.html";
             }else{
-                window.alert ("You haven't registrated with User!");
+                window.alert ("You haven't registered with User!");
             }
         })
         .catch(function(error) {
@@ -157,7 +157,7 @@ App = {
             if(result==true){
                 window.location.href = "CourierServices.html";
             }else{
-                window.alert ("You haven't registrated with Courier!");
+                window.alert ("You haven't registered with Courier!");
             }
         })
         .catch(function(error) {
@@ -180,7 +180,7 @@ App = {
             if(result==true){
                 window.location.href = "ModifierServices.html";
             }else{
-                window.alert ("You haven't registrated with Modifier!");
+                window.alert ("You haven't registered with Modifier!");
             }
         })
         .catch(function(error) {
@@ -205,7 +205,7 @@ App = {
             if(result==true){
                 window.location.href = "SupplierServices.html";
             }else{
-                window.alert ("You haven't registrated with Supplier!");
+                window.alert ("You haven't registered with Supplier!");
             }
         })
         .catch(function(error) {

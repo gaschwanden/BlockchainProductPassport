@@ -291,9 +291,6 @@ App = {
                    );
                  
              }  
-             setTimeout(function(){
-                App.logEvent(productName.length);
-              },16000);
             return product2;
         }).then(function(){
 

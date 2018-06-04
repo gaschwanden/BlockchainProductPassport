@@ -169,7 +169,7 @@ App = {
          },
     createProduct: function(){ 
 
-        var productName = $("#ProductName").val();
+    var productName = $("#ProductName").val();
 		var _newAttributeName = $("#attributeNames").val().split(" ");
 		var _newValues = $("#values").val().split(" ");
 		var parentProducts =$("#parentProducts").val().split(" ");

@@ -13,12 +13,24 @@
       <change beforePath="$PROJECT_DIR$/build/contracts/Roles.json" afterPath="$PROJECT_DIR$/build/contracts/Roles.json" />
       <change beforePath="$PROJECT_DIR$/build/contracts/SafeMath.json" afterPath="$PROJECT_DIR$/build/contracts/SafeMath.json" />
       <change beforePath="$PROJECT_DIR$/build/contracts/Users.json" afterPath="$PROJECT_DIR$/build/contracts/Users.json" />
-      <change beforePath="$PROJECT_DIR$/web/assets/js/addActionToProduct.js" afterPath="$PROJECT_DIR$/web/assets/js/addActionToProduct.js" />
+      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change beforePath="$PROJECT_DIR$/web/SupplierServices.html" afterPath="$PROJECT_DIR$/web/SupplierServices.html" />
+      <change beforePath="$PROJECT_DIR$/web/UserServices.html" afterPath="$PROJECT_DIR$/web/UserServices.html" />
       <change beforePath="$PROJECT_DIR$/web/assets/js/createProduct.js" afterPath="$PROJECT_DIR$/web/assets/js/createProduct.js" />
-      <change beforePath="$PROJECT_DIR$/web/assets/js/parties.js" afterPath="$PROJECT_DIR$/web/assets/js/parties.js" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/login.js" afterPath="$PROJECT_DIR$/web/assets/js/login.js" />
       <change beforePath="$PROJECT_DIR$/web/assets/js/rangeValidate.js" afterPath="$PROJECT_DIR$/web/assets/js/rangeValidate.js" />
-      <change beforePath="$PROJECT_DIR$/web/assets/js/track.js" afterPath="$PROJECT_DIR$/web/assets/js/track.js" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/spliteProduct.1.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/spliteProduct.js" afterPath="$PROJECT_DIR$/web/assets/js/spliteProduct.js" />
+      <change beforePath="$PROJECT_DIR$/web/blog-single.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/web/createProduct.html" afterPath="$PROJECT_DIR$/web/createProduct.html" />
+      <change beforePath="$PROJECT_DIR$/web/login.html" afterPath="$PROJECT_DIR$/web/login.html" />
+      <change beforePath="$PROJECT_DIR$/web/mergeProduct.html" afterPath="$PROJECT_DIR$/web/mergeProduct.html" />
+      <change beforePath="$PROJECT_DIR$/web/parties.html" afterPath="$PROJECT_DIR$/web/parties.html" />
+      <change beforePath="$PROJECT_DIR$/web/rangeValidate.html" afterPath="$PROJECT_DIR$/web/rangeValidate.html" />
+      <change beforePath="$PROJECT_DIR$/web/registration.html" afterPath="$PROJECT_DIR$/web/registration.html" />
+      <change beforePath="$PROJECT_DIR$/web/services.html" afterPath="$PROJECT_DIR$/web/services.html" />
+      <change beforePath="$PROJECT_DIR$/web/spliteProduct.html" afterPath="$PROJECT_DIR$/web/spliteProduct.html" />
+      <change beforePath="$PROJECT_DIR$/web/track.html" afterPath="$PROJECT_DIR$/web/track.html" />
       <change beforePath="$PROJECT_DIR$/web/transferOwnership.html" afterPath="$PROJECT_DIR$/web/transferOwnership.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -390,7 +402,7 @@
       <workItem from="1527548555746" duration="1366000" />
       <workItem from="1527815100141" duration="624000" />
       <workItem from="1528052593533" duration="977000" />
-      <workItem from="1528055400185" duration="4490000" />
+      <workItem from="1528055400185" duration="4939000" />
     </task>
     <task id="LOCAL-00001" summary="update the deliveryContract.sol, product1.sol, measurements.sol to test">
       <created>1524823366542</created>
@@ -553,11 +565,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528071055737</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Fixed the logevent bug">
+      <created>1528089589782</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1528089589782</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200604000" />
+    <option name="totallyTimeSpent" value="201053000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -624,7 +643,8 @@
     <MESSAGE value="all function works." />
     <MESSAGE value="fix init problem" />
     <MESSAGE value="Almost final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Almost final" />
+    <MESSAGE value="Fixed the logevent bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the logevent bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

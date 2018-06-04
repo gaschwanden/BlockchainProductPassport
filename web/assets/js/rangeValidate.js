@@ -85,7 +85,7 @@ App = {
       .then(function(result){
         var productAddress1 = $("#productAddress").val();
         var productAddress = productAddress1+"";
-        var productAddress ='0x7de23fea6a2702e5b618648e6a7f9fa269d33324';
+        //var productAddress ='0x8e0c0df488fca3a98c31c2d414d61966a9a1ef63';
         productABI =JSON.parse(localStorage.productABI);
         var productContract = web3.eth.contract(productABI);
         product = productContract.at(productAddress);
@@ -94,52 +94,41 @@ App = {
             var min=result[1][i];
             var max=result[2][i];
             var attriName=web3.toAscii(result[0][i]).replace(/\u0000/g, '');
+            
             var productValue=product.getAttributeByName(attriName,
                 function(error,result){
                     if(error){
                         console.log(error);
                     }else{
+                      console.log("  max "+max+' min '+min)   
+                      console.log("111111111111111111111111111111") 
+                      console.log("the res11 is "+result[1]);
+                      if(result[1]>max||result[1]<min){
+                        flag=false;
+                        console.log("this is false !!!!!!")
+                       
                         
-                        if(result[i]!=0){   
-                            console.log("111111111111111111111111111111") 
-                           if(result[i]>max||result[i]<min){
-                               flag=false;
-                              
-                               return flag;
-                           }
-                        }
-                        console.log(i+" is "+min)
-                        console.log(i+" is "+max)
-                        console.log("the res11 is "+result[1]);
+                  }
                     }
-                   
-            console.log(i+" is "+attriName)
-            console.log(i+" is "+productValue)
-                    
-            });
+                  
+            console.log(i+" attribute is "+attriName)
+            console.log(i+" product value is "+productValue)
             
-        }
-       
-        console.log(web3.toAscii(result[0][0]).replace(/\u0000/g, ''))
-
-        console.log(web3.toAscii(result[0][1]).replace(/\u0000/g, ''));
-        console.log(result[1][0]);
-        console.log(result[1][1]);
-       
+            });          
+        }  
+        setTimeout(() => {
+          $(".validate>h3").remove()
+              var str='<h3>your product is in range</h3>'
+              var str2='<h3>your product is not in range</h3>'
+              var st
+              if(flag){
+                  st=str;
+              }else{
+                  st=str2;
+              }
+              $( ".validate" ).append( $.parseHTML(st) );
+              }, 2000);
         
-        
-        return flag;
-      }).then(function(result){
-        var str='<h3>your product is in range</h3>'
-        var str2='<h3>your product is not in range</h3>'
-        var st
-        if(result){
-             st=str;
-        }else{
-            st=str2;
-        }
-        $( ".validate" ).append( $.parseHTML(st) );
-          console.log(result)
       })
       .catch(function(error) {
         console.warn(error);
@@ -160,12 +149,12 @@ App = {
         RangeRequirementsInstance = instance;
         return RangeRequirementsInstance;   
       }).then(function(RangeRequirementsInstance){
-        // var attributeName = $("#attributeName").val().split(" ");
-        // var maxValues = $("#maxValues").val().split(" ");
-        // var minValues = $("#minValues").val().split(" ");
-        var attributeName =['sub11','sub22'];
-        var minValues =[1,30];
-        var maxValues = [20,40];
+        var attributeName = $("#attributeName").val().split(" ");
+        var maxValues = $("#maxValues").val().split(" ");
+        var minValues = $("#minValues").val().split(" ");
+        // var attributeName =['sub11','sub22'];
+        // var minValues =[1,1];
+        // var maxValues = [20,40];
         //setAttributes
         return RangeRequirementsInstance.setAttributes(attributeName,minValues,maxValues,
             { from: App.account,gas: '4700000' });
