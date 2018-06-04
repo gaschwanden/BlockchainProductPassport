@@ -85,7 +85,7 @@ App = {
       .then(function(result){
         var productAddress1 = $("#productAddress").val();
         var productAddress = productAddress1+"";
-        var productAddress ='0x7e544fc2020e8a70e97c2dfc5df8cd13ca354407';
+        var productAddress ='0x7de23fea6a2702e5b618648e6a7f9fa269d33324';
         productABI =JSON.parse(localStorage.productABI);
         var productContract = web3.eth.contract(productABI);
         product = productContract.at(productAddress);

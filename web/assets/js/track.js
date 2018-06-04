@@ -358,6 +358,7 @@ App = {
         var productAddress = productAddress1+"";
         // var productAddress ="0x42cf5772c5f1e972f0b3b00dcbbcb917b3c7c59b";
         App.listenForEvents(productAddress);
+       
     },
     getAll: function(){
         var productAddress1 = $("#productAddress").val();

@@ -250,9 +250,7 @@ App = {
                );
                     console.log( " product2.actions is          "+product2.actions);
                     console.log( " product2.actions is          "+product2.actions.length);
-                    setTimeout(function(){
-                        App.logEvent();
-                    },13000);
+                   
         })
         .catch(function(error) {
           console.warn(error);

@@ -146,9 +146,7 @@ App = {
                       console.log(e);
                   }}
              );
-             setTimeout(function(){
-              App.logEvent();
-            },15000);       
+             
             
            
         });

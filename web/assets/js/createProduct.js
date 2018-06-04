@@ -190,9 +190,6 @@ App = {
                 databaseaddress, 
                 { from: App.account,gas: '4700000' },
                );
-            setTimeout(function(){
-                App.logEvent();
-            },15000);
         
         })
         .catch(function(error) {
