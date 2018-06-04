@@ -145,13 +145,11 @@ App = {
                       console.log(e);
                   }}
              );
-             setTimeout(function(){
-              App.logEvent();
-            },15000);       
+
             
            
         });
-          console.log("333311111");
+
     },
     getproduct: function(){
         App.contracts.Database.deployed().then(function(instance) {
