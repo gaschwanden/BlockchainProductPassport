@@ -102,42 +102,42 @@ i.	ProductName: Cattle
 ii.	attributeNames: origin Age Weight Type Gender  //Show split by space
 iii.	attributeValues: 1 8 200 3 1 // split by space
 iv.	parentProducts : can leave it with empty
-v.	longtitude : 40
-vi.	latitude : 98
+v.	longtitude : 20
+vi.	latitude : 100
 vii.	PRODUCT-FACORY: you can leave it with empty
-b.	And then click on create product to create. There will be two notifications to confirm transaction, the first one is creating product and second one is log event. Because the metamask is not stable, merge these two functions maybe give us out of gas error. After two or three times click on confirm. (please waiting more than 10 seconds for each transactions thanks :) )Your product has been successfully created. 
+b.	And then click on create product to create. There will be one notifications to confirm the transaction. Refresh the website. Your product has been successfully created. 
 4.	Track 
 a.	You can get all products which is only belong to yourselves by clicking on ‘Get your personal productList’ button. And your product list will show under the button.
 b.	You can copy that product address and enter the input form to get All the action in this product by clicking on ‘getAction’. You can get this product information by clicking on ‘Get product information by address’. You can track all information by click on ‘Track all information by product address’, including parents products. And after get all information, you can refresh the page and see the product is marked in the google map.
 5.	Add action
-a.	It is similar with creating product, but don’t input too many attributes, because of Metamask, it will have some bugs. And the example is following:
+a.	It is similar with creating product, but don’t input too many attributes, because of Metamask, it has some bugs. And the example is following:
 i.	ProductName: Cattle
 ii.	ActionName : move
 iii.	attributeNames: origin Age Weight //Show split by space
 iv.	attributeValues: 1 8 200 // split by space
 v.	parentProducts : //can leave it with empty
-vi.	longtitude : 10
-vii.	latitude :15
+vi.	longtitude : 20
+vii.	latitude :80
 viii.	PRODUCT-FACORY: you can leave it with empty
 b.	You can track this action in the Track pages, input address and get the table
 6.	Split Product
-a.	It is similar with adding action, but also don’t input too many attributes, you can input more than one product name that the origin product will be marked as consumed. Because of Metamask, it will have some bugs, when you input to many attributes, keep it 2 or 3 is easy. And the example is following:
+a.	It is similar with adding action, but also don’t input too many attributes, you can input more than one product name that the origin product will be marked as consumed. Because of Metamask, it will have some bugs, when you input to many attributes, keep it 2 or 3 is fine. And the example is following:
 i.	ProductAdderss : // input your product which will be split
 ii.	Description about action: split 
 iii.	ProductName: beef steak
 iv.	attributeNames: origin Age Weight //Show split by space
 v.	attributeValues: 1 8 10 // split by space
 vi.	parentProducts : //can leave it with empty
-vii.	longtitude : 45
-viii.	latitude :25
+vii.	longtitude : 10
+viii.	latitude :110
 ix.	PRODUCT-FACORY: you can leave it with empty
 b.	You can track this action in the Track pages, input address and get the table
 7.	Transfer Ownership
 a.	That is easy, input your product address and who you want to transfer
 8.	Validate
 a.	Input product address, attributes name and max min value for range in the form. It will give you solution.
-Like give 
-i.	ProductAdderss : // input your product which will be split
+Like: 
+i.	ProductAdderss : // input your product address which will be validated
 ii.	Description about action: Age Weight
 iii.	attributeMax: 1 10   // age range is 1-20 Weight range is 10-20
 iv.	attributeMin: 10 20
