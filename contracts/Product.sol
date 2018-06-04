@@ -1,9 +1,10 @@
 pragma solidity ^0.4.16;
+
 import "./authority/Owned.sol";
 import "./Database.sol";
 import "./authority/Roles.sol";
 
-contract Product is Roles{
+contract Product {
     
     address public owner;
     address public PRODUCT_FACTORY;
@@ -21,6 +22,8 @@ contract Product is Roles{
     
     Attribute [] public attributes;
     Action[] public actions;
+    
+    
     
     struct Action {
         address handler;
@@ -61,16 +64,7 @@ contract Product is Roles{
         }
 
     
-    function Product(address _owner, 
-        bytes32 _name, 
-        bytes32[] _attributeName, 
-        uint[] _values, 
-        address[] _parentProducts, 
-        uint _lon, 
-        uint _lat ,
-        address _DATABASE_CONTRACT,
-        address _PRODUCT_FACTORY) {
-
+    function Product(address _owner, bytes32 _name, bytes32[] _attributeName, uint[] _values, address[] _parentProducts, uint _lon, uint _lat ,address _DATABASE_CONTRACT,address _PRODUCT_FACTORY) {
         owner = _owner;
         name = _name;
         isConsumed = false;
@@ -95,6 +89,7 @@ contract Product is Roles{
         Database database = Database(DATABASE_CONTRACT);
         database.storeProductReference(this);
         
+        
         ProductInfo( name,
             owner,
             attributeNames,
@@ -106,18 +101,7 @@ contract Product is Roles{
             DATABASE_CONTRACT);
     }
      
-    function logProductInfo(){
-        ProductInfo( name,
-            owner,
-            attributeNames,
-            values,
-            parentProducts,
-            lon,
-            lat,
-            PRODUCT_FACTORY,
-            DATABASE_CONTRACT);
-        
-    }
+ 
     
     function setAttributes(bytes32 [] _attributeName, uint [] _values)   {
         if (_attributeName.length != _values.length) throw;
@@ -146,7 +130,14 @@ contract Product is Roles{
             }
         }
     }
-
+    
+    
+    function transferOwnership (address _owner) public  {
+        owner = _owner;
+    }
+    
+     
+  
     
     function getActionCount() public constant returns(uint) {
         return actions.length;
@@ -159,12 +150,7 @@ contract Product is Roles{
     }
   
 
-    function addAction( bytes32 _newProductsNames, 
-        bytes32 description, bytes32 []_newAttributeNames,
-        uint[] _newValues,
-        uint lon, 
-        uint lat, 
-        bool _consumed) notConsumed {
+    function addAction( bytes32 _newProductsNames, bytes32 description, bytes32 []_newAttributeNames,uint[] _newValues,uint lon, uint lat, bool _consumed) notConsumed {
 
         setAttributes(_newAttributeNames,_newValues);
     
@@ -216,17 +202,21 @@ contract Product is Roles{
 
     function merge(address[] _otherProducts, bytes32 _newProductName, bytes32[] _newAttributeName, uint[] _newValues, uint _lon, uint _lat) notConsumed {
         ProductFactory productFactory = ProductFactory(PRODUCT_FACTORY);
+        
+        
         address _newProduct = productFactory.createProduct(msg.sender,_newProductName, _newAttributeName,  _newValues, _otherProducts, _lon, _lat,DATABASE_CONTRACT);
 
-         this.addMergeAction(_newProduct, _lon, _lat);
-         for (uint i = 0; i < _otherProducts.length; ++i) {
-             Product prod = Product(_otherProducts[i]);
-             prod.addMergeAction(_newProduct, _lon, _lat);
-         }
+        this.addMergeAction(_newProduct, _lon, _lat);
+        for (uint i = 0; i < _otherProducts.length; ++i) {
+            Product prod = Product(_otherProducts[i]);
+            prod.addMergeAction(_newProduct, _lon, _lat);
+        }   
+        
     }
 
     function addMergeAction(address _newProductAddress, uint _lon, uint _lat) notConsumed {
         childProducts.push(_newProductAddress);
+
         Action memory merge;
         merge.handler = this;
         merge.description = "Merge the product and create new";
@@ -235,7 +225,8 @@ contract Product is Roles{
         merge.timestamp = now;
         merge.blockNumber = block.number;
         actions.push(merge);
-        isConsumed = true;
+
+       isConsumed = true;
     }
 
   
@@ -255,15 +246,7 @@ contract ProductFactory is Roles{
     }
   
 
-    function createProduct(
-        address _owner ,
-        bytes32 _name, 
-        bytes32[] _newAttributeName, 
-        uint [] _newValues, 
-        address[] _parentProducts, 
-        uint _lon, 
-        uint _lat, 
-        address DATABASE_CONTRACT)  returns(address) {
-        return new Product(_owner,_name, _newAttributeName,  _newValues, _parentProducts, _lon, _lat, DATABASE_CONTRACT, this);
+    function createProduct(address _owner, bytes32 _name, bytes32[] _newAttributeName, uint [] _newValues, address[] _parentProducts, uint _lon, uint _lat, address DATABASE_CONTRACT)  returns(address) {
+        return new Product(owner,_name, _newAttributeName,  _newValues, _parentProducts, _lon, _lat, DATABASE_CONTRACT, this);
     }
 }
