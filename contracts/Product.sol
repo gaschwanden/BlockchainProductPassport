@@ -218,16 +218,15 @@ contract Product is Roles{
         ProductFactory productFactory = ProductFactory(PRODUCT_FACTORY);
         address _newProduct = productFactory.createProduct(msg.sender,_newProductName, _newAttributeName,  _newValues, _otherProducts, _lon, _lat,DATABASE_CONTRACT);
 
-        this.addMergeAction(_newProduct, _lon, _lat);
-        for (uint i = 0; i < _otherProducts.length; ++i) {
-            Product prod = Product(_otherProducts[i]);
-            prod.addMergeAction(_newProduct, _lon, _lat);
-        }
+         this.addMergeAction(_newProduct, _lon, _lat);
+         for (uint i = 0; i < _otherProducts.length; ++i) {
+             Product prod = Product(_otherProducts[i]);
+             prod.addMergeAction(_newProduct, _lon, _lat);
+         }
     }
 
     function addMergeAction(address _newProductAddress, uint _lon, uint _lat) notConsumed {
         childProducts.push(_newProductAddress);
-
         Action memory merge;
         merge.handler = this;
         merge.description = "Merge the product and create new";
@@ -236,8 +235,7 @@ contract Product is Roles{
         merge.timestamp = now;
         merge.blockNumber = block.number;
         actions.push(merge);
-
-       isConsumed = true;
+        isConsumed = true;
     }
 
   

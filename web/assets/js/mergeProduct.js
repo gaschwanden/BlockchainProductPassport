@@ -8,11 +8,10 @@ App = {
   
     init: function() {
       var databaselist;
-      console.log("databaselist     "+databaselist);
       var databaseInstance;
       var productFactoryInstance;
-      var productABI = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"childProducts","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newProductsNames","type":"bytes32"},{"name":"description","type":"bytes32"},{"name":"_newAttributeNames","type":"bytes32[]"},{"name":"_newValues","type":"uint256[]"},{"name":"lon","type":"uint256"},{"name":"lat","type":"uint256"},{"name":"_consumed","type":"bool"}],"name":"addAction","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"owner_","type":"address"}],"name":"setOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"logProductInfo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getAttributes","outputs":[{"name":"","type":"bytes32[]"},{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"otherProducts","type":"address[]"},{"name":"newProductName","type":"bytes32"},{"name":"_newAttributeName","type":"bytes32[]"},{"name":"_newValues","type":"uint256[]"},{"name":"lon","type":"uint256"},{"name":"lat","type":"uint256"}],"name":"merge","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"consume","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"DATABASE_CONTRACT","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"getAttributeByName","outputs":[{"name":"","type":"bytes32"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"lon","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getAttributeNames","outputs":[{"name":"","type":"bytes32[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"lat","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getActionCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"PRODUCT_FACTORY","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_attributeName","type":"bytes32[]"},{"name":"_values","type":"uint256[]"}],"name":"setAttributes","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"measurements","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"isConsumed","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"actions","outputs":[{"name":"handler","type":"address"},{"name":"description","type":"bytes32"},{"name":"lon","type":"uint256"},{"name":"lat","type":"uint256"},{"name":"timestamp","type":"uint256"},{"name":"blockNumber","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"owner_","type":"address"}],"name":"transferOwnerShip","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getOwner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"index","type":"uint256"}],"name":"getActionByCount","outputs":[{"name":"","type":"address"},{"name":"","type":"bytes32"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"newProductAddress","type":"address"},{"name":"lon","type":"uint256"},{"name":"lat","type":"uint256"}],"name":"collaborateInMerge","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getAttributeValues","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"attributes","outputs":[{"name":"attributeName","type":"bytes32"},{"name":"value","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"parentProducts","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_name","type":"bytes32"},{"name":"_attributeName","type":"bytes32[]"},{"name":"_values","type":"uint256[]"},{"name":"_parentProducts","type":"address[]"},{"name":"_lon","type":"uint256"},{"name":"_lat","type":"uint256"},{"name":"_DATABASE_CONTRACT","type":"address"},{"name":"_PRODUCT_FACTORY","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":false,"stateMutability":"nonpayable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":false,"name":"name","type":"bytes32"},{"indexed":false,"name":"attributeNames","type":"bytes32[]"},{"indexed":false,"name":"values","type":"uint256[]"},{"indexed":false,"name":"parentProducts","type":"address[]"},{"indexed":false,"name":"lon","type":"uint256"},{"indexed":false,"name":"lat","type":"uint256"},{"indexed":false,"name":"PRODUCT_FACTORY","type":"address"},{"indexed":false,"name":"DATABASE_CONTRACT","type":"address"}],"name":"ProductInfo","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"newOwner","type":"address"}],"name":"SetTheOwner","type":"event"}];
-      var productContract = web3.eth.contract(productABI);
+
+      var productContract ;
       var getProductContractAddress;
       var productAddress;
       console.log("productAddress   "+productAddress)
@@ -21,6 +20,8 @@ App = {
       console.log("productContract      "+productContract);
       var productInstance;
       //console.log("productInstance      "+productInstance);
+      var information = localStorage.infor;
+      $( ".loginInfo" ).append( $.parseHTML(information) );
       App.initWeb3();
     },
   
@@ -94,7 +95,6 @@ App = {
         }).catch(function(error) {
           console.warn(error);
         });
-       
     },
    
       //deploy product factory--------------------------------------------------------
@@ -138,82 +138,110 @@ App = {
         console.warn(error);
       });
     },
-    listenForEvents: function(product) {
+    
+    listenForEvents: function() {
+        productABI =JSON.parse(localStorage.productABI);
+        var productContract = web3.eth.contract(productABI);
+        var productAddress1 = $("#productAddress").val();
+        var productAddress = productAddress1+"";
+        var productAddress ="0x42cf5772c5f1e972f0b3b00dcbbcb917b3c7c59b";
+        product = productContract.at(productAddress);
+        console.log(product);
+        product.owner(
+           function(error,result){
+               console.log("this line successfffffff"+result);
+           } 
+        );
         product.ProductInfo({}, {
             fromBlock: 0,
             toBlock: 'latest'
           }).watch(function(error, event) {
+            console.log("1222")
+              if(error){
+                  console.log("error        "+error);
+              }else{
+                console.log("event        "+event);
+              }
             console.log("event triggered", event)
-            if (event.blockHash != $("#insTrans").html())
-				$("#loader").hide();
-				$("#insTrans").html('Block hash: '+ event.blockHash );
-				console.log("successfule get event") 
-				console.log('myEvent: ' + JSON.stringify(event.args));
-				console.log("with web32"+JSON.stringify("the first attibutes is " + web3.toAscii(event.args.attributeNames[0]).replace(/\u0000/g, '')));
-				console.log("with web33"+event.args.values)
-
-				$("#ProductsName").html("Successful Create your "+web3.toAscii(event.args.name)+ ' And the Info is following' );
-				$("#ProductsInfo").html(web3.toAscii(event.args.attributeNames[0]).replace(/\u0000/g, '') + ' is ' + event.args.values[0]+" "+web3.toAscii(event.args.attributeNames[1]).replace(/\u0000/g, '') + ' is ' + event.args.values[1]);
-
-            App.render2();
-          });
- 
-      },
-      getEvent: function(){
-        App.contracts.Database.deployed().then(function(instance) {
-            databaseInstance = instance;
-            return instance.getProductReference({ from: App.account });
-        }).then(function(databaseList){
-            var productABI = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"childProducts","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newProductsNames","type":"bytes32"},{"name":"description","type":"bytes32"},{"name":"_newAttributeNames","type":"bytes32[]"},{"name":"_newValues","type":"uint256[]"},{"name":"lon","type":"uint256"},{"name":"lat","type":"uint256"},{"name":"_consumed","type":"bool"}],"name":"addAction","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"owner_","type":"address"}],"name":"setOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"logProductInfo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getAttributes","outputs":[{"name":"","type":"bytes32[]"},{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"otherProducts","type":"address[]"},{"name":"newProductName","type":"bytes32"},{"name":"_newAttributeName","type":"bytes32[]"},{"name":"_newValues","type":"uint256[]"},{"name":"lon","type":"uint256"},{"name":"lat","type":"uint256"}],"name":"merge","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"consume","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"DATABASE_CONTRACT","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"getAttributeByName","outputs":[{"name":"","type":"bytes32"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"lon","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getAttributeNames","outputs":[{"name":"","type":"bytes32[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"lat","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getActionCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"PRODUCT_FACTORY","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_attributeName","type":"bytes32[]"},{"name":"_values","type":"uint256[]"}],"name":"setAttributes","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"measurements","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"isConsumed","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"actions","outputs":[{"name":"handler","type":"address"},{"name":"description","type":"bytes32"},{"name":"lon","type":"uint256"},{"name":"lat","type":"uint256"},{"name":"timestamp","type":"uint256"},{"name":"blockNumber","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"owner_","type":"address"}],"name":"transferOwnerShip","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getOwner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"index","type":"uint256"}],"name":"getActionByCount","outputs":[{"name":"","type":"address"},{"name":"","type":"bytes32"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"newProductAddress","type":"address"},{"name":"lon","type":"uint256"},{"name":"lat","type":"uint256"}],"name":"collaborateInMerge","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getAttributeValues","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"attributes","outputs":[{"name":"attributeName","type":"bytes32"},{"name":"value","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"parentProducts","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_name","type":"bytes32"},{"name":"_attributeName","type":"bytes32[]"},{"name":"_values","type":"uint256[]"},{"name":"_parentProducts","type":"address[]"},{"name":"_lon","type":"uint256"},{"name":"_lat","type":"uint256"},{"name":"_DATABASE_CONTRACT","type":"address"},{"name":"_PRODUCT_FACTORY","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":false,"stateMutability":"nonpayable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":false,"name":"name","type":"bytes32"},{"indexed":false,"name":"attributeNames","type":"bytes32[]"},{"indexed":false,"name":"values","type":"uint256[]"},{"indexed":false,"name":"parentProducts","type":"address[]"},{"indexed":false,"name":"lon","type":"uint256"},{"indexed":false,"name":"lat","type":"uint256"},{"indexed":false,"name":"PRODUCT_FACTORY","type":"address"},{"indexed":false,"name":"DATABASE_CONTRACT","type":"address"}],"name":"ProductInfo","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"newOwner","type":"address"}],"name":"SetTheOwner","type":"event"}];
-            var productContract = web3.eth.contract(productABI);
-            product = productContract.at(databaseList[databaseList.length-1]);
-            product.DATABASE_CONTRACT(
-                function (e,res){
-                if(!e){
-                    console.log(res);
-                    console.log("the DATABASE_CONTRACT log successfully2")
-                } else{
-                    
-                    console.log(e);
-                }
-            });
-            
-            product.PRODUCT_FACTORY(
-                function (e,res){
-                if(!e){
-                    console.log("attributes "+res);
-                    console.log("the attributes log successfully2")
-                } else{
-                    
-                    console.log(e);
-                }
-            });
-            product.actions(0,
-                function (e,res){
-                if(!e){
-                    console.log("actions    "+res);
-                    console.log("the actions log successfully2")
-                } else{
-                    
-                    console.log(e);
-                }
-            });
+            console.log("1111111")
            
-            App.listenForEvents(product);
-            product.logProductInfo(
-            function (e,res){
-                if(!e){
-                    console.log(res);
-                    console.log("the logProductInfo log successfully3")
-                } else{
-                    
-                    console.log(e);
+                $("#insTrans").html('Block hash: '+ event.blockHash );
+                console.log("successfule get event") 
+                $("#ProductsName").html("Successful Create your "+web3.toAscii(event.args.name)+ ' And the Info is following' );
+                $("#ProductsInfo").html(web3.toAscii(event.args.attributeNames[0]).replace(/\u0000/g, '') + ' is ' + event.args.values[0]+" "+web3.toAscii(event.args.attributeNames[1]).replace(/\u0000/g, '') + ' is ' + event.args.values[1]);
+          });
+          console.log("333311111");
+    },
+        logEvent: function(num){
+            App.contracts.Database.deployed().then(function(instance) {
+                databaseInstance = instance;
+                return instance.getProductReference({ from: App.account });
+            }).then(function(databaseList){
+                productABI =JSON.parse(localStorage.productABI);
+                var productContract = web3.eth.contract(productABI);
+                for(var i=0;i<num;i++){
+                    var j=i+1;
+                    product = productContract.at(databaseList[databaseList.length-j]);
+                    console.log("this product is    "+databaseList[databaseList.length-j]);
+                    product.logProductInfo(
+                    function (e,res){
+                        if(!e){
+                            console.log(res);
+                            console.log("the logProductInfo log successfully3")
+                        } else{
+                            
+                            console.log(e);
+                        }
+                    }
+                    );
                 }
-            }
-    );
-        })
-         },
-      merge: function(){ 
+               
+            })
+            },
+         getAction: function(){
+            App.contracts.Database.deployed().then(function(instance) {
+                databaseInstance = instance;
+                return instance.getProductReference({ from: App.account });
+            }).then(function(databaseList){
+                var   productABI =JSON.parse(localStorage.productABI);   
+                var productContract = web3.eth.contract(productABI);
+                var productAddress1 = $("#productAddress").val();
+                var productAddress =productAddress1+"";
+                product = productContract.at(productAddress);
+                var length;
+                product.getActionCount(
+                    { from: App.account },
+                    function (e,res){
+                    if(!e){
+                        console.log("actions length is    "+res);
+                        var i;
+                        for (i=0;i<res;i++){
+                            product.getActionByCount(i,
+                                { from: App.account },  
+                                function (e,res){
+                                if(!e){
+                                    console.log("the action1 is    "+res[0]);
+                                    console.log("the action2 is    "+web3.toAscii(res[1]));
+                                    console.log("the action2 is    "+res[2]);
+                                    console.log("the action3 is    "+res[3]);
+                                    console.log("the action4 is    "+res[4]);
+                                    console.log("the action5 is    "+res[5]);
+
+                                } else{   
+                                    console.log(e);
+                                }
+                            });
+                        }
+                    } else{
+                        
+                        console.log(e);
+                    }
+                });
+               
+                })
+             },
+
+        mergeProduct: function(){ 
         
         var product;
         
@@ -222,128 +250,90 @@ App = {
             productFactoryInstance = instance;
             
             return  databaseInstance.getProductReference({ from: App.account });
-
         }).then(function(databaseList){
-            // var productName = $("#newProductName").val();
-            // var _newAttributeName = $("#newAttributeName").val().split(" ");
-            // var _newValues = $("#newValues").val().split(" ");
-            // var parentProducts =$("#otherProducts").val().split(" ");
-            // var lon = $("#longitude").val();
-            // var lat = $("#latitude").val();
-            //0xa02da8453d6cd23e40c62cadefe6ec6f89140a61
-            var productName ="superproduct";
-            var _newAttributeName =["attr1","attr2"];
-            var _newValues=[1100,1200];
-            var parentProducts=["0x9dc894a422a1d7d98eccbc329d32c06e6a4eb4e3","0x448b95400ce9cd8548930bb83594eac58835b0c8"];
-            var lon=130;
-            var lat =140;
-            var productABI = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"childProducts","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newProductsNames","type":"bytes32"},{"name":"description","type":"bytes32"},{"name":"_newAttributeNames","type":"bytes32[]"},{"name":"_newValues","type":"uint256[]"},{"name":"lon","type":"uint256"},{"name":"lat","type":"uint256"},{"name":"_consumed","type":"bool"}],"name":"addAction","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"owner_","type":"address"}],"name":"setOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"logProductInfo","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getAttributes","outputs":[{"name":"","type":"bytes32[]"},{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"otherProducts","type":"address[]"},{"name":"newProductName","type":"bytes32"},{"name":"_newAttributeName","type":"bytes32[]"},{"name":"_newValues","type":"uint256[]"},{"name":"lon","type":"uint256"},{"name":"lat","type":"uint256"}],"name":"merge","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"consume","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"DATABASE_CONTRACT","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"getAttributeByName","outputs":[{"name":"","type":"bytes32"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"lon","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getAttributeNames","outputs":[{"name":"","type":"bytes32[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"lat","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getActionCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"PRODUCT_FACTORY","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_attributeName","type":"bytes32[]"},{"name":"_values","type":"uint256[]"}],"name":"setAttributes","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"measurements","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"isConsumed","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"actions","outputs":[{"name":"handler","type":"address"},{"name":"description","type":"bytes32"},{"name":"lon","type":"uint256"},{"name":"lat","type":"uint256"},{"name":"timestamp","type":"uint256"},{"name":"blockNumber","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"owner_","type":"address"}],"name":"transferOwnerShip","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getOwner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"index","type":"uint256"}],"name":"getActionByCount","outputs":[{"name":"","type":"address"},{"name":"","type":"bytes32"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"newProductAddress","type":"address"},{"name":"lon","type":"uint256"},{"name":"lat","type":"uint256"}],"name":"collaborateInMerge","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getAttributeValues","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"attributes","outputs":[{"name":"attributeName","type":"bytes32"},{"name":"value","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"parentProducts","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_name","type":"bytes32"},{"name":"_attributeName","type":"bytes32[]"},{"name":"_values","type":"uint256[]"},{"name":"_parentProducts","type":"address[]"},{"name":"_lon","type":"uint256"},{"name":"_lat","type":"uint256"},{"name":"_DATABASE_CONTRACT","type":"address"},{"name":"_PRODUCT_FACTORY","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":false,"stateMutability":"nonpayable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":false,"name":"name","type":"bytes32"},{"indexed":false,"name":"attributeNames","type":"bytes32[]"},{"indexed":false,"name":"values","type":"uint256[]"},{"indexed":false,"name":"parentProducts","type":"address[]"},{"indexed":false,"name":"lon","type":"uint256"},{"indexed":false,"name":"lat","type":"uint256"},{"indexed":false,"name":"PRODUCT_FACTORY","type":"address"},{"indexed":false,"name":"DATABASE_CONTRACT","type":"address"}],"name":"ProductInfo","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"newOwner","type":"address"}],"name":"SetTheOwner","type":"event"}];
+             var _newProductName = $("#newProductName").val();
+             var _newAttributeName = $("#newAttributeName").val().split(" ");
+            var _newValues = $("#newValues").val().split(" ");
+             var parentProducts =$("#otherProducts").val().split(" ");
+            // console.log("parentProducts "+typeof(parentProducts[0])+parentProducts[0])
+            var lon = $("#longitude").val();
+            var lat = $("#latitude").val();
+            // var _newProductName ="superproduct";
+            // var _newAttributeName =["attr1","attr2"];
+            // var _newValues=[110,120];
+            //var parentProducts=["0x814ad7e195a30f59e9353fb2436513158e5ffb45","0x6de182f96384fdbe7bd778ecfea1f53c77fdd455"];
+            // var lon=13;
+            // var lat =14;
+
+            App.contracts.ProductFactory.deployed().then(function(instance) {
+                productFactoryInstance = instance;
+                var productI= productFactoryInstance.createProduct(
+                    App.account,
+                    _newProductName,
+                    _newAttributeName,
+                    _newValues,
+                    parentProducts,
+                    lon,
+                    lat,
+                    databaseaddress, 
+                    { from: App.account,gas: '4700000' },
+                   );
+            
+            })
+            setTimeout(() => {
+                productABI =JSON.parse(localStorage.productABI);
             var productContract = web3.eth.contract(productABI);
-            console.log("the new databaseList  length         "+databaseList.length);
-            console.log("the new databaseList          "+databaseList[databaseList.length-1]);
-            console.log("parentProducts[0]  "+parentProducts[0]);
-            console.log("parentProducts[1]  "+parentProducts[1]);
-            let subProduct1 = productContract.at((parentProducts[0]));
-            let subProduct2 = productContract.at((parentProducts[1]));
-            console.log("otherProducts  "+otherProducts);
-            console.log("subProduct1  "+subProduct1);
-            console.log("subProduct2  "+subProduct2);
-            subProduct2.isConsumed(
-                function (e,res){
-                if(!e){
-                    console.log("the subproduct1 is consumed    "+res);
-                
-                } else{
-                    
-                    console.log(e);
-                }
-            });                   
-            subProduct1.merge(
-                parentProducts,
-                productName,
-                _newAttributeName,
-                _newValues,
-                lon,
-                lat,
-                { from: App.account,gas: '4700000' },
-                function (e,contract){
-                    if(!e){
-                        console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
-                    } else{
-                        
-                        console.log(e);
-                    }});
+           
+
+            for(var i=0;i<parentProducts.length;i++){
+                let subProduct = productContract.at(parentProducts[i]);
+                var productName='';
+                var description='merge to others';
+                var _newAttributeName=[];
+                var _newValues=[];
+                var consumed=true;
+                subProduct.addAction(
+                    productName,
+                    description,
+                    _newAttributeName,
+                    _newValues,
+                    lon,
+                    lat,
+                    consumed,
+                    { from: App.account,gas: '5700000' },
+                        function (e,contract){
+                            console.log(contract);
+                        if(!e){
+                            console.log('add the new action to this prodcut' + contract.address + ' transactionHash: ' + contract.transactionHash);
+                        } else{
+                            
+                            console.log(e);
+                        }}
+                );
             
-            App.listenForEvents(subProduct1);
-            subProduct1.logProductInfo(
-                function (e,res){
-                    if(!e){
-                        console.log(res);
-                        console.log("the logProductInfo log successfully3")
-                    } else{
-                        
-                        console.log(e);
-                    }
-                }
-            );
+            }
+            }, 1000);
             
-            subProduct1.isConsumed(
-                function (e,res){
-                if(!e){
-                    console.log("the subproduct2 is consumed    "+res);
-                
-                } else{
-                    
-                    console.log(e);
-                }
-            });
-            
-            subProduct1.PRODUCT_FACTORY(
-                function (e,res){
-                if(!e){
-                    console.log("PRODUCT_FACTORY "+res);
-                    console.log("the PRODUCT_FACTORY log successfully2")
-                } else{
-                    
-                    console.log(e);
-                }
-            });
-            subProduct1.childProducts(0,
-                function (e,res){
-                if(!e){
-                    console.log("childProducts    "+res);
-                } else{
-                    
-                    console.log(e);
-                }
-            });
         
-       
+        
+            
+               
+         
+        }).then(function(){
+
         })
         .catch(function(error) {
           console.warn(error);
         });
        
+    },
+    logOff: function() {          
+        var information ="<h3>You have successfully logged out！</h3>'"
+        localStorage.infor=information;
+        location.reload();
     }
-
-
-
-
 };
 
-
-    // castVote: function() {
-    //   var candidateId = $('#candidatesSelect').val();
-    //   App.contracts.Election.deployed().then(function(instance) {
-    //     return instance.vote(candidateId, { from: App.account });
-    //   }).then(function(result) {
-    //     // Wait for votes to update
-    //     $("#content").hide();
-    //     $("#loader").show();
-    //   }).catch(function(err) {
-    //     console.error(err);
-    //   });
-    // }
  
   
   $(function() {
@@ -351,35 +341,14 @@ App = {
         
       App.init();
     });
-
-    $("#merge").click(function() {
-        App.merge();
+    $("#mergeProduct").click(function() {
+        App.mergeProduct();
     });
     $("#getproduct").click(function() {
         App.getproduct();
     });
-    $("#getEvent").click(function() {
-        App.getEvent();
+    $("#logOff").click(function() {
+        App.logOff();
     });
 
-
-  });
-  
-
-
-    // Listen for events emitted from the contract
-    // listenForEvents: function() {
-    //   App.contracts.Database.deployed().then(function(instance) {
-    //     // Restart Chrome if you are unable to receive this event
-    //     // This is a known issue with Metamask
-    //     // https://github.com/MetaMask/metamask-extension/issues/2393
-    //     instance.votedEvent({}, {
-    //       fromBlock: 0,
-    //       toBlock: 'latest'
-    //     }).watch(function(error, event) {
-    //       console.log("event triggered", event)
-    //       // Reload when a new vote is recorded
-    //       App.render();
-    //     });
-    //   });
-    // },
+  })

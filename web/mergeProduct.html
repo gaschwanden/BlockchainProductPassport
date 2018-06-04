@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>MergeProdcut</title>
+	<title>Split Product</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
@@ -30,7 +30,6 @@
 	<script type="text/javascript" src="assets/js/llqrcode.js"></script>
 	<script type="text/javascript" src="assets/js/webqr.js"></script>
 	<!-- <script type="text/javascript" src="../node_modules/jquery/dist/jquery.subwayMap-0.5.0.js"></script> -->
-    <!-- <script type="text/javascript" src="./assets/js/ProductFactoryABI.js"></script> -->
 
 
     <!-- <script type="text/javascript" src="./Bytescode/ProductBytecode.js"></script>
@@ -88,22 +87,15 @@
 					<!-- /Collapse nav button -->
 				</div>
 
-				<!--  Main navigation  -->
-				<ul class="main-nav nav navbar-nav navbar-right">
-					<li><a href="../index.html#home">Home</a></li>
-					<li><a href="../index.html#about">About</a></li>
-					<li><a href="../index.html#portfolio">Portfolio</a></li>
-					<li><a href="../index.html#service">Services</a></li>
-					<li><a href="../index.html#pricing">Prices</a></li>
-					<li><a href="../index.html#team">Team</a></li>
-					<li class="has-dropdown"><a>Blog</a>
-						<ul class="dropdown">
-							<li><a href="#">blog post</a></li>
-						</ul>
-					</li>
-					<li><a href="../index.html#contact">Contact</a></li>
-				</ul>
-				<!-- /Main navigation -->
+			<!--  Main navigation  -->
+			<ul class="main-nav nav navbar-nav navbar-right">
+				<li><a href="../index.html#home">Home</a></li>
+				<li><a href="Services.html?">Services</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<button id="logOff"  class="main-btn" onclick="logout();">logOut</button>
+			</ul>
+			<!-- /Main navigation -->
+
 
 			</div>
 		</nav>
@@ -112,7 +104,9 @@
 		<!-- header wrapper -->
 		<div class="header-wrapper sm-padding bg-grey">
 			<div class="container">
-				<h2>merge Your Product</h2>
+				<h2>Merge your product to newProduct</h2>
+				<div class = "loginInfo"></div>
+				<h3 id="accountAddress" ></h3>
 				<!-- <ul class="breadcrumb">
 					<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
 					<li class="breadcrumb-item"><a href="../index.html#blog">Blog</a></li>
@@ -121,6 +115,13 @@
 			</div>
 		</div>
 		<!-- /header wrapper -->
+		<script type="text/javascript">
+		
+			function logout() {
+			   alert ("You have successfully logged out!");
+			 //   document.write ("This is a warning message!");
+			}	 
+	  </script>
 
 	</header>
 	<!-- /Header -->
@@ -141,40 +142,40 @@
 				<main id="main" class="col-md-9">
 					
 
-						<div class="Input Information">
-								<h3 class="title">Merge your product</h3>
+					<div class="Input Information">
+						<h3 class="title">Merge your product</h3>
 
+						
+						<form onsubmit="return false;" id="myForm">
+							<input class="input" id="otherProducts" type="text" placeholder="otherProducts">
+							<input class="input" id="newProductName" type="text" placeholder="newProductName">
+							<input class="input" id="newAttributeName" type="text" placeholder="newAttributeName">
+							<input class="input" id="newValues" type="text" placeholder="newValues">
+							<input class="input" id="longitude" type="text" placeholder="longitude">
+							<input class="input" id="latitude" type="text" placeholder="latitude">
+							<input class="PRODUCT_FACTORY" type="text" placeholder="PRODUCT_FACTORY">
+							<!-- <input class="input" type="email" placeholder="Email"> -->
+						
+						
+							<button id="mergeProduct"  class="main-btn">merge product</button>
+
+							<button id="getEvent"  class="main-btn">getEvent</button>
+							<button id="getproduct"  class="main-btn">getproduct</button>
+							
+							<h3 id="ProductsName"></h3>
+							<h3 id="ProductsInfo"></h3>
+							<h4 id="insTrans"></h4>
+							
+							
+
+							<script>
 								
-								<form onsubmit="return false;" id="myForm">
-									<input class="input" id="otherProducts" type="text" placeholder="otherProducts">
-									<input class="input" id="newProductName" type="text" placeholder="newProductName">
-									<input class="input" id="newAttributeName" type="text" placeholder="newAttributeName">
-									<input class="input" id="newValues" type="text" placeholder="newValues">
-									<input class="input" id="longitude" type="text" placeholder="longitude">
-									<input class="input" id="latitude" type="text" placeholder="latitude">
-									<input class="PRODUCT_FACTORY" type="text" placeholder="PRODUCT_FACTORY">
-									<!-- <input class="input" type="email" placeholder="Email"> -->
-									<textarea placeholder="Add Your Commment"></textarea>
-									<button type="submit" class="main-btn">Submit</button>
-									<button id="merge"  class="main-btn">merge product</button>
 									
-									<button id="getEvent"  class="main-btn">getEvent</button>
-									<button id="getproduct"  class="main-btn">getproduct</button>
-									
-									<h3 id="ProductsName"></h3>
-									<h3 id="ProductsInfo"></h3>
-									<h4 id="insTrans"></h4>
-									
-									
-
-									<script>
 										
-											
-												
-									</script>
-								</form>
-								
-						</div>
+							</script>
+						</form>
+						
+				</div>
 
 
 					<div class="info">
@@ -183,7 +184,7 @@
 						</div> -->
 			
 
-					
+						
 
 						<!-- reply form -->
 						<div class="reply-form">
@@ -309,7 +310,6 @@
 						<li><a href="#"><i class="fa fa-youtube"></i></a></li>
 					</ul>
 					<!-- /footer follow -->
-
 
 				</div>
 

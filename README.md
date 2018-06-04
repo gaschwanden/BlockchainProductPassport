@@ -121,7 +121,7 @@ vii.	latitude :80<br />
 viii.	PRODUCT-FACORY: you can leave it with empty<br />
 b.	You can track this action in the Track pages, input address and get the table<br />
 6.	Split Product<br />
-a.	It is similar with adding action, but also don’t input too many attributes, you can input more than one product name that the origin product will be marked as consumed. Because of Metamask, it will have some bugs, when you input to many attributes, keep it 2 or 3 is fine. And the example is following:<br />
+a.	It is similar with adding action, but also don’t input too many attributes, you can input more than one new product name that the origin product will be marked as consumed. Because of Metamask, it will have some bugs, when you input to many attributes, keep it 2 or 3 is fine. And the example is following:<br />
 i.	ProductAdderss : // input your product which will be split<br />
 ii.	Description about action: split <br />
 iii.	ProductName: beef steak<br />
@@ -141,4 +141,14 @@ i.	ProductAdderss : // input your product address which will be validated<br />
 ii.	Description about action: Age Weight<br />
 iii.	attributeMax: 1 10   // age range is 1-20 Weight range is 10-20<br />
 iv.	attributeMin: 10 20<br />
-
+9.	Merge Product<br />
+a.	It is similar with splitting action, but also don’t input too many attributes, you can input more than one parent product name that the origin product will be marked as consumed. Because of Metamask, it will have some bugs, when you input to many attributes, keep it 2 or 3 is fine. And the example is following:<br />
+i.	parentProductAddress : // input your product which will be merged<br />
+ii.	New productName: superProduct<br />
+iii.attributeNames: origin Age Weight //Show split by space<br />
+iv.	attributeValues: 1 8 10 // split by space<br />
+v.	longtitude : 10<br />
+vi.	latitude :110<br />
+vii.	PRODUCT-FACORY: you can leave it with empty<br />
+There will be three  notifications, if you want to merge two products, one for creating new product, two for adding action for parent products.
+b.	You can track this in the Track pages, input address and get the table, and also can get all the information.<br />
