@@ -280,15 +280,15 @@ App = {
               });
 
 
-              // App.listenForEvents(productAddress,
-              //   { gas: '4700000'},
-              //   function (e,res){
-              //   if(!e){
-              //       console.log(res);
-              //   } else{
-              //       console.log(e);
-              //   }
-              //   });
+              App.listenForEvents(productAddress,
+                { gas: '4700000'},
+                function (e,res){
+                if(!e){
+                    console.log(res);
+                } else{
+                    console.log(e);
+                }
+                });
               
 
                product.owner(
